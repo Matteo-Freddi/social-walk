@@ -1,14 +1,41 @@
 import './home.css';
 
 const lista = document.getElementById('partecipanti');
-const inizia = document.getElementById('inizia');
 const conta = document.getElementById('conta');
-const camminatori = document.getElementById('camminatori');
+const numGruppo = document.getElementById('num-gruppo');
+const testata = document.getElementById('testata');
+const hero = document.getElementById('hero');
+const heroImg = document.getElementById('hero-img');
+const tappaCard = document.getElementById('tappa-card');
+const tappaImg = document.getElementById('tappa-img');
 
 const FILE = 'partecipanti.json';
-const MAGLIE = ['#e30613', '#00a24f', '#ffd200', '#0a6fd6', '#a05fb0']; // come le linee M1–M5
-const PELLI = ['#ffd7b5', '#f1b98a', '#c68642', '#8d5524', '#ffe0bd'];
-const CAPELLI = ['#24135c', '#6b3e26', '#e0a030', '#1a1a1a', '#c0392b'];
+const BASE = import.meta.env.BASE_URL;
+
+// Foto: mettile in public/images/ (o cambia i nomi qui).
+// Se un file manca, resta il gradiente di riserva.
+const IMMAGINI = {
+  hero: 'images/hero.jpg',
+  sforzesco: 'images/sforzesco.jpg',
+};
+
+const ridotto = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- immagini con fallback ---------- */
+
+function caricaFoto(file, elementoImg, contenitore) {
+  const url = `${BASE}${file}`;
+  const img = new Image();
+  img.onload = () => {
+    elementoImg.style.setProperty('--img', `url("${url}")`);
+    contenitore.classList.add('con-foto');
+  };
+  img.onerror = () => {}; // nessuna foto: si tiene il gradiente
+  img.src = url;
+}
+
+caricaFoto(IMMAGINI.hero, heroImg, hero);
+caricaFoto(IMMAGINI.sforzesco, tappaImg, tappaCard);
 
 /* ---------- lettura del file ---------- */
 
@@ -19,9 +46,8 @@ function estraiNomi(dati) {
 }
 
 async function leggiPartecipanti() {
-  // più percorsi possibili: base di Vite, relativo alla pagina, radice del sito
   const candidati = [
-    `${import.meta.env.BASE_URL}${FILE}`,
+    `${BASE}${FILE}`,
     new URL(FILE, document.baseURI).href,
     `/${FILE}`,
     `./${FILE}`,
@@ -32,8 +58,8 @@ async function leggiPartecipanti() {
     try {
       const res = await fetch(url, { cache: 'no-cache' });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const testo = (await res.text()).replace(/^\uFEFF/, ''); // via l'eventuale BOM
-      return estraiNomi(JSON.parse(testo)); // se arriva index.html, qui salta e si passa al prossimo
+      const testo = (await res.text()).replace(/^\uFEFF/, '');
+      return estraiNomi(JSON.parse(testo));
     } catch (e) {
       errori.push(`${url} → ${e.message}`);
     }
@@ -62,13 +88,14 @@ function disegnaPartecipanti(nomi) {
 
     const avatar = document.createElement('span');
     avatar.className = 'avatar';
+    avatar.setAttribute('aria-hidden', 'true');
     avatar.textContent = iniziali(nome);
 
     const dati = document.createElement('span');
     dati.className = 'dati';
     const n = document.createElement('span');
     n.className = 'nome';
-    n.textContent = nome; // textContent: niente HTML iniettato dal file
+    n.textContent = nome; // textContent: nessun HTML iniettato dal file
     const etichetta = document.createElement('small');
     etichetta.textContent = `Camminatore ${i + 1}`;
 
@@ -77,6 +104,7 @@ function disegnaPartecipanti(nomi) {
     lista.append(li);
   });
   conta.textContent = `${nomi.length} ${nomi.length === 1 ? 'camminatore' : 'camminatori'}`;
+  contaFinoA(numGruppo, nomi.length);
 }
 
 function mostraErrore() {
@@ -84,52 +112,53 @@ function mostraErrore() {
   li.className = 'vuoto';
   li.textContent = 'Elenco partecipanti non disponibile';
   lista.replaceChildren(li);
+  numGruppo.textContent = '–';
 }
 
-/* ---------- omini che camminano sullo sfondo ---------- */
-
-function camminatore(i) {
-  const maglia = MAGLIE[i % MAGLIE.length];
-  const pelle = PELLI[(i * 2 + 1) % PELLI.length];
-  const capelli = CAPELLI[(i * 3 + 2) % CAPELLI.length];
-  const gamba = (v) => `
-    <g class="gamba ${v}">
-      <rect x="17" y="47" width="8" height="26" rx="4" fill="#24135c"/>
-      <rect x="17" y="69" width="14" height="7" rx="3.5" fill="#fff" stroke="#24135c" stroke-width="1.6"/>
-    </g>`;
-  const braccio = (v) => `<g class="braccio ${v}"><rect x="18" y="25" width="6" height="22" rx="3" fill="${pelle}"/></g>`;
-
-  const el = document.createElement('div');
-  el.className = 'camminatore';
-  el.style.setProperty('--k', i);
-  el.innerHTML = `
-    <svg viewBox="0 0 44 80">
-      <rect x="3" y="26" width="11" height="19" rx="4.5" fill="#24135c"/>
-      ${braccio('b')}
-      ${gamba('b')}
-      <rect x="11" y="21" width="20" height="30" rx="9" fill="${maglia}" stroke="#24135c" stroke-width="2"/>
-      ${gamba('a')}
-      <circle cx="22" cy="12" r="8.5" fill="${pelle}" stroke="#24135c" stroke-width="2"/>
-      <path d="M13.5 11a8.5 8.5 0 0 1 17 0z" fill="${capelli}"/>
-      ${braccio('a')}
-    </svg>`;
-  return el;
+function contaFinoA(el, fine) {
+  if (ridotto || fine < 2) { el.textContent = fine; return; }
+  const durata = 900;
+  const t0 = performance.now();
+  const passo = (t) => {
+    const p = Math.min((t - t0) / durata, 1);
+    el.textContent = Math.round(fine * (1 - Math.pow(1 - p, 3)));
+    if (p < 1) requestAnimationFrame(passo);
+  };
+  requestAnimationFrame(passo);
 }
 
-function disegnaCamminatori(quanti) {
-  const n = Math.max(1, Math.min(quanti || 4, 8));
-  camminatori.style.setProperty('--n', n);
-  camminatori.replaceChildren(...Array.from({ length: n }, (_, i) => camminatore(i)));
+/* ---------- comparsa allo scroll ---------- */
+
+const osservatore = new IntersectionObserver(
+  (voci) => voci.forEach((v) => {
+    if (v.isIntersecting) { v.target.classList.add('visibile'); osservatore.unobserve(v.target); }
+  }),
+  { threshold: 0.15, rootMargin: '0px 0px -8% 0px' },
+);
+document.querySelectorAll('.reveal').forEach((el) => osservatore.observe(el));
+
+/* ---------- testata e parallasse ---------- */
+
+let inAttesa = false;
+function alloScroll() {
+  if (inAttesa) return;
+  inAttesa = true;
+  requestAnimationFrame(() => {
+    const y = window.scrollY;
+    testata.classList.toggle('solida', y > 40);
+    if (!ridotto && y < window.innerHeight * 1.2) hero.style.setProperty('--py', y.toFixed(0));
+    inAttesa = false;
+  });
 }
+addEventListener('scroll', alloScroll, { passive: true });
+alloScroll();
 
 /* ---------- avvio ---------- */
 
 async function avvia() {
   mostraScheletri();
-  let quanti = 4;
   try {
     const nomi = await leggiPartecipanti();
-    quanti = nomi.length;
     if (nomi.length) disegnaPartecipanti(nomi);
     else mostraErrore();
   } catch (e) {
@@ -137,8 +166,6 @@ async function avvia() {
     console.error(e);
   } finally {
     lista.removeAttribute('aria-busy');
-    disegnaCamminatori(quanti);
-    inizia.hidden = false; // il tasto compare comunque
   }
 }
 
