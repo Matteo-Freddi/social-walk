@@ -11,7 +11,7 @@ for (const d of readdirSync(root)) {
 }
 
 export default defineConfig({
-  base: '/NOME-REPO/',          // sostituisci con il nome del repo
+  base: '/social-walk-website/',          // sostituisci con il nome del repo
   build: { rollupOptions: { input: pages } },
   server: { host: true, port: 5173 },
 });
