@@ -3,36 +3,301 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#1b1a2e" />
-  <title>Social Walking Tour</title>
-  <meta name="description" content="Cammina, scopri, conosci nuove persone. Il tuo walking tour inizia qui." />
+  <meta name="theme-color" content="#24135c" />
+  <title>Social Walking Tour · Milano</title>
+  <meta name="description" content="Cammina, scopri, chiacchiera: il tuo walking tour a Milano inizia qui." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Caveat:wght@700&family=VT323&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="sfondo" aria-hidden="true">
-    <span class="blob b1"></span>
-    <span class="blob b2"></span>
-    <span class="blob b3"></span>
-    <svg class="percorso" viewBox="0 0 400 800" preserveAspectRatio="none">
-      <path d="M-20 780 C 120 700, 60 600, 200 540 S 340 420, 240 330 S 80 220, 220 120 S 380 40, 420 -20" />
-    </svg>
+
+  <!-- Sprite: motivi e simboli riusati nella pagina -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="orma" viewBox="0 0 24 40">
+        <path fill="currentColor" d="M4 12C4 5 8 1 12 1s8 4 8 11c0 6-3 9-4 12H8C7 21 4 18 4 12Z"/>
+        <path fill="currentColor" d="M8.5 28h7c.8 0 1.5.7 1.5 1.6 0 3.8-2 8.4-5 8.4s-5-4.6-5-8.4c0-.9.7-1.6 1.5-1.6Z"/>
+      </symbol>
+      <pattern id="fin" width="9" height="11" patternUnits="userSpaceOnUse"><rect x="2" y="2" width="4" height="6" rx="1" fill="#ffe28a"/></pattern>
+      <pattern id="bande" width="8" height="9" patternUnits="userSpaceOnUse"><rect y="3" width="8" height="3" fill="#fff" opacity=".5"/></pattern>
+      <pattern id="verde" width="10" height="14" patternUnits="userSpaceOnUse">
+        <rect y="12" width="10" height="2" fill="#1c7a4c"/>
+        <circle cx="3" cy="8" r="3.6" fill="#2fbf71"/><circle cx="8" cy="9" r="3" fill="#43d98a"/>
+      </pattern>
+      <pattern id="merli" width="16" height="10" patternUnits="userSpaceOnUse"><rect width="8" height="10" fill="#e8503a"/></pattern>
+      <pattern id="mattoni" width="14" height="8" patternUnits="userSpaceOnUse">
+        <rect width="14" height="1" fill="#8a1f2b"/><rect width="1" height="4" fill="#8a1f2b"/><rect x="7" y="4" width="1" height="4" fill="#8a1f2b"/>
+      </pattern>
+    </defs>
+  </svg>
+
+  <!-- Cielo al tramonto -->
+  <div class="cielo" aria-hidden="true">
+    <span class="stelle"></span>
+    <div class="sole"></div>
+    <span class="nuvola n1"></span>
+    <span class="nuvola n2"></span>
+    <span class="nuvola n3"></span>
+    <svg class="uccello u1" viewBox="0 0 32 14"><path d="M1 10Q8 0 16 9Q24 0 31 10"/></svg>
+    <svg class="uccello u2" viewBox="0 0 32 14"><path d="M1 10Q8 0 16 9Q24 0 31 10"/></svg>
+    <svg class="uccello u3" viewBox="0 0 32 14"><path d="M1 10Q8 0 16 9Q24 0 31 10"/></svg>
   </div>
 
+  <!-- Skyline di Milano -->
+  <svg class="skyline" viewBox="0 0 1440 360" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+    <defs>
+      <path id="lontano" d="M0,300V240H50V222H95V250H140V230H200V215H250V245H300V228H350V250H410V235H470V258H540V240H600V224H660V248H720V232H770V215H830V240H900V226H960V252H1020V236H1080V218H1140V244H1200V228H1260V250H1330V232H1390V246H1440V300Z"/>
+    </defs>
+
+    <!-- palazzi lontani -->
+    <use href="#lontano" fill="#a8449f" opacity=".55"/>
+    <use href="#lontano" fill="url(#fin)" opacity=".4"/>
+
+    <!-- palazzi milanesi -->
+    <g>
+      <rect x="245" y="250" width="54" height="50" fill="#ffb36b"/>
+      <polygon points="241,250 272,238 303,250" fill="#c2338f"/>
+      <rect x="297" y="262" width="70" height="38" fill="#ff7aa2"/>
+      <rect x="665" y="258" width="54" height="42" fill="#35c7b8"/>
+      <polygon points="661,258 692,247 723,258" fill="#5b1f94"/>
+      <rect x="1002" y="245" width="38" height="55" fill="#ffd25e"/>
+      <rect x="1408" y="250" width="32" height="50" fill="#b388ff"/>
+      <rect x="245" y="250" width="54" height="50" fill="url(#fin)"/>
+      <rect x="297" y="262" width="70" height="38" fill="url(#fin)"/>
+      <rect x="665" y="258" width="54" height="42" fill="url(#fin)"/>
+      <rect x="1002" y="245" width="38" height="55" fill="url(#fin)"/>
+      <rect x="1408" y="250" width="32" height="50" fill="url(#fin)"/>
+    </g>
+
+    <!-- Arco della Pace -->
+    <g>
+      <rect x="22" y="236" width="76" height="64" fill="#fbe3b7"/>
+      <rect x="18" y="226" width="84" height="12" fill="#f4cf94"/>
+      <rect x="30" y="206" width="60" height="22" fill="#fbe3b7"/>
+      <g fill="#f4cf94">
+        <rect x="26" y="240" width="5" height="60"/><rect x="43" y="240" width="5" height="60"/>
+        <rect x="72" y="240" width="5" height="60"/><rect x="89" y="240" width="5" height="60"/>
+      </g>
+      <g fill="#6b2a5e">
+        <path d="M50,300V268a10,10 0 0 1 20,0V300Z"/>
+        <path d="M31,300V284a5,5 0 0 1 10,0V300Z"/>
+        <path d="M79,300V284a5,5 0 0 1 10,0V300Z"/>
+      </g>
+      <g fill="#ffc83d">
+        <circle cx="49" cy="195" r="3.5"/><circle cx="56" cy="193" r="3.5"/>
+        <circle cx="64" cy="193" r="3.5"/><circle cx="71" cy="195" r="3.5"/>
+        <polygon points="55,198 65,198 63,206 57,206"/>
+        <circle cx="60" cy="188" r="3"/>
+      </g>
+    </g>
+
+    <!-- Bosco Verticale -->
+    <g>
+      <rect x="140" y="125" width="44" height="175" fill="#d6f0df"/>
+      <rect x="140" y="125" width="44" height="175" fill="url(#verde)"/>
+      <rect x="196" y="165" width="38" height="135" fill="#d6f0df"/>
+      <rect x="196" y="165" width="38" height="135" fill="url(#verde)"/>
+      <g fill="#2fbf71">
+        <circle cx="148" cy="124" r="7"/><circle cx="160" cy="119" r="8"/><circle cx="173" cy="123" r="7"/><circle cx="181" cy="127" r="5"/>
+        <circle cx="204" cy="164" r="6"/><circle cx="217" cy="160" r="7"/><circle cx="228" cy="165" r="5"/>
+      </g>
+    </g>
+
+    <!-- Castello Sforzesco -->
+    <g>
+      <rect x="384" y="245" width="264" height="55" fill="#e8503a"/>
+      <rect x="384" y="245" width="264" height="55" fill="url(#mattoni)" opacity=".35"/>
+      <rect x="384" y="235" width="264" height="10" fill="url(#merli)"/>
+      <!-- torri tonde -->
+      <rect x="370" y="205" width="30" height="95" fill="#d6403a"/>
+      <polygon points="366,205 385,168 404,205" fill="#1fb5a8" stroke="#24135c" stroke-width="2" stroke-linejoin="round"/>
+      <rect x="383" y="225" width="4" height="12" rx="2" fill="#ffd25e"/>
+      <rect x="628" y="205" width="30" height="95" fill="#d6403a"/>
+      <polygon points="624,205 643,168 662,205" fill="#1fb5a8" stroke="#24135c" stroke-width="2" stroke-linejoin="round"/>
+      <rect x="641" y="225" width="4" height="12" rx="2" fill="#ffd25e"/>
+      <!-- finestre -->
+      <g fill="#ffd25e">
+        <path d="M410,285V272a5,5 0 0 1 10,0V285Z"/><path d="M436,285V272a5,5 0 0 1 10,0V285Z"/><path d="M462,285V272a5,5 0 0 1 10,0V285Z"/>
+        <path d="M560,285V272a5,5 0 0 1 10,0V285Z"/><path d="M586,285V272a5,5 0 0 1 10,0V285Z"/><path d="M612,285V272a5,5 0 0 1 10,0V285Z"/>
+      </g>
+      <!-- Torre del Filarete -->
+      <rect x="494" y="165" width="44" height="135" fill="#e8503a"/>
+      <rect x="494" y="165" width="44" height="135" fill="url(#mattoni)" opacity=".35"/>
+      <rect x="488" y="154" width="56" height="12" fill="#c23b32"/>
+      <rect x="496" y="146" width="40" height="8" fill="url(#merli)"/>
+      <rect x="500" y="118" width="32" height="28" fill="#e8503a"/>
+      <g fill="#3a1550">
+        <path d="M503,146V133a4,4 0 0 1 8,0V146Z"/><path d="M513,146V133a4,4 0 0 1 8,0V146Z"/><path d="M523,146V133a4,4 0 0 1 8,0V146Z"/>
+      </g>
+      <polygon points="498,118 516,64 534,118" fill="#1fb5a8" stroke="#24135c" stroke-width="2" stroke-linejoin="round"/>
+      <line x1="516" y1="64" x2="516" y2="36" stroke="#24135c" stroke-width="2"/>
+      <g class="bandiera">
+        <rect x="516" y="36" width="22" height="14" fill="#fff" stroke="#24135c" stroke-width="1"/>
+        <rect x="525" y="36" width="4" height="14" fill="#e30613"/>
+        <rect x="516" y="41" width="22" height="4" fill="#e30613"/>
+      </g>
+      <circle cx="516" cy="190" r="11" fill="#fff3d6" stroke="#24135c" stroke-width="2"/>
+      <path d="M516,190V182M516,190L522,194" stroke="#24135c" stroke-width="2" stroke-linecap="round"/>
+      <rect x="508" y="212" width="6" height="12" rx="3" fill="#ffd25e"/><rect x="518" y="212" width="6" height="12" rx="3" fill="#ffd25e"/>
+      <path d="M504,300V268a12,12 0 0 1 24,0V300Z" fill="#3a1550"/>
+    </g>
+
+    <!-- Duomo e Madonnina -->
+    <g stroke="#d98aa8" stroke-width="1.2" stroke-linejoin="round">
+      <polygon points="720,300 720,228 770,205 770,300" fill="#fbd9cf"/>
+      <polygon points="1000,300 1000,228 950,205 950,300" fill="#fbd9cf"/>
+      <polygon points="848,170 860,44 872,170" fill="#fff0e2"/>
+      <g stroke="none" class="madonnina">
+        <circle cx="860" cy="35" r="9" fill="#ffd25e" opacity=".55"/>
+        <circle cx="860" cy="35" r="3.5" fill="#ffc83d"/>
+        <rect x="858.8" y="38" width="2.4" height="7" fill="#ffc83d"/>
+      </g>
+      <polygon points="770,300 770,205 860,150 950,205 950,300" fill="#ffe7d6"/>
+      <g fill="#f3c5cf">
+        <rect x="767" y="205" width="6" height="95"/><rect x="803" y="183" width="6" height="117"/><rect x="839" y="161" width="6" height="139"/>
+        <rect x="875" y="161" width="6" height="139"/><rect x="911" y="183" width="6" height="117"/><rect x="947" y="205" width="6" height="95"/>
+      </g>
+      <g fill="#fff0e2">
+        <polygon points="766,205 770,157 774,205"/><polygon points="802,183 806,127 810,183"/><polygon points="838,161 842,97 846,161"/>
+        <polygon points="874,161 878,97 882,161"/><polygon points="910,183 914,127 918,183"/><polygon points="946,205 950,157 954,205"/>
+        <polygon points="728,223 732,193 736,223"/><polygon points="746,214 750,184 754,214"/>
+        <polygon points="984,223 988,193 992,223"/><polygon points="966,214 970,184 974,214"/>
+      </g>
+      <g stroke="none">
+        <g fill="#7a2d6b">
+          <path d="M779,300V282a9,9 0 0 1 18,0V300Z"/><path d="M815,300V282a9,9 0 0 1 18,0V300Z"/>
+          <path d="M851,300V274a9,9 0 0 1 18,0V300Z"/>
+          <path d="M887,300V282a9,9 0 0 1 18,0V300Z"/><path d="M923,300V282a9,9 0 0 1 18,0V300Z"/>
+        </g>
+        <g fill="#ff9a3c">
+          <path d="M783,262V238a5,5 0 0 1 10,0V262Z"/><path d="M819,262V238a5,5 0 0 1 10,0V262Z"/>
+          <path d="M891,262V238a5,5 0 0 1 10,0V262Z"/><path d="M927,262V238a5,5 0 0 1 10,0V262Z"/>
+        </g>
+        <path d="M853,258V222a7,7 0 0 1 14,0V258Z" fill="#ffd25e"/>
+      </g>
+    </g>
+
+    <!-- Torre Velasca -->
+    <g>
+      <rect x="1062" y="198" width="36" height="102" fill="#e2602b"/>
+      <rect x="1062" y="198" width="36" height="102" fill="url(#fin)"/>
+      <polygon points="1062,214 1038,172 1052,172 1066,206" fill="#c94a24"/>
+      <polygon points="1098,214 1122,172 1108,172 1094,206" fill="#c94a24"/>
+      <rect x="1038" y="124" width="84" height="48" fill="#f58a3c"/>
+      <rect x="1038" y="124" width="84" height="48" fill="url(#fin)"/>
+      <polygon points="1038,124 1080,98 1122,124" fill="#8a2f4e"/>
+      <line x1="1080" y1="98" x2="1080" y2="76" stroke="#24135c" stroke-width="2"/>
+    </g>
+
+    <!-- Pirellone -->
+    <g>
+      <polygon points="1134,300 1134,128 1142,106 1158,106 1166,128 1166,300" fill="#a05fb0"/>
+      <rect x="1134" y="128" width="32" height="172" fill="url(#bande)"/>
+      <rect x="1148" y="92" width="4" height="14" fill="#a05fb0"/>
+    </g>
+
+    <!-- CityLife: Dritto, Storto, Curvo -->
+    <g>
+      <rect x="1186" y="70" width="40" height="230" fill="#1da1c8"/>
+      <rect x="1186" y="70" width="40" height="230" fill="url(#bande)"/>
+      <rect x="1186" y="70" width="12" height="230" fill="#fff" opacity=".18"/>
+      <polygon points="1236,300 1244,150 1262,92 1274,300" fill="#ff4f9a"/>
+      <path d="M1240,205L1272,193M1241,255L1273,243M1243,175L1269,160" stroke="#fff" stroke-width="2" opacity=".4"/>
+      <path d="M1286,300V176C1286,150 1310,134 1336,124V300Z" fill="#7c5cff"/>
+      <path d="M1286,300V176C1286,150 1310,134 1336,124V300Z" fill="url(#fin)"/>
+    </g>
+
+    <!-- Torre Unicredit -->
+    <g>
+      <polygon points="1356,300 1356,132 1370,114 1390,114 1404,132 1404,300" fill="#2b8be0"/>
+      <rect x="1356" y="132" width="48" height="168" fill="url(#bande)"/>
+      <polygon points="1356,300 1356,132 1368,132 1368,300" fill="#fff" opacity=".2"/>
+      <polygon points="1376,114 1380,22 1384,114" fill="#cfe9ff"/>
+    </g>
+
+    <!-- marciapiede, strada, binari -->
+    <rect y="300" width="1440" height="16" fill="#ffe1b8"/>
+    <rect y="316" width="1440" height="44" fill="#3a1f6e"/>
+    <rect y="316" width="1440" height="3" fill="#24135c"/>
+    <rect y="337" width="1440" height="2" fill="#8a6fd0"/>
+    <rect y="343" width="1440" height="2" fill="#8a6fd0"/>
+    <line x1="0" y1="354" x2="1440" y2="354" stroke="#ffd25e" stroke-width="3" stroke-dasharray="26 22"/>
+
+    <!-- il tram arancione -->
+    <g class="tram">
+      <line x1="72" y1="296" x2="96" y2="272" stroke="#24135c" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="96" cy="272" r="3" fill="#24135c"/>
+      <rect x="0" y="296" width="152" height="42" rx="9" fill="#ff8a1f" stroke="#24135c" stroke-width="3"/>
+      <rect x="3" y="299" width="146" height="8" rx="4" fill="#ffc94d"/>
+      <g fill="#fff3c4" stroke="#24135c" stroke-width="2">
+        <rect x="9" y="311" width="19" height="14" rx="3"/><rect x="32" y="311" width="19" height="14" rx="3"/>
+        <rect x="55" y="311" width="19" height="14" rx="3"/><rect x="78" y="311" width="19" height="14" rx="3"/>
+        <rect x="101" y="311" width="19" height="14" rx="3"/><rect x="124" y="311" width="19" height="14" rx="3"/>
+      </g>
+      <rect x="3" y="328" width="146" height="5" fill="#e8590c"/>
+      <circle cx="148" cy="331" r="2.5" fill="#fff"/>
+      <circle cx="30" cy="341" r="6.5" fill="#24135c"/><circle cx="122" cy="341" r="6.5" fill="#24135c"/>
+    </g>
+  </svg>
+
+  <!-- Il gruppo che cammina (generato da home.js) -->
+  <div class="camminatori" id="camminatori" aria-hidden="true"></div>
+
   <main class="hero">
-    <p class="etichetta">👣 Si parte da Castello Sforzesco</p>
-    <h1>Social<br /><em>Walking</em> Tour</h1>
-    <p class="intro">Benvenuti! Ecco chi cammina con noi oggi.</p>
+
+    <div class="display" role="status">
+      <span class="logo-m" aria-hidden="true">M</span>
+      <div class="led" aria-label="Prossima fermata: Castello Sforzesco">
+        <div class="led-traccia" aria-hidden="true">
+          <span>» PROSSIMA FERMATA: CASTELLO SFORZESCO • BENVENUTI A MILANO • SI CAMMINA, SI SCOPRE, SI CHIACCHIERA •</span>
+          <span>» PROSSIMA FERMATA: CASTELLO SFORZESCO • BENVENUTI A MILANO • SI CAMMINA, SI SCOPRE, SI CHIACCHIERA •</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="titolo">
+      <h1 aria-label="Social Walking Tour">
+        <span class="r1" style="--d:0">Social</span>
+        <span class="r2" style="--d:1">Walking</span>
+        <span class="r3" style="--d:2">Tour</span>
+      </h1>
+      <svg class="sticker" viewBox="0 0 120 120" aria-hidden="true">
+        <defs><path id="cerchio" d="M60,60m-44,0a44,44 0 1,1 88,0a44,44 0 1,1 -88,0"/></defs>
+        <circle cx="60" cy="60" r="58" fill="#ffd200" stroke="#24135c" stroke-width="3"/>
+        <g class="testo-rot">
+          <text font-size="10" font-weight="800" letter-spacing="1.5" fill="#24135c"><textPath href="#cerchio">SOCIAL WALKING TOUR • MILANO • </textPath></text>
+        </g>
+        <circle cx="60" cy="60" r="31" fill="#e30613" stroke="#24135c" stroke-width="3"/>
+        <use href="#orma" x="48" y="40" width="24" height="40" color="#fff"/>
+      </svg>
+    </div>
+
+    <p class="intro"><strong>Benvenuti!</strong> Ecco chi cammina con noi oggi.</p>
 
     <section class="gruppo" aria-labelledby="titolo-gruppo">
-      <h2 id="titolo-gruppo">Il gruppo</h2>
+      <div class="gruppo-testa">
+        <h2 id="titolo-gruppo">Chi cammina con noi</h2>
+        <span id="conta" class="conta"></span>
+      </div>
       <ul id="partecipanti" class="partecipanti" aria-live="polite"></ul>
     </section>
 
+    <div class="sentiero" aria-hidden="true">
+      <svg class="orma" style="--k:0"><use href="#orma"/></svg>
+      <svg class="orma" style="--k:1"><use href="#orma"/></svg>
+      <svg class="orma" style="--k:2"><use href="#orma"/></svg>
+      <svg class="orma" style="--k:3"><use href="#orma"/></svg>
+      <svg class="orma" style="--k:4"><use href="#orma"/></svg>
+      <svg class="orma" style="--k:5"><use href="#orma"/></svg>
+      <svg class="orma" style="--k:6"><use href="#orma"/></svg>
+    </div>
+
     <a id="inizia" class="bottone" href="./sforzesco/" hidden>
       <span>Inizia il tour</span>
-      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="freccia" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="26" height="26"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
     </a>
   </main>
 
