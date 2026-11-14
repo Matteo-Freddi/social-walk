@@ -4,18 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Social Walking Tour</title>
-  <link rel="stylesheet" href="/src/main.css" />
 </head>
 <body>
   <h1>Social Walking Tour</h1>
   <nav class="tappe" id="tappe"></nav>
-  <script type="module">
-    import './src/main.css';
-    const nav = document.getElementById('tappe');
-    for (let i = 1; i <= 7; i++) {
-      nav.insertAdjacentHTML('beforeend',
-        `<a href="${import.meta.env.BASE_URL}tappa-${i}/">Tappa ${i}</a>`);
-    }
-  </script>
+  <script type="module" src="/src/home.js"></script>
 </body>
 </html>
