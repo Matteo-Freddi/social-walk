@@ -35,3 +35,37 @@ h1 {
 .tappe a:hover {
   opacity: 0.85;
 }
+
+.intro { text-align: center; }
+
+.partecipanti {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem auto;
+  max-width: 24rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.partecipanti li {
+  padding: 0.6rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+}
+
+.bottone {
+  display: block;
+  width: fit-content;
+  margin: 2rem auto 0;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.bottone[hidden] { display: none; }
+
+.swiper { max-width: 40rem; margin: 1rem auto; }
+.swiper-slide img { width: 100%; height: auto; display: block; }
