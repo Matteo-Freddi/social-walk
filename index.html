@@ -2,14 +2,40 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1b1a2e" />
   <title>Social Walking Tour</title>
+  <meta name="description" content="Cammina, scopri, conosci nuove persone. Il tuo walking tour inizia qui." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <h1>Social Walking Tour</h1>
-  <p class="intro">Benvenuti! Ecco chi cammina con noi oggi.</p>
-  <ul id="partecipanti" class="partecipanti"></ul>
-  <a id="inizia" class="bottone" href="./sforzesco/" hidden>Inizia il tour →</a>
+  <div class="sfondo" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+    <svg class="percorso" viewBox="0 0 400 800" preserveAspectRatio="none">
+      <path d="M-20 780 C 120 700, 60 600, 200 540 S 340 420, 240 330 S 80 220, 220 120 S 380 40, 420 -20" />
+    </svg>
+  </div>
+
+  <main class="hero">
+    <p class="etichetta">👣 Si parte da Castello Sforzesco</p>
+    <h1>Social<br /><em>Walking</em> Tour</h1>
+    <p class="intro">Benvenuti! Ecco chi cammina con noi oggi.</p>
+
+    <section class="gruppo" aria-labelledby="titolo-gruppo">
+      <h2 id="titolo-gruppo">Il gruppo</h2>
+      <ul id="partecipanti" class="partecipanti" aria-live="polite"></ul>
+    </section>
+
+    <a id="inizia" class="bottone" href="./sforzesco/" hidden>
+      <span>Inizia il tour</span>
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </main>
+
   <script type="module" src="/src/home.js"></script>
 </body>
 </html>
