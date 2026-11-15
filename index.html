@@ -113,7 +113,7 @@ nav.solid{background:rgba(248,241,230,.92);backdrop-filter:blur(10px);box-shadow
 @keyframes bob{50%{transform:translateY(7px)}}
 
 /* SEZIONI */
-section{padding:clamp(90px,12vw,150px) 0}
+section{padding:clamp(90px,12vw,150px) 0;scroll-margin-top:74px}
 .sec-head{max-width:46rem;margin-bottom:3.2rem}
 .sec-head p{color:var(--ink-soft);margin-top:1rem;font-size:1.1rem}
 
@@ -126,7 +126,7 @@ section{padding:clamp(90px,12vw,150px) 0}
 .value strong{display:block;font-family:var(--serif);font-size:1.1rem;color:var(--ink)}
 .value span{font-size:.92rem;color:var(--ink-soft)}
 .cards-stack{position:relative;height:520px}
-.stack{position:absolute;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:8px solid #fffaf1;background:#fffaf1}
+.cards-stack .stack{position:absolute;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:8px solid #fffaf1;background:#fffaf1}
 .s1{width:68%;height:62%;left:0;top:0;transform:rotate(-3deg)}
 .s2{width:62%;height:56%;right:0;bottom:0;transform:rotate(4deg)}
 .s3{width:38%;height:30%;right:6%;top:-3%;transform:rotate(8deg);z-index:2}
@@ -164,7 +164,7 @@ section{padding:clamp(90px,12vw,150px) 0}
 
 /* MARQUEE */
 .marquee{background:var(--spritz);color:#fff8ec;overflow:hidden;padding:1.05rem 0;position:relative;z-index:5}
-.marquee-track{display:flex;gap:3rem;white-space:nowrap;width:max-content;animation:scroll 42s linear infinite;font-family:var(--serif);font-style:italic;font-size:1.35rem}
+.marquee-track{display:flex;gap:3rem;padding-right:3rem;white-space:nowrap;width:max-content;animation:scroll 42s linear infinite;font-family:var(--serif);font-style:italic;font-size:1.35rem}
 .marquee-track span::after{content:"✦";margin-left:3rem;color:#ffe0a8;font-style:normal}
 @keyframes scroll{to{transform:translateX(-50%)}}
 
@@ -186,19 +186,31 @@ section{padding:clamp(90px,12vw,150px) 0}
 .t-quote{grid-column:span 2;background:var(--gold);color:var(--ink);display:flex;align-items:center;padding:1.6rem;font-family:var(--serif);font-size:clamp(1.25rem,2.4vw,1.85rem);font-style:italic;line-height:1.25}
 .t-quote span{display:block;font-family:var(--sans);font-style:normal;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-top:.9rem;font-weight:700}
 @media(max-width:900px){.mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}.t-a{grid-column:span 2}.t-e,.t-quote{grid-column:span 2}}
+@media(hover:none){.tile figcaption{opacity:1;transform:none}}
 
 /* PARTECIPANTI */
+[hidden]{display:none!important}
 .people{background:var(--marble);position:relative}
-.people-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem}
-@media(max-width:980px){.people-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:460px){.people-grid{gap:1rem}}
+.people-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1.6rem}
+.person{flex:0 1 calc(25% - 1.2rem);min-width:0}
+@media(max-width:980px){.person{flex-basis:calc(50% - .8rem)}}
+@media(max-width:460px){.people-grid{gap:1rem}.person{flex-basis:calc(50% - .5rem)}}
 .person{background:#fffaf1;border-radius:var(--radius);padding:1.5rem 1rem 1.5rem;text-align:center;box-shadow:0 10px 28px -20px rgba(42,31,45,.7);border:2px dashed rgba(42,31,45,.14);transform:rotate(var(--r,0deg));transition:transform .35s,box-shadow .35s;position:relative}
 .person:hover{transform:rotate(0) translateY(-6px) scale(1.02);box-shadow:var(--shadow)}
 .person svg{width:112px;height:112px;margin:0 auto .9rem;border-radius:50%;box-shadow:0 0 0 5px #fff,0 0 0 7px var(--chip,#f4b998)}
 .person h3{font-size:1.35rem}
 .adj{display:inline-block;margin-top:.55rem;padding:.25em 1em;border-radius:999px;background:var(--chip,#f4b998);color:var(--ink);font-size:.85rem;font-weight:700;letter-spacing:.04em}
-.people-cta{margin-top:3rem;text-align:center}
-.people-cta p{font-family:var(--serif);font-style:italic;font-size:1.3rem;margin-bottom:1.2rem}
+
+.people-start,.people-next{text-align:center;margin-top:2.4rem}
+.people-start{margin-top:0}
+.btn-arrow{width:64px;height:64px;padding:0;justify-content:center}
+.btn-arrow svg{width:28px;height:28px}
+
+.people-finish{margin:3.5rem auto 0;max-width:560px;text-align:center;background:var(--navy);color:var(--marble);border-radius:var(--radius);padding:2.4rem 1.6rem;box-shadow:var(--shadow)}
+.people-finish h3{font-size:clamp(2rem,5vw,3rem);margin-bottom:1.4rem}
+
+.pop{animation:pop .6s cubic-bezier(.2,.8,.2,1) backwards}
+@keyframes pop{from{opacity:0;transform:translateY(24px) rotate(var(--r,0deg)) scale(.92)}}
 
 /* FAQ */
 .faq{background:var(--marble-2)}
@@ -227,7 +239,7 @@ footer a:hover{color:#fff}
   html{scroll-behavior:auto}
 }
 </style>
-<noscript><style>.sub{opacity:1!important}.hero{height:auto}.stage{position:relative;height:auto;min-height:100svh}.l1{opacity:0}.reveal{opacity:1;transform:none}</style></noscript>
+<noscript><style>.sub{opacity:1!important}.hero{height:auto}.stage{position:relative;height:auto;min-height:100svh}.l1{opacity:0}.reveal{opacity:1;transform:none}#peopleStage[hidden]{display:block!important}.person[hidden]{display:block!important}.people-start,.people-next{display:none}</style></noscript>
 </head>
 
 <body>
@@ -636,7 +648,7 @@ footer a:hover{color:#fff}
 <symbol id="s-velasca" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
   <defs>
     <pattern id="v-w" width="8" height="9" patternUnits="userSpaceOnUse"><rect x="1.6" y="2" width="4.8" height="5.4" fill="#2b2233"/></pattern>
-    <pattern id="v-wl" width="40" height="36" patternUnits="userSpaceOnUse"><path d="M1.6 2h4.8v5.4H1.6zM25.6 2h4.8v5.4h-4.8zM9.6 11h4.8v5.4H9.6zM33.6 11h4.8v5.4h-4.8zM17.6 20h4.8v5.4h-4.8zM1.6 20h4.8v5.4H1.6zM9.6 29h4.8v5.4H9.6zM33.6 29h4.8v5.4h-4.8z" fill="#ffd27a"/></pattern>
+    <pattern id="v-wl" width="40" height="36" patternUnits="userSpaceOnUse"><path d="M1.6 2h4.8v5.4H1.6zM25.6 2h4.8v5.4h-4.8zM9.6 11h4.8v5.4H9.6zM33.6 11h4.8v5.4h-4.8zM17.6 20h4.8v5.4h-4.8zM1.6 20h4.8v5.4H1.6zM9.6 29h4.8v5.4H9.6zM33.6 29h4.8v5.4H9.6z" fill="#ffd27a"/></pattern>
     <linearGradient id="v-sh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".12"/><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></linearGradient>
   </defs>
 
@@ -725,7 +737,7 @@ footer a:hover{color:#fff}
 
   <!-- edifici lontani -->
   <g fill="#3a3a78" opacity=".75"><rect x="0" y="192" width="38" height="76"/><rect x="38" y="216" width="30" height="52"/><rect x="154" y="204" width="22" height="64"/><rect x="224" y="214" width="20" height="54"/><rect x="288" y="206" width="26" height="62"/><rect x="368" y="200" width="32" height="68"/></g>
-  <g fill="url(#p-win-lit)" opacity=".35"><rect x="2" y="198" width="34" height="66"/><rect x="156" y="210" width="18" height="54"/><rect x="290" y="212" width="22" height="52"/><rect x="370" y="206" width="28" height="58"/></g>
+  <g fill="url(#p-win-lit)" opacity=".35"><rect x="2" y="198" width="34" height="66"/><rect x="156" y="210" width="18" height="54"/><rect x="290" y="212" width="22" height="54"/><rect x="370" y="206" width="28" height="58"/></g>
 
   <!-- TORRE DIAMANTE: prisma sfaccettato -->
   <path d="M104 268V134L152 112V268Z" fill="#7189ad"/>
@@ -1088,41 +1100,58 @@ footer a:hover{color:#fff}
       <h2>Chi cammina <em>con noi</em></h2>
       <p>Una faccia, un nome e un aggettivo ciascuno: così si riconoscono i compagni di strada.</p>
     </div>
+
     <!-- MODIFICA: sostituisci "Nome" e "Aggettivo" (e, se vuoi, i colori dell'avatar).
          Usa solo nomi/foto di persone che hanno dato il loro consenso alla pubblicazione. -->
-    <div class="people-grid">
-      <article class="person reveal" style="--r:-2deg;--chip:#f4b998">
-        <svg viewBox="0 0 120 120" style="--bg:#f4b998;--skin:#f0c8a4;--hair:#2a1f2d;--cloth:#1f2a4d" role="img" aria-label="Avatar illustrato"><use href="#av1"/></svg>
-        <h3>Nome</h3><span class="adj">Aggettivo</span>
-      </article>
-      <article class="person reveal" style="--r:1.5deg;--chip:#cfe3d7">
-        <svg viewBox="0 0 120 120" style="--bg:#cfe3d7;--skin:#c98f6b;--hair:#3a2a22;--cloth:#ef5a2a" role="img" aria-label="Avatar illustrato"><use href="#av2"/></svg>
-        <h3>Nome</h3><span class="adj">Aggettivo</span>
-      </article>
-      <article class="person reveal" style="--r:-1deg;--chip:#f7dc9d">
-        <svg viewBox="0 0 120 120" style="--bg:#f7dc9d;--skin:#e8b996;--hair:#5b3a2a;--cloth:#2f6b4f;--hat:#ef5a2a;--accent:#f8f1e6" role="img" aria-label="Avatar illustrato"><use href="#av3"/></svg>
-        <h3>Nome</h3><span class="adj">Aggettivo</span>
-      </article>
-      <article class="person reveal" style="--r:2deg;--chip:#d9d4f0">
-        <svg viewBox="0 0 120 120" style="--bg:#d9d4f0;--skin:#8d5a3c;--hair:#1b1630;--cloth:#c9973f;--accent:#ef5a2a" role="img" aria-label="Avatar illustrato"><use href="#av4"/></svg>
-        <h3>Nome</h3><span class="adj">Aggettivo</span>
-      </article>
-      <article class="person reveal" style="--r:1.5deg;--chip:#f2c6d0">
-        <svg viewBox="0 0 120 120" style="--bg:#f2c6d0;--skin:#f3d2b8;--hair:#b5651d;--cloth:#1f2a4d" role="img" aria-label="Avatar illustrato"><use href="#av2"/></svg>
-        <h3>Nome</h3><span class="adj">Aggettivo</span>
-      </article>
-      <article class="person reveal" style="--r:-2deg;--chip:#bcd9ea">
-        <svg viewBox="0 0 120 120" style="--bg:#bcd9ea;--skin:#d9a37e;--hair:#b8b8c0;--cloth:#ef5a2a" role="img" aria-label="Avatar illustrato"><use href="#av1"/></svg>
-        <h3>Nome</h3><span class="adj">Aggettivo</span>
-      </article>
-      <article class="person reveal" style="--r:1deg;--chip:#f4b998">
-        <svg viewBox="0 0 120 120" style="--bg:#f4b998;--skin:#f0c8a4;--hair:#7a3b1e;--cloth:#1f2a4d;--accent:#2f6b4f" role="img" aria-label="Avatar illustrato"><use href="#av4"/></svg>
-        <h3>Nome</h3><span class="adj">Aggettivo</span>
-      </article>
-      <article class="person reveal" style="--r:-1.5deg;--chip:#cfe3d7">
-        <svg viewBox="0 0 120 120" style="--bg:#cfe3d7;--skin:#b9774f;--hair:#2a1f2d;--cloth:#c0392b;--hat:#1f2a4d;--accent:#f7dc9d" role="img" aria-label="Avatar illustrato"><use href="#av3"/></svg>
-        <h3>Nome</h3><span class="adj">Aggettivo</span>
-      </article>
+    <div class="people-start" id="peopleStart">
+      <button class="btn btn-primary" id="showPeople" type="button">Mostra i partecipanti</button>
+    </div>
+
+    <div id="peopleStage" hidden>
+      <div class="people-grid" id="peopleGrid" aria-live="polite">
+        <article class="person" hidden style="--r:-2deg;--chip:#f4b998">
+          <svg viewBox="0 0 120 120" style="--bg:#f4b998;--skin:#f0c8a4;--hair:#2a1f2d;--cloth:#1f2a4d" role="img" aria-label="Avatar illustrato"><use href="#av1"/></svg>
+          <h3>Nome</h3><span class="adj">Aggettivo</span>
+        </article>
+        <article class="person" hidden style="--r:1.5deg;--chip:#cfe3d7">
+          <svg viewBox="0 0 120 120" style="--bg:#cfe3d7;--skin:#c98f6b;--hair:#3a2a22;--cloth:#ef5a2a" role="img" aria-label="Avatar illustrato"><use href="#av2"/></svg>
+          <h3>Nome</h3><span class="adj">Aggettivo</span>
+        </article>
+        <article class="person" hidden style="--r:-1deg;--chip:#f7dc9d">
+          <svg viewBox="0 0 120 120" style="--bg:#f7dc9d;--skin:#e8b996;--hair:#5b3a2a;--cloth:#2f6b4f;--hat:#ef5a2a;--accent:#f8f1e6" role="img" aria-label="Avatar illustrato"><use href="#av3"/></svg>
+          <h3>Nome</h3><span class="adj">Aggettivo</span>
+        </article>
+        <article class="person" hidden style="--r:2deg;--chip:#d9d4f0">
+          <svg viewBox="0 0 120 120" style="--bg:#d9d4f0;--skin:#8d5a3c;--hair:#1b1630;--cloth:#c9973f;--accent:#ef5a2a" role="img" aria-label="Avatar illustrato"><use href="#av4"/></svg>
+          <h3>Nome</h3><span class="adj">Aggettivo</span>
+        </article>
+        <article class="person" hidden style="--r:1.5deg;--chip:#f2c6d0">
+          <svg viewBox="0 0 120 120" style="--bg:#f2c6d0;--skin:#f3d2b8;--hair:#b5651d;--cloth:#1f2a4d" role="img" aria-label="Avatar illustrato"><use href="#av2"/></svg>
+          <h3>Nome</h3><span class="adj">Aggettivo</span>
+        </article>
+        <article class="person" hidden style="--r:-2deg;--chip:#bcd9ea">
+          <svg viewBox="0 0 120 120" style="--bg:#bcd9ea;--skin:#d9a37e;--hair:#b8b8c0;--cloth:#ef5a2a" role="img" aria-label="Avatar illustrato"><use href="#av1"/></svg>
+          <h3>Nome</h3><span class="adj">Aggettivo</span>
+        </article>
+        <article class="person" hidden style="--r:1deg;--chip:#f4b998">
+          <svg viewBox="0 0 120 120" style="--bg:#f4b998;--skin:#f0c8a4;--hair:#7a3b1e;--cloth:#1f2a4d;--accent:#2f6b4f" role="img" aria-label="Avatar illustrato"><use href="#av4"/></svg>
+          <h3>Nome</h3><span class="adj">Aggettivo</span>
+        </article>
+        <article class="person" hidden style="--r:-1.5deg;--chip:#cfe3d7">
+          <svg viewBox="0 0 120 120" style="--bg:#cfe3d7;--skin:#b9774f;--hair:#2a1f2d;--cloth:#c0392b;--hat:#1f2a4d;--accent:#f7dc9d" role="img" aria-label="Avatar illustrato"><use href="#av3"/></svg>
+          <h3>Nome</h3><span class="adj">Aggettivo</span>
+        </article>
+      </div>
+      <div class="people-next" id="peopleNext">
+        <button class="btn btn-primary btn-arrow" id="nextPerson" type="button" aria-label="Mostra il prossimo partecipante">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="people-finish" id="peopleFinish" hidden>
+      <h3>Cominciamo!</h3>
+      <a class="btn btn-primary" id="goFirst" href="#cartoline">Vai alla prima tappa</a>
     </div>
   </div>
 </section>
@@ -1158,6 +1187,47 @@ footer a:hover{color:#fff}
     <div style="opacity:.7">© <span id="year">2026</span> · Tutti i diritti riservati</div>
   </div>
 </footer>
+
+<!-- ===== Partecipanti: rivelazione uno alla volta ===== -->
+<script>
+(function(){
+  var start=document.getElementById('showPeople');
+  if(!start)return;
+  var startBox=document.getElementById('peopleStart'),
+      stage=document.getElementById('peopleStage'),
+      next=document.getElementById('nextPerson'),
+      nextBox=document.getElementById('peopleNext'),
+      finish=document.getElementById('peopleFinish'),
+      goFirst=document.getElementById('goFirst'),
+      persons=[].slice.call(document.querySelectorAll('#peopleGrid .person')),
+      shown=0,
+      reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  function showNext(){
+    if(shown>=persons.length)return;
+    var p=persons[shown++];
+    p.hidden=false;
+    p.classList.add('pop');
+    if(shown<persons.length){
+      next.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'});
+    }else{
+      nextBox.hidden=true;
+      finish.hidden=false;
+      finish.classList.add('pop');
+      goFirst.focus({preventScroll:true});
+      finish.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'});
+    }
+  }
+
+  start.addEventListener('click',function(){
+    startBox.hidden=true;
+    stage.hidden=false;
+    showNext();
+    next.focus({preventScroll:true});
+  });
+  next.addEventListener('click',showNext);
+})();
+</script>
 
 <script>
 (function(){
