@@ -1,17 +1,14 @@
-import { defineConfig } from 'vite';
-import { resolve } from 'path';
-import { readdirSync, existsSync } from 'fs';
-
-const root = import.meta.dirname;
-const pages = { main: resolve(root, 'index.html') };
-for (const d of readdirSync(root)) {
-  if (/^tappa-\d+$/.test(d) && existsSync(resolve(root, d, 'index.html'))) {
-    pages[d] = resolve(root, d, 'index.html');
-  }
-}
+import { defineConfig } from 'vite'
+import { resolve } from 'node:path'
 
 export default defineConfig({
-  base: '/social-walk-website/',          // sostituisci con il nome del repo
-  build: { rollupOptions: { input: pages } },
-  server: { host: true, port: 5173 },
-});
+  base: './',
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(import.meta.dirname, 'index.html'),
+        castello: resolve(import.meta.dirname, 'castello.html'),
+      },
+    },
+  },
+})

@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Madonna del Grembiule · Terza tappa · Milano a Passo Lento</title>
+<meta name="description" content="La Madonna del Grembiule, la chiesa open air di Milano: un affresco ritrovato, un miracolo, la bomba del 1943 e la rinascita.">
+<meta property="og:title" content="Madonna del Grembiule · Milano a Passo Lento">
+<meta property="og:description" content="Una chiesa senza tetto, in pieno centro: una ferita di guerra diventata luogo di memoria.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#efe6d6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ef5a2a'/%3E%3Cpath d='M32 10l4 12v30h-8V22z' fill='%23fff3e6'/%3E%3Ccircle cx='32' cy='9' r='3.5' fill='%23ffd27a'/%3E%3Cpath d='M16 52V34l7-6v24zM48 52V34l-7-6v24z' fill='%23fff3e6' opacity='.8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+
+<style>
+/* Pagina sobria: niente animazioni, niente effetti di scorrimento, nessun suono. */
+:root{
+  --ink:#2a1f2d;
+  --ink-soft:#5d4e5c;
+  --marble:#f8f1e6;
+  --marble-2:#f1e5d3;
+  --stone:#efe6d6;
+  --gold:#c9973f;
+  --spritz:#ef5a2a;
+  --navy:#1f2a4d;
+  --green:#2f6b4f;
+  --radius:18px;
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--marble);scroll-padding-top:80px}
+body{font-family:var(--sans);color:var(--ink);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.1;letter-spacing:-.01em}
+h2{font-size:clamp(2rem,4.4vw,3.2rem)}
+em{font-style:italic;color:var(--spritz)}
+[hidden]{display:none!important}
+.eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--spritz);display:inline-flex;align-items:center;gap:.7em;margin-bottom:1rem}
+.eyebrow::before{content:"";width:34px;height:2px;background:currentColor}
+.btn{display:inline-flex;align-items:center;gap:.6em;padding:.95em 1.6em;border-radius:999px;font-weight:700;text-decoration:none;font-size:1rem;border:2px solid transparent;cursor:pointer;font-family:inherit}
+.btn-primary{background:var(--spritz);color:#fff}
+.btn-primary:hover{background:#d94a1c}
+.btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-ghost:hover{background:var(--ink);color:var(--marble)}
+.btn-sm{padding:.55em 1.2em;font-size:.92rem}
+:focus-visible{outline:3px solid var(--navy);outline-offset:3px;border-radius:8px}
+
+/* NAV */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(248,241,230,.94);box-shadow:0 1px 0 rgba(42,31,45,.08)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-family:var(--serif);font-weight:800;font-size:1.25rem}
+.logo svg{width:38px;height:38px}
+.nav-links{display:flex;gap:1.8rem;align-items:center;list-style:none}
+.nav-links a{text-decoration:none;font-weight:500;font-size:.95rem}
+.nav-links a:not(.btn):hover{color:var(--spritz)}
+.nav-links .btn{padding:.6em 1.2em;font-size:.9rem;color:#fff}
+@media(max-width:860px){.nav-links li:not(:last-child){display:none}.logo span{display:none}}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;min-height:92svh;display:flex;align-items:center;padding:130px 0 230px;background:linear-gradient(180deg,#f3ebdc 0%,#e7dac5 100%)}
+.hero-in{position:relative;z-index:2;width:min(900px,100% - 40px);margin-inline:auto;text-align:center}
+.hero h1{font-size:clamp(2.5rem,6.6vw,5.2rem);font-weight:800;line-height:1.04}
+.lead{font-size:clamp(1.05rem,1.9vw,1.3rem);max-width:34em;margin:1.4rem auto 0;color:var(--ink-soft)}
+.ask{margin-top:1.8rem;font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,2.4vw,1.6rem)}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.8rem;justify-content:center}
+.chip{background:rgba(255,250,241,.8);border:1px solid rgba(42,31,45,.18);padding:.4em 1em;border-radius:999px;font-size:.88rem;font-weight:500}
+.hero-art{position:absolute;z-index:1;left:0;right:0;bottom:0;width:100%;height:min(30vh,260px)}
+
+/* SEZIONI */
+section{padding:clamp(80px,11vw,140px) 0}
+.sec-head{max-width:46rem;margin-bottom:3rem}
+.sec-head p{color:var(--ink-soft);margin-top:1rem;font-size:1.1rem}
+
+/* IN BREVE */
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+.about p{margin-top:1.1rem;color:var(--ink-soft)}
+.about p:first-of-type{margin-top:1.4rem}
+.fact-card{background:#fffaf1;border-radius:var(--radius);padding:1.8rem;border:1px solid rgba(42,31,45,.14)}
+.fact-card dl div{padding:.8rem 0;border-bottom:1px solid rgba(42,31,45,.12)}
+.fact-card dl div:first-child{padding-top:0}
+.fact-card dl div:last-child{border-bottom:0;padding-bottom:0}
+.fact-card dt{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--green)}
+.fact-card dd{font-family:var(--serif);font-size:1.2rem;font-weight:600;line-height:1.25}
+@media(max-width:860px){.about{grid-template-columns:1fr}}
+
+/* PRIMA / DOPO */
+.photos{background:var(--stone)}
+.ba-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:1.6rem}
+.ba{background:#fffaf1;border-radius:var(--radius);padding:.8rem .8rem 1.2rem;border:1px solid rgba(42,31,45,.14)}
+.ba-img{position:relative;aspect-ratio:3/2;border-radius:12px;overflow:hidden;background:#e4d8c4}
+.ba-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;text-align:center;padding:1rem;color:var(--ink-soft);border:2px dashed rgba(42,31,45,.3);border-radius:12px;background:repeating-linear-gradient(135deg,rgba(42,31,45,.03) 0 14px,rgba(42,31,45,.07) 14px 28px)}
+.ph strong{font-family:var(--serif);font-size:1.25rem;color:var(--ink)}
+.ph span{font-size:.9rem}
+.ph code{background:rgba(42,31,45,.1);padding:.15em .6em;border-radius:6px;font-size:.88rem}
+.has-photo .ph{display:none}
+.ba figcaption{padding:1rem .5rem 0}
+.ba-tag{display:inline-block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;background:var(--ink);color:var(--marble);padding:.25em .9em;border-radius:999px}
+.ba figcaption p{margin-top:.6rem;color:var(--ink-soft);font-size:.98rem}
+
+/* STORIA */
+.timeline{position:relative;max-width:820px;margin:0 auto;padding-left:2.4rem}
+.timeline::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:rgba(42,31,45,.25)}
+.t-item{position:relative;margin-bottom:1.5rem}
+.t-item:last-child{margin-bottom:0}
+.t-item::before{content:"";position:absolute;left:-2.4rem;top:1.5rem;width:20px;height:20px;border-radius:50%;background:var(--ink);border:4px solid var(--marble);box-shadow:0 0 0 2px var(--ink)}
+.t-card{background:#fffaf1;border-radius:var(--radius);padding:1.4rem 1.6rem 1.5rem;border:1px solid rgba(42,31,45,.12)}
+.t-year{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--spritz)}
+.t-card h3{font-size:1.45rem;margin:.3rem 0 .5rem}
+.t-card p{color:var(--ink-soft);font-size:.98rem}
+.t-card p + p{margin-top:.6rem}
+.note{margin:2rem auto 0;max-width:820px;padding:1rem 1.4rem;border-left:3px solid var(--gold);background:rgba(201,151,63,.1);font-size:.95rem;color:var(--ink-soft)}
+
+/* GIOCO */
+.game-sec{background:var(--stone)}
+.quiet{max-width:46rem;margin:0 0 2.4rem;padding:1.1rem 1.4rem;border-left:3px solid var(--ink);background:rgba(42,31,45,.06);font-family:var(--serif);font-size:1.15rem}
+.setup{background:#fffaf1;border-radius:var(--radius);border:1px solid rgba(42,31,45,.14);padding:1.6rem;max-width:560px}
+.setup fieldset{border:0;margin-bottom:1.2rem}
+.setup legend{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--green);margin-bottom:.6rem}
+.opts{display:flex;gap:.8rem}
+.opts label{cursor:pointer}
+.opts input{position:absolute;opacity:0;pointer-events:none}
+.opts span{display:inline-grid;place-items:center;width:52px;height:52px;border-radius:50%;border:2px solid var(--ink);font-family:var(--serif);font-weight:800;font-size:1.3rem}
+.opts input:checked + span{background:var(--ink);color:var(--marble)}
+.opts input:focus-visible + span{outline:3px solid var(--navy);outline-offset:3px}
+.draw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1.2rem}
+.draw{background:#fffaf1;border-radius:var(--radius);border:1px solid rgba(42,31,45,.14);padding:1.4rem 1.2rem;text-align:center}
+.draw-n{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--green);margin-bottom:.6rem}
+.draw h3{font-size:1.7rem;margin-bottom:1.1rem;overflow-wrap:anywhere}
+.draw-empty{padding:1.2rem;text-align:center;color:var(--ink-soft)}
+.reset{margin-top:1.4rem;text-align:center}
+.reset button{background:none;border:0;font:inherit;font-size:.9rem;color:var(--ink-soft);text-decoration:underline;cursor:pointer}
+.tell{margin-top:2.4rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+@media(max-width:760px){.tell{grid-template-columns:1fr}}
+.tell div{background:#fffaf1;border-radius:var(--radius);border:1px solid rgba(42,31,45,.14);padding:1.3rem}
+.tell h4{font-size:1.15rem;margin-bottom:.4rem}
+.tell p{color:var(--ink-soft);font-size:.95rem}
+.bridge{margin-top:2rem;text-align:center;font-family:var(--serif);font-style:italic;font-size:1.3rem}
+
+/* OGGI / PERCHÉ */
+.sights{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+@media(max-width:900px){.sights{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.sights{grid-template-columns:1fr}}
+.sight{background:#fffaf1;border-radius:var(--radius);padding:1.5rem 1.4rem;border:1px solid rgba(42,31,45,.12);border-top:3px solid var(--gold)}
+.sight h3{font-size:1.25rem;margin-bottom:.4rem}
+.sight p{color:var(--ink-soft);font-size:.95rem}
+.why{background:var(--stone)}
+
+/* CTA */
+.cta{text-align:center}
+.cta .wrap{max-width:760px}
+.cta blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,3vw,2rem);line-height:1.3;margin:0 0 2rem}
+.cta-btns{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
+
+/* FOOTER */
+footer{background:#1b1630;color:#cfc8de;padding:3rem 0 2rem;font-size:.92rem}
+.foot{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:center}
+footer a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.25)}
+footer a:hover{color:#fff}
+.madonnina{color:var(--gold)}
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAV ===== -->
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="index.html#top" aria-label="Milano a Passo Lento, torna alla home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#ef5a2a"/><path d="M32 12l4 12v28h-8V24z" fill="#fff3e6"/><circle cx="32" cy="10" r="3.5" fill="#ffd27a"/><path d="M14 52V36l8-6v22zM50 52V36l-8-6v22z" fill="#fff3e6" opacity=".8"/></svg>
+      <span>Milano a Passo Lento</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#foto">Prima e dopo</a></li>
+      <li><a href="#storia">Storia</a></li>
+      <li><a href="#gioco">Il gioco</a></li>
+      <li><a class="btn btn-primary" href="index.html#partecipanti">← Torna al tour</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="top">
+  <div class="hero-in">
+    <span class="eyebrow">Terza tappa · La chiesa open air</span>
+    <h1>Una chiesa senza tetto, in pieno centro.</h1>
+    <p class="lead">Non è un errore: è una ferita di guerra diventata luogo di memoria.</p>
+    <p class="ask">Perché una Madonna si chiamerebbe «del Grembiule»?</p>
+    <div class="chips" aria-label="In questa tappa">
+      <span class="chip">Una scoperta</span>
+      <span class="chip">Un miracolo</span>
+      <span class="chip">Una bomba</span>
+      <span class="chip">Una rinascita</span>
+    </div>
+  </div>
+
+  <!-- disegno a tratto: un arco senza tetto e il cerchio con la data -->
+  <svg class="hero-art" viewBox="0 0 1440 280" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <g fill="none" stroke="#2a1f2d" stroke-opacity=".5" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M0 250H1440"/>
+      <path d="M600 250V150a120 120 0 0 1 240 0V250"/>
+      <path d="M632 250V152a88 88 0 0 1 176 0V250"/>
+      <rect x="680" y="150" width="80" height="100" rx="3"/>
+      <path d="M700 250V186a20 20 0 0 1 40 0V250" stroke-opacity=".35"/>
+      <path d="M350 250V196L372 186L396 200L420 190V250"/>
+      <path d="M1020 250V176L1046 168L1068 184L1096 172V250"/>
+      <ellipse cx="720" cy="266" rx="74" ry="9"/>
+    </g>
+    <text x="720" y="270" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-weight="600" font-size="12" fill="#2a1f2d" fill-opacity=".6">1943</text>
+  </svg>
+</header>
+
+<!-- ===== IN BREVE ===== -->
+<section id="intro">
+  <div class="wrap about">
+    <div>
+      <span class="eyebrow">In breve</span>
+      <h2>Un affresco, <em>un grembiule</em>, una bomba.</h2>
+      <p>Siamo in una zona antichissima, vicino alla Porta Vercellina, uno degli accessi alle mura di Mediolanum: da qui partiva la strada verso Vercelli e il Piemonte. È la stessa zona del palazzo imperiale di Massimiano, quindi stiamo camminando sopra la Milano capitale dell'Impero.</p>
+      <p>Poi arrivano un operaio, un affresco ritrovato, i bombardamenti del 1943 e un restauro che lascia il cielo aperto. È un luogo di culto: qui si cammina piano e a voce bassa.</p>
+    </div>
+    <aside class="fact-card" aria-label="Scheda della tappa">
+      <dl>
+        <div><dt>Nome ufficiale</dt><dd>Beata Vergine dei Miracoli</dd></div>
+        <div><dt>Architetto</dt><dd>Francesco Maria Richini (nuova chiesa del 1652)</dd></div>
+        <div><dt>Distrutta nel</dt><dd>1943, la notte del 12–13 agosto</dd></div>
+        <div><dt>Oggi</dt><dd>Aperta, gratuita e sempre visibile</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<!-- ===== PRIMA / DOPO IL 1943 ===== -->
+<section class="photos" id="foto">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Prima e dopo il 1943</span>
+      <h2>Lo stesso <em>luogo</em></h2>
+      <p>Due immagini, un prima e un dopo. Fermiamoci a guardarle in silenzio.</p>
+    </div>
+
+    <!-- MODIFICA: salva le foto in images/ come grembiule-prima.jpg e grembiule-dopo.jpg e adatta alt e didascalie.
+         Per aggiungere altre foto copia un <figure> e cambia data-photo. -->
+    <div class="ba-grid">
+      <figure class="ba" data-photo="grembiule-prima" data-alt="La cappella della Madonna del Grembiule prima del 1943">
+        <div class="ba-img">
+          <div class="ph"><strong>Prima del 1943</strong><span>Salva il file come <code>images/grembiule-prima.jpg</code></span></div>
+        </div>
+        <figcaption>
+          <span class="ba-tag">Prima del 1943</span>
+          <p>La cappella ottagonale costruita attorno all'affresco.</p>
+        </figcaption>
+      </figure>
+      <figure class="ba" data-photo="grembiule-dopo" data-alt="Il luogo dopo il bombardamento del 1943">
+        <div class="ba-img">
+          <div class="ph"><strong>Dopo il 1943</strong><span>Salva il file come <code>images/grembiule-dopo.jpg</code></span></div>
+        </div>
+        <figcaption>
+          <span class="ba-tag">Dopo il 1943</span>
+          <p>La cappella non c'è più: resta l'affresco, tra le macerie e poi nel vicolo restaurato.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STORIA ===== -->
+<section id="storia">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">La storia</span>
+      <h2>Una scoperta e <em>una ferita</em></h2>
+    </div>
+
+    <!-- MODIFICA: controlla date e testi prima di pubblicare -->
+    <div class="timeline">
+      <article class="t-item"><div class="t-card">
+        <span class="t-year">Prima del XII secolo · Porta Vercellina</span>
+        <h3>Una chiesa «alla porta»</h3>
+        <p>La chiesa vicina si chiama Santa Maria alla Porta proprio perché era «alla porta» della città. Esisteva già prima del XII secolo, come chiesa minore.</p>
+        <p>Le cronache medievali ricordano il ritrovamento di reliquie il 7 maggio 1105, all'origine di una processione annuale: la Festa del Salvatore.</p>
+      </div></article>
+
+      <article class="t-item"><div class="t-card">
+        <span class="t-year">XVII secolo · La Milano spagnola</span>
+        <h3>La chiesa di Richini</h3>
+        <p>Nel Seicento Milano è sotto il dominio spagnolo, epoca di grandi cantieri religiosi dopo la peste e le crisi. La chiesa viene ricostruita da Francesco Maria Richini, uno dei maggiori architetti della Milano barocca, che progettò anche il Palazzo di Brera, oggi Pinacoteca.</p>
+        <p>Il nuovo edificio è del 1652, con aula a navata unica. Dopo Richini i lavori proseguono con Francesco Castelli.</p>
+      </div></article>
+
+      <article class="t-item"><div class="t-card">
+        <span class="t-year">Metà del Seicento · La scoperta</span>
+        <h3>L'operaio e il grembiule</h3>
+        <p>Durante i lavori un operaio scrosta un vecchio muro esterno e trova un affresco quattrocentesco: la Vergine con il Bambino, coperta di polvere.</p>
+        <p>Secondo la tradizione, l'uomo pulisce il volto con il suo grembiule da lavoro e guarisce dalla zoppia. Da qui il nome: Madonna del Grembiule (nome ufficiale: Beata Vergine dei Miracoli).</p>
+      </div></article>
+
+      <article class="t-item"><div class="t-card">
+        <span class="t-year">Seicento–Settecento · La cappella</span>
+        <h3>Un culto nato dal basso</h3>
+        <p>Il popolo milanese accorre: offerte e donazioni finanziano l'ampliamento della chiesa. Attorno all'affresco viene costruita una cappella di pianta ottagonale (secondo alcune fonti nel Settecento, secondo altre subito dopo la scoperta).</p>
+        <p>È un culto nato dal basso, da un operaio e dai cittadini, non da un ordine dall'alto.</p>
+      </div></article>
+
+      <article class="t-item"><div class="t-card">
+        <span class="t-year">12–13 agosto 1943 · La bomba</span>
+        <h3>La cappella distrutta</h3>
+        <p>Nell'agosto 1943 Milano subisce pesanti bombardamenti alleati, la stessa ondata che colpisce il Palazzo Gorani. Una bomba distrugge la cappella e gran parte del vicolo.</p>
+        <p>L'affresco si salva e alcuni elementi, come l'altare e il pavimento in marmo, resistono sotto le macerie. Le macerie hanno «conservato» ciò che c'era sotto: il pavimento in marmo policromo è rimasto protetto per decenni.</p>
+      </div></article>
+
+      <article class="t-item"><div class="t-card">
+        <span class="t-year">Dopoguerra · L'abbandono</span>
+        <h3>Una cappella mai ricostruita</h3>
+        <p>Nel dopoguerra la cappella non viene ricostruita: l'area resta abbandonata a lungo, come il vicino quartiere delle Cinque Vie.</p>
+      </div></article>
+
+      <article class="t-item"><div class="t-card">
+        <span class="t-year">Novembre 2015 · Il restauro</span>
+        <h3>Il vicolo torna alla luce</h3>
+        <p>Un progetto di riqualificazione, concluso a novembre 2015, riporta in luce il vicolo. I promotori sono il Comune di Milano, Reale Immobili e Reale Assicurazioni, in accordo con la Soprintendenza.</p>
+      </div></article>
+    </div>
+
+    <p class="note">La storia dell'operaio è una tradizione, non un fatto verificabile: le fonti divergono anche sulle date della scoperta. Per questo si racconta «a metà del Seicento» e «la storia racconta che…».</p>
+  </div>
+</section>
+
+<!-- ===== GIOCO: FOTO DEL PASSATO ===== -->
+<section class="game-sec" id="gioco">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Il gioco · Foto del passato</span>
+      <h2>Un pezzo <em>del vostro</em> passato</h2>
+      <p>Un affresco riemerso dal passato; voi mostrate un pezzo del vostro. Obiettivo: raccontarsi attraverso un'immagine.</p>
+    </div>
+
+    <p class="quiet">Prima un minuto di silenzio. Poi si gioca a voce bassa: è un luogo di culto, e non occupiamo l'altare.</p>
+
+    <!-- Scelta del numero e estrazione -->
+    <div class="setup" id="drawSetup">
+      <fieldset>
+        <legend>Quante persone raccontano?</legend>
+        <div class="opts">
+          <label><input type="radio" name="howmany" value="3" checked><span>3</span></label>
+          <label><input type="radio" name="howmany" value="4"><span>4</span></label>
+        </div>
+      </fieldset>
+      <button class="btn btn-primary" id="drawBtn" type="button">Estrai</button>
+      <p class="draw-empty" id="drawMsg" hidden></p>
+    </div>
+
+    <!-- Persone estratte -->
+    <div id="drawStage" hidden>
+      <div class="draw-grid" id="drawGrid"></div>
+      <p class="draw-empty" id="drawNone" hidden>Non ci sono altre persone da estrarre.</p>
+      <div class="reset"><button type="button" id="drawReset">Ricomincia l'estrazione</button></div>
+    </div>
+
+    <div class="tell">
+      <div><h4>Un minuto a testa</h4><p>Chi è estratto racconta per un minuto la propria immagine.</p></div>
+      <div><h4>Una foto dal telefono</h4><p>Una foto che dice qualcosa di voi. Se l'avete dimenticata, descrivetela a voce.</p></div>
+      <div><h4>Si può passare</h4><p>Chi non se la sente preme «Passo»: ne viene estratta un'altra, senza spiegazioni.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OGGI ===== -->
+<section id="oggi">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Cosa si vede oggi</span>
+      <h2>Una chiesa <em>a cielo aperto</em></h2>
+    </div>
+    <div class="sights">
+      <div class="sight"><h3>L'affresco</h3><p>La Madonna con il Bambino, restaurata.</p></div>
+      <div class="sight"><h3>L'altare</h3><p>L'altare e ciò che resta della cappella.</p></div>
+      <div class="sight"><h3>Il vicolo nuovo</h3><p>Una nuova pavimentazione con aiuole e illuminazione.</p></div>
+      <div class="sight"><h3>Il cerchio del 1943</h3><p>Un cerchio in pietra con la data, a ricordo del bombardamento.</p></div>
+      <div class="sight"><h3>Il marmo sotto i piedi</h3><p>Il pavimento originale è stato ritrovato ma, per mancanza di fondi, è stato ricoperto per proteggerlo.</p></div>
+      <div class="sight"><h3>Un'oasi di silenzio</h3><p>Il luogo è gratuito e sempre visibile, a due passi dal traffico di Piazza Affari.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PERCHÉ È IMPORTANTE ===== -->
+<section class="why" id="perche">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Perché è importante</span>
+      <h2>Tre Milano in <em>uno spazio piccolo</em></h2>
+      <p>Milano non nasconde le sue cicatrici: le trasforma in luoghi di memoria.</p>
+    </div>
+    <div class="sights">
+      <div class="sight"><h3>Milano popolare e devota</h3><p>Il miracolo dell'operaio e le offerte dei cittadini.</p></div>
+      <div class="sight"><h3>Milano barocca e spagnola</h3><p>La chiesa ricostruita da Richini.</p></div>
+      <div class="sight"><h3>Milano ferita dalla guerra</h3><p>La bomba del 1943 e il vicolo che oggi la ricorda.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta">
+  <div class="wrap">
+    <span class="eyebrow">La terza tappa</span>
+    <blockquote>Un grembiule, un muro, una bomba: e ancora oggi, in un angolo di città, una Madonna guarda la gente passare.</blockquote>
+    <div class="cta-btns">
+      <!-- MODIFICA: sostituisci tappa-4.html con il nome reale della pagina della quarta tappa -->
+      <a class="btn btn-primary" href="tappa-4.html">Vai alla quarta tappa →</a>
+      <a class="btn btn-ghost" href="index.html#partecipanti">← Torna al tour</a>
+      <a class="btn btn-ghost" href="via-gorani.html">← Seconda tappa</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap foot">
+    <div><strong class="madonnina">✦</strong> Milano a Passo Lento · Social walking tour<br><span style="opacity:.7">Fatto a mano, a piedi, a Milano.</span></div>
+    <div>
+      <!-- MODIFICA: inserisci i tuoi contatti reali -->
+      <a href="mailto:ciao@tuodominio.it">ciao@tuodominio.it</a> ·
+      <a href="https://instagram.com/" rel="noopener">Instagram</a>
+    </div>
+    <div style="opacity:.7">© <span id="year">2026</span> · Tutti i diritti riservati</div>
+  </div>
+</footer>
+
+<script src="partecipanti.js"></script>
+<script>
+(function(){
+  document.getElementById('year').textContent=new Date().getFullYear();
+
+  /* Foto: se in /images esiste il file indicato, sostituisce il segnaposto */
+  document.querySelectorAll('.ba').forEach(function(f){
+    var box=f.querySelector('.ba-img'),img=new Image();
+    img.alt=f.getAttribute('data-alt')||'';
+    img.decoding='async';
+    img.onload=function(){box.appendChild(img);f.classList.add('has-photo')};
+    img.src='images/'+f.getAttribute('data-photo')+'.jpg';
+  });
+
+  /* ===== Estrazione =====
+     L'ordine di estrazione è "casuale" ma calcolato dal codice del giro e dall'elenco
+     in partecipanti.js: su tutti i telefoni le persone estratte sono le stesse.
+     "Passo" sostituisce subito la persona con la successiva dell'elenco, senza chiedere nulla.
+     Gli stati (chi ha passato) restano sul telefono in cui si preme: per un risultato
+     unico usa lo schermo della guida come riferimento. */
+  var LIST=(window.PARTECIPANTI||[]).filter(function(p){return p&&p.nome}).map(function(p){return p.nome}),
+      setup=document.getElementById('drawSetup'),
+      stage=document.getElementById('drawStage'),
+      grid=document.getElementById('drawGrid'),
+      none=document.getElementById('drawNone'),
+      msg=document.getElementById('drawMsg'),
+      drawBtn=document.getElementById('drawBtn'),
+      resetBtn=document.getElementById('drawReset'),
+      KEY='mpt_foto_tappa3',
+      state=null;
+
+  function pad(n){return(n<10?'0':'')+n}
+  var d=new Date(),
+      code=(window.URLSearchParams&&new URLSearchParams(location.search).get('giro'))||window.GIRO||(d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()));
+
+  function hash(s){
+    var h=1779033703^s.length;
+    for(var i=0;i<s.length;i++){h=Math.imul(h^s.charCodeAt(i),3432918353);h=h<<13|h>>>19}
+    h=Math.imul(h^h>>>16,2246822507);h=Math.imul(h^h>>>13,3266489909);
+    return(h^h>>>16)>>>0;
+  }
+  function mulberry32(a){
+    return function(){
+      a|=0;a=a+0x6D2B79F5|0;
+      var t=Math.imul(a^a>>>15,1|a);
+      t=t+Math.imul(t^t>>>7,61|t)^t;
+      return((t^t>>>14)>>>0)/4294967296;
+    };
+  }
+  function shuffle(arr,rng){
+    var a=arr.slice();
+    for(var i=a.length-1;i>0;i--){var j=Math.floor(rng()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}
+    return a;
+  }
+  var sig=hash(code+'|t3|'+LIST.join(','));
+  var order=shuffle(LIST,mulberry32(sig));
+
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+  function load(){
+    try{
+      var s=JSON.parse(localStorage.getItem(KEY)||'null');
+      if(s&&s.sig===sig&&s.slots)return s;
+    }catch(e){}
+    return null;
+  }
+
+  function render(){
+    grid.textContent='';
+    state.slots.forEach(function(name,i){
+      var c=document.createElement('article');c.className='draw';
+      var n=document.createElement('span');n.className='draw-n';n.textContent='Persona '+(i+1);
+      var h=document.createElement('h3');h.textContent=name;
+      var b=document.createElement('button');
+      b.type='button';b.className='btn btn-ghost btn-sm';b.textContent='Passo';
+      b.addEventListener('click',function(){pass(i)});
+      c.appendChild(n);c.appendChild(h);c.appendChild(b);
+      grid.appendChild(c);
+    });
+    none.hidden=state.slots.length>0;
+  }
+  function pass(i){
+    if(state.next<order.length){state.slots[i]=order[state.next++]}
+    else{state.slots.splice(i,1)}
+    save();render();
+  }
+  function show(){
+    setup.hidden=true;stage.hidden=false;render();
+  }
+
+  drawBtn.addEventListener('click',function(){
+    if(LIST.length<1){
+      msg.hidden=false;
+      msg.textContent='Nessun partecipante: controlla il file partecipanti.js.';
+      return;
+    }
+    var n=Math.min(parseInt(document.querySelector('input[name="howmany"]:checked').value,10),order.length);
+    state={sig:sig,n:n,slots:order.slice(0,n),next:n};
+    save();show();
+  });
+  resetBtn.addEventListener('click',function(){
+    state=null;
+    try{localStorage.removeItem(KEY)}catch(e){}
+    stage.hidden=true;setup.hidden=false;
+  });
+
+  state=load();
+  if(state)show();
+})();
+</script>
+</body>
+</html>
