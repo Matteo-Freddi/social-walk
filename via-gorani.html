@@ -1,0 +1,839 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Via Gorani · Seconda tappa · Milano a Passo Lento</title>
+<meta name="description" content="Via Gorani, Milano: sotto i vostri piedi il palazzo di Massimiano, capitale dell'Impero. Dalla torre medievale al palazzo barocco, fino ai bombardamenti del 1943 e alla rinascita.">
+<meta property="og:title" content="Via Gorani · Milano a Passo Lento">
+<meta property="og:description" content="Un palazzo imperiale sotto i vostri piedi, e il gioco delle tre cose in comune.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1f2a4d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ef5a2a'/%3E%3Cpath d='M32 10l4 12v30h-8V22z' fill='%23fff3e6'/%3E%3Ccircle cx='32' cy='9' r='3.5' fill='%23ffd27a'/%3E%3Cpath d='M16 52V34l7-6v24zM48 52V34l-7-6v24z' fill='%23fff3e6' opacity='.8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#2a1f2d;
+  --ink-soft:#5d4e5c;
+  --marble:#f8f1e6;
+  --marble-2:#f1e5d3;
+  --rose:#e9c9bd;
+  --gold:#c9973f;
+  --spritz:#ef5a2a;
+  --navy:#1f2a4d;
+  --green:#2f6b4f;
+  --radius:22px;
+  --shadow:0 18px 40px -18px rgba(42,31,45,.45);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--marble);scroll-padding-top:80px}
+body{font-family:var(--sans);color:var(--ink);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(2rem,4.6vw,3.4rem)}
+em{font-style:italic;color:var(--spritz)}
+[hidden]{display:none!important}
+.eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--spritz);display:inline-flex;align-items:center;gap:.7em;margin-bottom:1rem}
+.eyebrow::before{content:"";width:34px;height:2px;background:currentColor}
+.btn{display:inline-flex;align-items:center;gap:.6em;padding:.95em 1.6em;border-radius:999px;font-weight:700;text-decoration:none;font-size:1rem;border:2px solid transparent;transition:transform .2s,box-shadow .2s,background .2s,color .2s;cursor:pointer;font-family:inherit}
+.btn-primary{background:var(--spritz);color:#fff;box-shadow:0 10px 24px -10px rgba(239,90,42,.8)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 28px -10px rgba(239,90,42,.9)}
+.btn-ghost{border-color:var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--marble)}
+.btn-arrow{width:64px;height:64px;padding:0;justify-content:center}
+.btn-arrow svg{width:28px;height:28px}
+:focus-visible{outline:3px solid var(--navy);outline-offset:3px;border-radius:8px}
+
+/* NAV (sul cielo scuro all'inizio il testo è chiaro) */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s}
+nav.solid{background:rgba(248,241,230,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(42,31,45,.08)}
+nav:not(.solid) .logo,nav:not(.solid) .nav-links a:not(.btn){color:var(--marble)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-family:var(--serif);font-weight:800;font-size:1.25rem}
+.logo svg{width:38px;height:38px}
+.nav-links{display:flex;gap:1.8rem;align-items:center;list-style:none}
+.nav-links a{text-decoration:none;font-weight:500;font-size:.95rem}
+.nav-links a:not(.btn):hover{color:var(--spritz)}
+.nav-links .btn{padding:.6em 1.2em;font-size:.9rem;color:#fff}
+@media(max-width:860px){.nav-links li:not(:last-child){display:none}.logo span{display:none}}
+
+/* HERO · sera */
+.hero{position:relative;overflow:hidden;min-height:100svh;display:flex;align-items:center;padding:130px 0 250px;color:var(--marble);
+  background:
+  radial-gradient(1.6px 1.6px at 12% 18%,#fff 50%,transparent 52%),
+  radial-gradient(1.2px 1.2px at 26% 34%,#fff 50%,transparent 52%),
+  radial-gradient(1.8px 1.8px at 41% 12%,#fff 50%,transparent 52%),
+  radial-gradient(1.2px 1.2px at 58% 28%,#fff 50%,transparent 52%),
+  radial-gradient(1.6px 1.6px at 73% 16%,#fff 50%,transparent 52%),
+  radial-gradient(1.2px 1.2px at 86% 38%,#fff 50%,transparent 52%),
+  radial-gradient(1.4px 1.4px at 8% 46%,#fff 50%,transparent 52%),
+  radial-gradient(1.4px 1.4px at 94% 10%,#fff 50%,transparent 52%),
+  linear-gradient(180deg,#1b2147 0%,#3a3566 42%,#a8566f 78%,#f0a27c 100%)}
+.hero-in{position:relative;z-index:2;width:min(960px,100% - 40px);margin-inline:auto;text-align:center}
+.hero .eyebrow{color:#ffb089}
+.hero h1{font-size:clamp(2.6rem,7.2vw,5.8rem);font-weight:800;line-height:1.02}
+.hero h1 em{color:#ffb089;font-weight:600}
+.lead{font-size:clamp(1.05rem,1.9vw,1.3rem);max-width:36em;margin:1.6rem auto 0;opacity:.94}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.8rem;justify-content:center}
+.chip{background:rgba(255,248,236,.14);color:var(--marble);border:1px solid rgba(255,255,255,.28);padding:.4em 1em;border-radius:999px;font-size:.88rem;font-weight:500}
+.moon{position:absolute;z-index:1;right:10%;top:13%;width:min(22vw,150px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#fff6d6 0 52%,rgba(255,246,214,0) 72%);animation:breathe 9s ease-in-out infinite}
+@keyframes breathe{50%{transform:scale(1.06)}}
+.hero-city{position:absolute;z-index:1;left:0;right:0;bottom:-1px;width:100%;height:min(36vh,310px)}
+
+/* SEZIONI */
+section{padding:clamp(90px,12vw,150px) 0}
+.sec-head{max-width:46rem;margin-bottom:3.2rem}
+.sec-head p{color:var(--ink-soft);margin-top:1rem;font-size:1.1rem}
+
+/* INTRO */
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+.about p{margin-top:1.1rem;color:var(--ink-soft)}
+.about p:first-of-type{margin-top:1.4rem}
+.fact-card{position:relative;background:#fffaf1;border-radius:var(--radius);padding:2.2rem 1.8rem 1.8rem;box-shadow:var(--shadow);border:2px dashed rgba(42,31,45,.14);transform:rotate(1.5deg)}
+.fact-card .tape{position:absolute;width:90px;height:26px;background:rgba(233,201,189,.85);left:calc(50% - 45px);top:-12px;transform:rotate(-4deg)}
+.fact-card dl div{padding:.8rem 0;border-bottom:1px dashed rgba(42,31,45,.2)}
+.fact-card dl div:last-child{border-bottom:0}
+.fact-card dt{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--green)}
+.fact-card dd{font-family:var(--serif);font-size:1.2rem;font-weight:600;line-height:1.25}
+@media(max-width:860px){.about{grid-template-columns:1fr}}
+
+/* GALLERIA */
+.gallery-sec{background:var(--navy);color:var(--marble);padding-inline:0;overflow:hidden}
+.gallery-sec h2 em{color:#ffb089}
+.gallery-sec .sec-head p{color:#c8c4da}
+.gallery{--sw:min(820px,86vw)}
+.g-track{position:relative;display:flex;gap:1.4rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 max(20px,calc((100% - var(--sw))/2)) 1rem;scrollbar-width:none;outline-offset:-4px}
+.g-track::-webkit-scrollbar{display:none}
+.g-slide{flex:0 0 var(--sw);scroll-snap-align:center;opacity:.5;transform:scale(.96);transition:opacity .4s,transform .4s}
+.g-slide.is-active{opacity:1;transform:none}
+.g-img{position:relative;aspect-ratio:3/2;border-radius:var(--radius);overflow:hidden;background:#2a3566;box-shadow:0 22px 50px -24px rgba(0,0,0,.7);border:8px solid #fffaf1}
+.g-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;text-align:center;padding:1rem;color:#c8c4da;background:repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 14px,rgba(255,255,255,.1) 14px 28px)}
+.ph svg{width:48px;height:48px;opacity:.85}
+.ph strong{font-family:var(--serif);font-size:1.25rem;color:#fff}
+.ph span{font-size:.9rem}
+.ph code{background:rgba(0,0,0,.28);padding:.15em .6em;border-radius:6px;color:#ffe0a8;font-size:.88rem}
+.has-photo .ph{display:none}
+.g-slide figcaption{padding:1.2rem .4rem 0}
+.g-era{display:inline-block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;background:var(--gold);color:var(--ink);padding:.25em .9em;border-radius:999px}
+.g-slide h3{font-size:1.6rem;margin:.7rem 0 .3rem}
+.g-slide p{color:#c8c4da;font-size:.98rem;max-width:42em}
+.g-ui{display:flex;align-items:center;justify-content:center;gap:1.2rem;margin-top:1.8rem}
+.g-btn{width:52px;height:52px;border-radius:50%;border:2px solid rgba(248,241,230,.5);background:transparent;color:var(--marble);display:grid;place-items:center;cursor:pointer;transition:background .2s,border-color .2s,opacity .2s}
+.g-btn:hover:not(:disabled){background:var(--spritz);border-color:var(--spritz)}
+.g-btn:disabled{opacity:.3;cursor:default}
+.g-btn svg{width:22px;height:22px}
+.g-dots{display:flex;gap:.6rem;align-items:center}
+.g-dots button{width:10px;height:10px;border-radius:999px;border:0;background:rgba(248,241,230,.35);cursor:pointer;padding:0;transition:width .3s,background .3s}
+.g-dots button[aria-current="true"]{width:30px;background:var(--gold)}
+.g-count{font-size:.85rem;letter-spacing:.12em;color:#c8c4da;min-width:3.5em;text-align:center}
+
+/* GIOCO · COPPIE */
+.game-sec{background:var(--marble)}
+.pairs-start,.pairs-next{text-align:center;margin-top:2.4rem}
+.pairs-start{margin-top:0}
+.pairs-note{margin-top:1rem;font-size:.9rem;color:var(--ink-soft)}
+.pairs-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1.6rem}
+.pair{flex:0 1 calc(50% - .8rem);min-width:260px;background:#fffaf1;border-radius:var(--radius);padding:1.6rem 1.2rem 1.5rem;text-align:center;box-shadow:0 10px 28px -20px rgba(42,31,45,.7);border:2px dashed rgba(42,31,45,.14);transform:rotate(var(--r,0deg))}
+@media(max-width:620px){.pair{flex-basis:100%}}
+.pair-n{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--green);margin-bottom:1rem}
+.pair-people{display:flex;align-items:flex-start;justify-content:center;gap:.7rem}
+.who{display:flex;flex-direction:column;align-items:center;gap:.6rem;flex:1;min-width:0}
+.avatar{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-weight:800;font-size:2rem;background:var(--c,#f4b998);box-shadow:0 0 0 4px #fff,0 0 0 6px var(--c,#f4b998)}
+.who h3{font-size:1.2rem;overflow-wrap:anywhere}
+.amp{font-family:var(--serif);font-style:italic;font-size:2rem;color:var(--spritz);padding-top:1.1rem}
+.pair.trio .avatar{width:64px;height:64px;font-size:1.5rem}
+.pair.trio .who h3{font-size:1.05rem}
+
+.game{margin:3.5rem auto 0;max-width:780px;background:var(--navy);color:var(--marble);border-radius:var(--radius);padding:2.4rem 1.6rem;box-shadow:var(--shadow);text-align:center}
+.game:focus{outline:none}
+.game h3{font-size:clamp(2rem,5vw,3rem);margin-bottom:.6rem}
+.game > p{color:#c8c4da}
+.three{display:flex;gap:.7rem;justify-content:center;margin:1.2rem 0}
+.three span{width:46px;height:46px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center;font-family:var(--serif);font-weight:800;font-size:1.3rem}
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.4rem 0;text-align:left}
+@media(max-width:620px){.rules{grid-template-columns:1fr}}
+.rule{background:rgba(255,255,255,.08);border-radius:16px;padding:1.1rem 1.2rem}
+.rule h4{font-family:var(--serif);font-size:1.1rem;margin-bottom:.5rem}
+.rule ul{list-style:none}
+.rule li{position:relative;padding-left:1.5rem;font-size:.96rem;margin:.25rem 0}
+.rule li::before{position:absolute;left:0;font-weight:700}
+.rule.no li::before{content:"✕";color:#ff9a7a}
+.rule.yes li::before{content:"✓";color:#9fe0b6}
+.me{margin:1.6rem 0 .4rem}
+.me label{display:block;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#ffb089;margin-bottom:.5rem}
+.me select{font-family:inherit;font-size:1rem;padding:.7em 1.2em;border-radius:999px;border:2px solid rgba(248,241,230,.5);background:transparent;color:var(--marble);min-width:240px;max-width:100%}
+.me select option{color:var(--ink)}
+.me-out{min-height:1.8rem;margin-top:.8rem;font-family:var(--serif);font-size:1.4rem}
+.me-out strong{color:#ffb089}
+.closing{margin-top:1.4rem;font-size:.95rem;color:#c8c4da}
+.giro{margin-top:1.2rem;font-size:.78rem;letter-spacing:.08em;opacity:.6}
+.pop{animation:pop .6s cubic-bezier(.2,.8,.2,1) backwards}
+@keyframes pop{from{opacity:0;transform:translateY(24px) rotate(var(--r,0deg)) scale(.92)}}
+
+/* CRONOLOGIA */
+.history{background:var(--marble-2)}
+.timeline{position:relative;max-width:820px;margin:0 auto;padding-left:2.4rem}
+.timeline::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:repeating-linear-gradient(180deg,var(--ink-soft) 0 6px,transparent 6px 12px);opacity:.45}
+.t-item{position:relative;margin-bottom:1.6rem}
+.t-item:last-child{margin-bottom:0}
+.t-item::before{content:"";position:absolute;left:-2.4rem;top:1.5rem;width:20px;height:20px;border-radius:50%;background:var(--spritz);border:4px solid var(--marble-2);box-shadow:0 0 0 2px var(--spritz)}
+.t-card{background:#fffaf1;border-radius:var(--radius);padding:1.4rem 1.6rem 1.5rem;box-shadow:0 10px 30px -22px rgba(42,31,45,.6)}
+.t-year{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--spritz)}
+.t-card h3{font-size:1.5rem;margin:.3rem 0 .5rem}
+.t-card p{color:var(--ink-soft);font-size:.98rem}
+.t-card p + p{margin-top:.6rem}
+
+/* DA VEDERE / INTORNO */
+.sights{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.sights.four{grid-template-columns:repeat(4,1fr)}
+@media(max-width:980px){.sights,.sights.four{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.sights,.sights.four{grid-template-columns:1fr}}
+.sight{background:#fffaf1;border-radius:var(--radius);padding:1.6rem 1.4rem;box-shadow:0 10px 30px -22px rgba(42,31,45,.6);transition:transform .35s,box-shadow .35s}
+.sight:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.sight .ico{font-size:2rem;line-height:1;margin-bottom:.8rem}
+.sight h3{font-size:1.25rem;margin-bottom:.4rem}
+.sight p{color:var(--ink-soft);font-size:.95rem}
+.around{background:var(--marble-2)}
+
+/* CTA */
+.cta{text-align:center}
+.cta .wrap{max-width:720px}
+.cta p{color:var(--ink-soft);margin:1rem 0 2rem;font-size:1.1rem}
+.cta-btns{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
+
+/* FOOTER */
+footer{background:#1b1630;color:#cfc8de;padding:3rem 0 2rem;font-size:.92rem}
+.foot{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:center}
+footer a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.25)}
+footer a:hover{color:#fff}
+.madonnina{color:var(--gold)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .moon{animation:none!important}
+  .pop{animation:none!important}
+  .reveal{transition:none;opacity:1;transform:none}
+  .g-slide{transition:none}
+  html{scroll-behavior:auto}
+}
+</style>
+<noscript><style>.reveal{opacity:1;transform:none}.g-slide{opacity:1;transform:none}.g-ui,.pairs-start{display:none}</style></noscript>
+</head>
+
+<body>
+
+<!-- ===== NAV ===== -->
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="index.html#top" aria-label="Milano a Passo Lento, torna alla home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#ef5a2a"/><path d="M32 12l4 12v28h-8V24z" fill="#fff3e6"/><circle cx="32" cy="10" r="3.5" fill="#ffd27a"/><path d="M14 52V36l8-6v22zM50 52V36l-8-6v22z" fill="#fff3e6" opacity=".8"/></svg>
+      <span>Milano a Passo Lento</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#galleria">Galleria</a></li>
+      <li><a href="#coppie">Il gioco</a></li>
+      <li><a href="#storia">Storia</a></li>
+      <li><a class="btn btn-primary" href="index.html#partecipanti">← Torna al tour</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="top">
+  <div class="moon" aria-hidden="true"></div>
+
+  <div class="hero-in">
+    <span class="eyebrow">Seconda tappa · Via Gorani</span>
+    <h1>Sotto i vostri piedi c'è un <em>palazzo imperiale</em>.</h1>
+    <p class="lead">Guardate intorno: palazzi bianchi nuovissimi, una torre di mattoni e, sotto di voi, la residenza di un imperatore. Quale città ha avuto un imperatore che abitava proprio qui? Non Roma: Milano.</p>
+    <div class="chips" aria-label="In breve">
+      <span class="chip">🏛️ Capitale dell'Impero (286–402)</span>
+      <span class="chip">🧱 Una torre medievale</span>
+      <span class="chip">🤝 Il gioco delle coppie</span>
+    </div>
+  </div>
+
+  <!-- silhouette: palazzi nuovi, portale barocco e Torre dei Gorani -->
+  <svg class="hero-city" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <pattern id="gw" width="22" height="26" patternUnits="userSpaceOnUse"><rect x="5" y="5" width="9" height="13" rx="1.5" fill="#7a6f9c"/></pattern>
+    </defs>
+    <!-- palazzi moderni chiari -->
+    <g fill="#b9aed0">
+      <rect x="40" y="120" width="420" height="200"/>
+      <rect x="980" y="150" width="400" height="170"/>
+      <rect x="470" y="190" width="80" height="130" opacity=".8"/>
+      <rect x="820" y="200" width="150" height="120" opacity=".8"/>
+    </g>
+    <g fill="url(#gw)">
+      <rect x="40" y="120" width="420" height="200"/>
+      <rect x="980" y="150" width="400" height="170"/>
+      <rect x="820" y="200" width="150" height="120"/>
+    </g>
+    <!-- portale barocco -->
+    <rect x="555" y="240" width="110" height="60" fill="#3d2a3b"/>
+    <path d="M575 240L610 222L645 240Z" fill="#4d3346"/>
+    <path d="M585 300V268a20 20 0 0 1 40 0V300Z" fill="#1b1630"/>
+    <!-- Torre dei Gorani -->
+    <rect x="665" y="100" width="110" height="200" fill="#4d3346"/>
+    <path d="M661 96H779" stroke="#4d3346" stroke-width="6" stroke-dasharray="5 4"/>
+    <rect x="675" y="56" width="90" height="36" fill="#4d3346"/>
+    <path d="M669 56L720 22L771 56Z" fill="#3d2a3b"/>
+    <path d="M683 92V72a7 7 0 0 1 14 0V92ZM713 92V72a7 7 0 0 1 14 0V92ZM743 92V72a7 7 0 0 1 14 0V92Z" fill="#ffd27a" opacity=".9"/>
+    <path d="M702 160V140a4 4 0 0 1 8 0V160ZM716 160V140a4 4 0 0 1 8 0V160ZM702 220V200a4 4 0 0 1 8 0V220ZM716 220V200a4 4 0 0 1 8 0V220Z" fill="#ffd27a" opacity=".75"/>
+    <!-- piazza -->
+    <rect y="300" width="1440" height="20" fill="#141230"/>
+    <g fill="#ffd27a"><circle cx="130" cy="311" r="2.4"/><circle cx="420" cy="313" r="2.4"/><circle cx="900" cy="311" r="2.4"/><circle cx="1230" cy="313" r="2.4"/></g>
+  </svg>
+</header>
+
+<!-- ===== IN BREVE ===== -->
+<section id="intro">
+  <div class="wrap about">
+    <div class="reveal">
+      <span class="eyebrow">In breve</span>
+      <h2>La capitale <em>sotto casa</em>.</h2>
+      <p>Nel 286 d.C. l'imperatore Massimiano, co-imperatore di Diocleziano, sceglie Milano come residenza. Per più di un secolo la città è la capitale dell'Impero Romano d'Occidente, e qui, in via Gorani, c'era il suo palazzo.</p>
+      <p>Poi arrivano l'abbandono, le torri dei nobili, un palazzo barocco, le bombe del 1943 e, finalmente, la rinascita. In pochi metri, tutta la storia di Milano.</p>
+    </div>
+    <aside class="fact-card reveal" aria-label="Scheda della tappa">
+      <div class="tape"></div>
+      <dl>
+        <div><dt>Dove</dt><dd>Via Gorani 4 e via Brisa</dd></div>
+        <div><dt>Capitale</dt><dd>286–402 d.C., d'Occidente</dd></div>
+        <div><dt>Vedremo</dt><dd>Palazzo imperiale, torre medievale, palazzo barocco</dd></div>
+        <div><dt>Oggi</dt><dd>Area archeologica, torre e piazza pedonale</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<!-- ===== GALLERIA A SCORRIMENTO ===== -->
+<section class="gallery-sec" id="galleria">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" style="color:#ffb089">Galleria storica</span>
+      <h2>Lo stesso luogo, <em>quattro epoche</em></h2>
+      <p>Dalla ricostruzione del palazzo imperiale alle macerie del 1943. Scorri o usa le frecce.</p>
+    </div>
+  </div>
+
+  <div class="gallery reveal" id="gallery" role="region" aria-roledescription="carosello" aria-label="Via Gorani attraverso le epoche">
+    <div class="g-track" id="gTrack" tabindex="0">
+
+      <!-- MODIFICA: salva le immagini in images/ come gorani-1.jpg … gorani-4.jpg e adatta alt e didascalie.
+           Per aggiungere una quinta immagine (es. "Oggi") copia un <figure> e chiamala gorani-5:
+           i pallini e il contatore si aggiornano da soli. -->
+      <figure class="g-slide" data-photo="gorani-1" data-alt="Ricostruzione del palazzo imperiale di Massimiano">
+        <div class="g-img">
+          <div class="ph">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="9" width="36" height="30" rx="5"/><circle cx="17" cy="20" r="3.5"/><path d="M6 34l11-9 9 7 6-5 10 8"/></svg>
+            <strong>Immagine 1</strong>
+            <span>Salva il file come <code>images/gorani-1.jpg</code></span>
+          </div>
+        </div>
+        <figcaption>
+          <span class="g-era">286–402 d.C.</span>
+          <h3>Il palazzo imperiale</h3>
+          <p>Un intero quartiere di sale di rappresentanza, terme e corridoi, collegato al circo da un passaggio privato.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="g-slide" data-photo="gorani-2" data-alt="Ricostruzione della torre medievale dei Gorani">
+        <div class="g-img">
+          <div class="ph">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="9" width="36" height="30" rx="5"/><circle cx="17" cy="20" r="3.5"/><path d="M6 34l11-9 9 7 6-5 10 8"/></svg>
+            <strong>Immagine 2</strong>
+            <span>Salva il file come <code>images/gorani-2.jpg</code></span>
+          </div>
+        </div>
+        <figcaption>
+          <span class="g-era">XI–XII secolo</span>
+          <h3>La torre medievale</h3>
+          <p>Sulle rovine nasce una casa-torre in mattoni: nella Milano dei Comuni, più alta la torre, più forte la famiglia.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="g-slide" data-photo="gorani-3" data-alt="Il palazzo barocco dei Gorani">
+        <div class="g-img">
+          <div class="ph">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="9" width="36" height="30" rx="5"/><circle cx="17" cy="20" r="3.5"/><path d="M6 34l11-9 9 7 6-5 10 8"/></svg>
+            <strong>Immagine 3</strong>
+            <span>Salva il file come <code>images/gorani-3.jpg</code></span>
+          </div>
+        </div>
+        <figcaption>
+          <span class="g-era">XVII–XVIII secolo</span>
+          <h3>Il palazzo barocco</h3>
+          <p>Il complesso passa ai Gorani. Del palazzo resta oggi il portale barocco, accanto alla torre.</p>
+        </figcaption>
+      </figure>
+
+      <figure class="g-slide" data-photo="gorani-4" data-alt="Le macerie dopo i bombardamenti del 1943">
+        <div class="g-img">
+          <div class="ph">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="9" width="36" height="30" rx="5"/><circle cx="17" cy="20" r="3.5"/><path d="M6 34l11-9 9 7 6-5 10 8"/></svg>
+            <strong>Immagine 4</strong>
+            <span>Salva il file come <code>images/gorani-4.jpg</code></span>
+          </div>
+        </div>
+        <figcaption>
+          <span class="g-era">1943</span>
+          <h3>Le macerie</h3>
+          <p>I bombardamenti distruggono il palazzo e gran parte del quartiere. Sopravvivono solo la torre e il portale.</p>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="g-ui">
+      <button class="g-btn" id="gPrev" type="button" aria-label="Immagine precedente">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+      </button>
+      <div class="g-dots" id="gDots"></div>
+      <span class="g-count" id="gCount" aria-live="polite">1 / 4</span>
+      <button class="g-btn" id="gNext" type="button" aria-label="Immagine successiva">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GIOCO: COPPIE ===== -->
+<section class="game-sec" id="coppie">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Il gioco · Coppie</span>
+      <h2>Tre cose <em>in comune</em></h2>
+      <p>Qui i secoli hanno lasciato pezzi condivisi; voi dovete trovare i vostri. Obiettivo: creare i primi legami a due.</p>
+    </div>
+
+    <div class="pairs-start" id="pairsStart">
+      <button class="btn btn-primary" id="makePairs" type="button">Forma le coppie</button>
+      <p class="pairs-note" id="pairsMsg">Le coppie sono casuali e uguali su tutti i telefoni.</p>
+      <noscript><p class="pairs-note">Il gioco delle coppie richiede JavaScript.</p></noscript>
+    </div>
+
+    <div id="pairsStage" hidden>
+      <div class="pairs-grid" id="pairsGrid" aria-live="polite"></div>
+      <div class="pairs-next" id="pairsNext">
+        <button class="btn btn-primary btn-arrow" id="nextPair" type="button" aria-label="Mostra la prossima coppia">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="game" id="pairsFinish" tabindex="-1" hidden>
+      <h3>Si cammina!</h3>
+      <p>Fino alla prossima tappa, trovate insieme tre cose in comune.</p>
+      <div class="three" aria-hidden="true"><span>1</span><span>2</span><span>3</span></div>
+
+      <div class="rules">
+        <div class="rule no">
+          <h4>Vietato</h4>
+          <ul>
+            <li>Il lavoro</li>
+            <li>La città</li>
+            <li>L'età</li>
+            <li>Le cose ovvie («ci piace mangiare»)</li>
+          </ul>
+        </div>
+        <div class="rule yes">
+          <h4>Esempi buoni</h4>
+          <ul>
+            <li>Un libro</li>
+            <li>Un'abitudine strana</li>
+            <li>Un posto del cuore</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="me">
+        <label for="meSelect">Chi sei?</label>
+        <select id="meSelect"><option value="">Scegli il tuo nome…</option></select>
+        <div class="me-out" id="meOut" aria-live="polite"></div>
+      </div>
+
+      <p class="closing">Alla prossima tappa 2–3 coppie racconteranno la cosa più strana che hanno scoperto.</p>
+      <p class="giro">Codice del giro: <span id="giroCode"></span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CRONOLOGIA ===== -->
+<section class="history" id="storia">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Per chi vuole approfondire</span>
+      <h2>Dall'imperatore alla <em>rinascita</em></h2>
+      <p>Le tappe principali, da Massimiano ai giorni nostri.</p>
+    </div>
+
+    <!-- MODIFICA: controlla date e testi prima di pubblicare -->
+    <div class="timeline">
+      <article class="t-item reveal"><div class="t-card">
+        <span class="t-year">286 d.C. · Massimiano</span>
+        <h3>Milano capitale dell'Impero</h3>
+        <p>L'imperatore Massimiano sceglie Milano come residenza. Fino al 402 è capitale dell'Impero Romano d'Occidente: ha una posizione strategica tra pianura Padana e Alpi, vicina ai confini da difendere.</p>
+        <p>Massimiano costruisce nuove mura, un circo, terme e il palazzo imperiale, che occupava un intero quartiere. Un passaggio lo collegava al circo, così l'imperatore poteva raggiungerlo senza uscire in strada.</p>
+        <p>Sotto il palazzo gli archeologi hanno trovato anche due domus romane più antiche (I–III secolo), demolite per far posto alla residenza imperiale.</p>
+      </div></article>
+
+      <article class="t-item reveal"><div class="t-card">
+        <span class="t-year">313–374 · Milano cristiana</span>
+        <h3>L'Editto di Milano e Ambrogio</h3>
+        <p>Nel 313 Costantino e Licinio emanano l'Editto di Milano sulla libertà di culto per i cristiani. Nel 374 Ambrogio diventa vescovo: sarà il futuro patrono della città.</p>
+      </div></article>
+
+      <article class="t-item reveal"><div class="t-card">
+        <span class="t-year">402 – XI secolo · L'abbandono</span>
+        <h3>La capitale se ne va</h3>
+        <p>Nel 402 la corte si trasferisce a Ravenna, più facile da difendere. Il palazzo viene danneggiato dalle invasioni (Unni, Goti), poi abbandonato in età longobarda.</p>
+        <p>Le rovine vengono smantellate e i mattoni romani riusati come materiale da costruzione: riciclo ante litteram. Attorno all'anno 1000 in superficie non rimane quasi nulla.</p>
+      </div></article>
+
+      <article class="t-item reveal"><div class="t-card">
+        <span class="t-year">XI–XII secolo · I Comuni</span>
+        <h3>Una torre sulle rovine</h3>
+        <p>Sopra le rovine nasce una casa-torre medievale. La datazione più diffusa la colloca tra XI e XII secolo, anche se alcune schede la indicano più tarda.</p>
+        <p>Nella Milano comunale le torri erano il simbolo di potere delle famiglie nobili: più alta la torre, più forte la famiglia. Questa è tra le pochissime sopravvissute in città, insieme a quelle dei Morigi e dei Meravigli. È piccola per gli standard di oggi (meno di 20 metri, dato indicativo), ma nel Medioevo era un segno di potere.</p>
+      </div></article>
+
+      <article class="t-item reveal"><div class="t-card">
+        <span class="t-year">XVII–XVIII secolo · Palazzo Gorani</span>
+        <h3>Dai Crivelli ai Gorani</h3>
+        <p>Il complesso appartenne ai Crivelli; nel Seicento passò ai Gorani, famiglia pavese arricchita con gli appalti militari.</p>
+        <p>Giuseppe Gorani, nato nel 1740, fu letterato e storiografo, figura dell'Illuminismo: da lui viene il nome della torre e della via. Gli ultimi proprietari furono i Bazzero-Mattei, con una notevole collezione di armi, oggi alla Pinacoteca Ambrosiana. Del palazzo resta il portale barocco del Seicento, accanto alla torre.</p>
+      </div></article>
+
+      <article class="t-item reveal"><div class="t-card">
+        <span class="t-year">1943 · Le bombe</span>
+        <h3>Il palazzo non c'è più</h3>
+        <p>I bombardamenti alleati distruggono il Palazzo Gorani e gran parte del quartiere. Sopravvivono la torre e il portale barocco.</p>
+      </div></article>
+
+      <article class="t-item reveal"><div class="t-card">
+        <span class="t-year">Dal 1953 · I decenni vuoti</span>
+        <h3>Un buco nel cuore di Milano</h3>
+        <p>Dopo la guerra un piano regolatore, ripreso nel 1953, prevedeva una grande arteria larga circa 30 metri e la ricostruzione si blocca. Per decenni qui ci sono parcheggi sterrati e rovine.</p>
+      </div></article>
+
+      <article class="t-item reveal"><div class="t-card">
+        <span class="t-year">Dal 2010 · La rinascita</span>
+        <h3>Residenze, torre e piazza</h3>
+        <p>Solo dagli anni 2010 l'area viene riqualificata: un nuovo complesso di residenze, il restauro della torre e una nuova piazza pedonale, dedicata a Giuseppe Tomasi di Lampedusa, autore de <em style="color:inherit">Il Gattopardo</em>.</p>
+      </div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COSA GUARDARE ===== -->
+<section id="vedere">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Cosa guardare</span>
+      <h2>Sotto i piedi e <em>sopra la testa</em></h2>
+    </div>
+    <div class="sights">
+      <div class="sight reveal"><div class="ico" aria-hidden="true">🏛️</div><h3>L'aula absidata</h3><p>I resti di una grande aula di rappresentanza e di un corridoio del palazzo di Massimiano.</p></div>
+      <div class="sight reveal"><div class="ico" aria-hidden="true">🔥</div><h3>Il praefurnium</h3><p>La camera di combustione che scaldava le sale con il riscaldamento a pavimento.</p></div>
+      <div class="sight reveal"><div class="ico" aria-hidden="true">🧩</div><h3>I mosaici</h3><p>Tracce di mosaici bianchi e neri, visibili da oblò di vetro nella pavimentazione ai piedi della torre.</p></div>
+      <div class="sight reveal"><div class="ico" aria-hidden="true">🪙</div><h3>La moneta del 299</h3><p>Una moneta di Massimiano del 299 d.C. trovata sotto il pavimento aiuta a datare la sala.</p></div>
+      <div class="sight reveal"><div class="ico" aria-hidden="true">🧱</div><h3>La torre</h3><p>Mattoni a vista (il cotto lombardo), cornice a dentelli, bifore, trifore e una loggetta in alto.</p></div>
+      <div class="sight reveal"><div class="ico" aria-hidden="true">🔩</div><h3>La scala di metallo</h3><p>Dentro la torre, una scala moderna aiuta a sostenere le pareti storiche: restauro contemporaneo che convive con l'antico.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INTORNO ===== -->
+<section class="around" id="intorno">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Qui intorno</span>
+      <h2>Il quartiere delle <em>Cinque Vie</em></h2>
+      <p>Se avanza tempo, quattro cose a pochi passi.</p>
+    </div>
+    <div class="sights four">
+      <div class="sight reveal"><div class="ico" aria-hidden="true">🧭</div><h3>Cinque Vie</h3><p>Il nome viene dall'incrocio di cinque strade. Impianto di origine romana, area dell'antico foro. Oggi è un distretto di botteghe, design e artigiani, vivissimo durante il Fuorisalone.</p></div>
+      <div class="sight reveal"><div class="ico" aria-hidden="true">🏛️</div><h3>Palazzo Borromeo</h3><p>Uno dei più importanti palazzi tardogotici di Milano, danneggiato nel 1943.</p></div>
+      <div class="sight reveal"><div class="ico" aria-hidden="true">🗼</div><h3>Museo Archeologico</h3><p>In Corso Magenta: le mura massimiane e una torre a 24 lati. Il campanile di San Maurizio poggia su una torre del circo.</p></div>
+      <div class="sight reveal"><div class="ico" aria-hidden="true">🕯️</div><h3>Via Bagnera</h3><p>Una stradina «oscura», legata ai delitti di Antonio Boggia, considerato il primo serial killer italiano (metà Ottocento).</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta">
+  <div class="wrap reveal">
+    <span class="eyebrow">La seconda tappa</span>
+    <h2>La storia è <em>sotto i vostri piedi</em>.</h2>
+    <p>A Milano la storia non è solo nei musei. Qui, in pochi metri, vedete la capitale dell'Impero e la Milano di oggi.</p>
+    <div class="cta-btns">
+      <a class="btn btn-primary" href="index.html#partecipanti">← Torna al tour</a>
+      <a class="btn btn-ghost" href="castello.html">← Prima tappa</a>
+      <a class="btn btn-ghost" href="#galleria">Rivedi la galleria</a>
+      <!-- MODIFICA: quando avrai la terza tappa, aggiungi qui il link:
+      <a class="btn btn-primary" href="tappa-3.html">Vai alla terza tappa →</a> -->
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap foot">
+    <div><strong class="madonnina">✦</strong> Milano a Passo Lento · Social walking tour<br><span style="opacity:.7">Fatto a mano, a piedi, a Milano.</span></div>
+    <div>
+      <!-- MODIFICA: inserisci i tuoi contatti reali -->
+      <a href="mailto:ciao@tuodominio.it">ciao@tuodominio.it</a> ·
+      <a href="https://instagram.com/" rel="noopener">Instagram</a>
+    </div>
+    <div style="opacity:.7">© <span id="year">2026</span> · Tutti i diritti riservati</div>
+  </div>
+</footer>
+
+<script src="partecipanti.js"></script>
+<script>
+(function(){
+  document.getElementById('year').textContent=new Date().getFullYear();
+  var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  /* Nav piena dopo lo scroll */
+  var nav=document.getElementById('nav');
+  function onS(){nav.classList.toggle('solid',window.scrollY>40)}
+  window.addEventListener('scroll',onS,{passive:true});onS();
+
+  /* Reveal allo scroll */
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el,i){el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+
+  /* ===== Galleria a scorrimento ===== */
+  var track=document.getElementById('gTrack');
+  if(track){
+    var slides=[].slice.call(track.querySelectorAll('.g-slide')),
+        dotsBox=document.getElementById('gDots'),dots=[],
+        prev=document.getElementById('gPrev'),
+        next=document.getElementById('gNext'),
+        count=document.getElementById('gCount'),
+        cur=0,raf;
+
+    slides.forEach(function(s,k){
+      /* immagine reale: se in /images esiste gorani-N.jpg sostituisce il segnaposto */
+      var box=s.querySelector('.g-img'),img=new Image();
+      img.alt=s.getAttribute('data-alt')||'';
+      img.decoding='async';
+      img.onload=function(){box.appendChild(img);s.classList.add('has-photo')};
+      img.src='images/'+s.getAttribute('data-photo')+'.jpg';
+      /* pallino */
+      var b=document.createElement('button');
+      b.type='button';
+      b.setAttribute('aria-label',"Vai all'immagine "+(k+1));
+      b.addEventListener('click',function(){go(k)});
+      dotsBox.appendChild(b);dots.push(b);
+    });
+
+    function target(i){var s=slides[i];return s.offsetLeft-(track.clientWidth-s.offsetWidth)/2}
+    function go(i){
+      i=Math.max(0,Math.min(slides.length-1,i));
+      track.scrollTo({left:target(i),behavior:reduce?'auto':'smooth'});
+    }
+    function setActive(i){
+      cur=i;
+      slides.forEach(function(s,k){s.classList.toggle('is-active',k===i)});
+      dots.forEach(function(d,k){d.setAttribute('aria-current',k===i?'true':'false')});
+      count.textContent=(i+1)+' / '+slides.length;
+      prev.disabled=i===0;
+      next.disabled=i===slides.length-1;
+    }
+    track.addEventListener('scroll',function(){
+      cancelAnimationFrame(raf);
+      raf=requestAnimationFrame(function(){
+        var c=track.scrollLeft+track.clientWidth/2,best=0,d=1e9;
+        slides.forEach(function(s,k){
+          var m=Math.abs(s.offsetLeft+s.offsetWidth/2-c);
+          if(m<d){d=m;best=k}
+        });
+        if(best!==cur)setActive(best);
+      });
+    },{passive:true});
+    prev.addEventListener('click',function(){go(cur-1)});
+    next.addEventListener('click',function(){go(cur+1)});
+    track.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'){e.preventDefault();go(cur+1)}
+      else if(e.key==='ArrowLeft'){e.preventDefault();go(cur-1)}
+    });
+    window.addEventListener('resize',function(){track.scrollLeft=target(cur)});
+    setActive(0);
+  }
+
+  /* ===== Gioco delle coppie =====
+     Le coppie sono "casuali" ma deterministiche: dipendono solo dal codice del giro
+     e dall'elenco dei partecipanti (partecipanti.js), quindi ogni telefono
+     calcola le stesse coppie. Se il numero è dispari l'ultimo gruppo è un trio.
+     Chi ha lo stesso valore "conosce" non viene accoppiato (se evitabile). */
+  var startBtn=document.getElementById('makePairs');
+  if(!startBtn)return;
+  var LIST=(window.PARTECIPANTI||[]).filter(function(p){return p&&p.nome}),
+      startBox=document.getElementById('pairsStart'),
+      msg=document.getElementById('pairsMsg'),
+      stage=document.getElementById('pairsStage'),
+      grid=document.getElementById('pairsGrid'),
+      nextBox=document.getElementById('pairsNext'),
+      nextBtn=document.getElementById('nextPair'),
+      finish=document.getElementById('pairsFinish'),
+      sel=document.getElementById('meSelect'),
+      out=document.getElementById('meOut'),
+      COLORS=['#f4b998','#cfe3d7','#f7dc9d','#d9d4f0','#f2c6d0','#bcd9ea'],
+      groups=[],shown=0;
+
+  function pad(n){return(n<10?'0':'')+n}
+  var d=new Date(),
+      code=(window.URLSearchParams&&new URLSearchParams(location.search).get('giro'))||window.GIRO||(d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()));
+
+  function hash(s){
+    var h=1779033703^s.length;
+    for(var i=0;i<s.length;i++){h=Math.imul(h^s.charCodeAt(i),3432918353);h=h<<13|h>>>19}
+    h=Math.imul(h^h>>>16,2246822507);h=Math.imul(h^h>>>13,3266489909);
+    return(h^h>>>16)>>>0;
+  }
+  function mulberry32(a){
+    return function(){
+      a|=0;a=a+0x6D2B79F5|0;
+      var t=Math.imul(a^a>>>15,1|a);
+      t=t+Math.imul(t^t>>>7,61|t)^t;
+      return((t^t>>>14)>>>0)/4294967296;
+    };
+  }
+  function shuffle(arr,rng){
+    var a=arr.slice();
+    for(var i=a.length-1;i>0;i--){var j=Math.floor(rng()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}
+    return a;
+  }
+  function conflicts(g){
+    var c=0;
+    for(var i=0;i<g.length;i++)for(var j=i+1;j<g.length;j++){
+      if(g[i].conosce&&g[i].conosce===g[j].conosce)c++;
+    }
+    return c;
+  }
+  function makeGroups(){
+    var rng=mulberry32(hash(code+'|'+LIST.map(function(p){return p.nome}).join(',')));
+    var best=null,bs=1e9;
+    for(var t=0;t<300&&bs>0;t++){
+      var a=shuffle(LIST,rng),g=[],i=0;
+      while(a.length-i>=2){
+        var take=(a.length-i===3)?3:2;
+        g.push(a.slice(i,i+take));i+=take;
+      }
+      var s=0;g.forEach(function(x){s+=conflicts(x)});
+      if(s<bs){bs=s;best=g}
+    }
+    return best;
+  }
+
+  function pairCard(g,i){
+    var art=document.createElement('article');
+    art.className='pair pop'+(g.length>2?' trio':'');
+    art.style.setProperty('--r',[-2,1.5,-1,2][i%4]+'deg');
+    var n=document.createElement('span');
+    n.className='pair-n';
+    n.textContent=(g.length>2?'Trio ':'Coppia ')+(i+1);
+    var row=document.createElement('div');
+    row.className='pair-people';
+    g.forEach(function(p,k){
+      if(k>0){
+        var amp=document.createElement('span');
+        amp.className='amp';amp.textContent='&';amp.setAttribute('aria-hidden','true');
+        row.appendChild(amp);
+      }
+      var w=document.createElement('div');w.className='who';
+      var av=document.createElement('div');
+      av.className='avatar';av.setAttribute('aria-hidden','true');
+      av.style.setProperty('--c',COLORS[LIST.indexOf(p)%COLORS.length]);
+      av.textContent=p.nome.charAt(0).toUpperCase();
+      var h=document.createElement('h3');h.textContent=p.nome;
+      w.appendChild(av);w.appendChild(h);row.appendChild(w);
+    });
+    art.appendChild(n);art.appendChild(row);
+    return art;
+  }
+
+  function remember(){
+    try{
+      localStorage.setItem('mpt_coppie_tappa2',JSON.stringify({
+        giro:code,
+        coppie:groups.map(function(g){return g.map(function(p){return p.nome})})
+      }));
+    }catch(e){}
+  }
+
+  function renderMe(name){
+    out.textContent='';
+    if(!name)return;
+    var g=groups.filter(function(x){return x.some(function(p){return p.nome===name})})[0];
+    if(!g)return;
+    var others=g.filter(function(p){return p.nome!==name}).map(function(p){return p.nome});
+    out.appendChild(document.createTextNode(others.length>1?'I tuoi compagni sono ':'Il tuo partner è '));
+    var s=document.createElement('strong');s.textContent=others.join(' e ');
+    out.appendChild(s);
+  }
+
+  function showNext(){
+    if(shown>=groups.length)return;
+    grid.appendChild(pairCard(groups[shown],shown));
+    shown++;
+    if(shown<groups.length){
+      nextBtn.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'});
+    }else{
+      nextBox.hidden=true;
+      finish.hidden=false;
+      finish.classList.add('pop');
+      finish.focus({preventScroll:true});
+      finish.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'});
+    }
+  }
+
+  startBtn.addEventListener('click',function(){
+    if(LIST.length<2){
+      msg.textContent='Servono almeno due partecipanti: controlla il file partecipanti.js.';
+      return;
+    }
+    groups=makeGroups();
+    remember();
+    document.getElementById('giroCode').textContent=code;
+    LIST.forEach(function(p){
+      var o=document.createElement('option');o.value=p.nome;o.textContent=p.nome;sel.appendChild(o);
+    });
+    try{
+      var saved=localStorage.getItem('mpt_io');
+      if(saved&&LIST.some(function(p){return p.nome===saved})){sel.value=saved;renderMe(saved)}
+    }catch(e){}
+    startBox.hidden=true;
+    stage.hidden=false;
+    showNext();
+    nextBtn.focus({preventScroll:true});
+  });
+  nextBtn.addEventListener('click',showNext);
+  sel.addEventListener('change',function(){
+    renderMe(sel.value);
+    try{localStorage.setItem('mpt_io',sel.value)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
