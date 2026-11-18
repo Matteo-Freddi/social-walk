@@ -302,39 +302,6 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<!-- ===== PRIMA / DOPO ===== -->
-<section class="photos" id="foto">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Prima e dopo</span>
-      <h2>Palazzo Mezzanotte, <em>ieri e oggi</em></h2>
-      <p>All'inaugurazione la facciata era ancora circondata da vecchie case, demolite dopo per creare la piazza attuale.</p>
-    </div>
-
-    <!-- MODIFICA: salva le foto in images/ come affari-prima.jpg e affari-dopo.jpg e adatta alt e didascalie -->
-    <div class="ba-grid">
-      <figure class="ba reveal" data-photo="affari-prima" data-alt="Palazzo Mezzanotte circondato dalle vecchie case, negli anni Trenta">
-        <div class="ba-img">
-          <div class="ph"><strong>Prima</strong><span>Salva il file come <code>images/affari-prima.jpg</code></span></div>
-        </div>
-        <figcaption>
-          <span class="ba-tag">1932 · L'inaugurazione</span>
-          <p>Il palazzo appena finito, ancora stretto tra vecchie case e vicoli.</p>
-        </figcaption>
-      </figure>
-      <figure class="ba reveal" data-photo="affari-dopo" data-alt="Piazza Affari oggi, con la scultura di Cattelan davanti alla Borsa">
-        <div class="ba-img">
-          <div class="ph"><strong>Dopo</strong><span>Salva il file come <code>images/affari-dopo.jpg</code></span></div>
-        </div>
-        <figcaption>
-          <span class="ba-tag">Oggi · La piazza</span>
-          <p>La piazza aperta e, davanti alla Borsa, il Dito di Cattelan.</p>
-        </figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
 <!-- ===== L.O.V.E. ===== -->
 <section id="love">
   <div class="wrap">
@@ -464,7 +431,7 @@ footer a:hover{color:#fff}
       <p>Un modo di dire italiano, e una storia lunga secoli.</p>
     </div>
     <div class="sights">
-      <div class="sight reveal"><h3>Medioevo e età moderna</h3><p>Mercanti e banchieri lombardi noti in tutta Europa; poi, sotto spagnoli e austriaci, commercio, seta e manifattura.</p></div>
+      <div class="sight reveal"><h3>Medioevo ed età moderna</h3><p>Mercanti e banchieri lombardi noti in tutta Europa; poi, sotto spagnoli e austriaci, commercio, seta e manifattura.</p></div>
       <div class="sight reveal"><h3>Ottocento e Novecento</h3><p>Napoleone, ferrovie, industria e la nascita della Borsa. Poi il fascismo e il boom economico degli anni Cinquanta e Sessanta.</p></div>
       <div class="sight reveal"><h3>Oggi</h3><p>Finanza, moda, design e fiere: la capitale economica e finanziaria d'Italia e la sua città più «europea».</p></div>
     </div>
@@ -533,15 +500,6 @@ footer a:hover{color:#fff}
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
     els.forEach(function(el,i){el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});
   }else{els.forEach(function(el){el.classList.add('in')})}
-
-  /* Foto: se in /images esiste il file indicato, sostituisce il segnaposto */
-  document.querySelectorAll('.ba').forEach(function(f){
-    var box=f.querySelector('.ba-img'),img=new Image();
-    img.alt=f.getAttribute('data-alt')||'';
-    img.decoding='async';
-    img.onload=function(){box.appendChild(img);f.classList.add('has-photo')};
-    img.src='images/'+f.getAttribute('data-photo')+'.jpg';
-  });
 
   /* ===== Gioco: l'irritazione del mattino =====
      1. estrae una frase anonima (ordine "casuale" calcolato dal codice del giro,

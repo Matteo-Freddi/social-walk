@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Pannello organizzatore · Chi vuoi risentire</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2a1f2d;--ink-soft:#5d4e5c;--marble:#f8f1e6;--marble-2:#f1e5d3;--spritz:#ef5a2a;--navy:#1f2a4d;--green:#2f6b4f;--gold:#c9973f;--serif:'Fraunces',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--marble);color:var(--ink);line-height:1.55;font-size:16px;padding:2rem 1rem 4rem}
+.wrap{max-width:860px;margin:0 auto}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1}
+h1{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:.6rem}
+h2{font-size:1.5rem;margin:2.2rem 0 .6rem}
+p{color:var(--ink-soft);margin-bottom:.8rem}
+.banner{background:#fffaf1;border:2px solid var(--green);border-radius:14px;padding:1rem 1.2rem;margin:1rem 0 1.6rem;color:var(--ink)}
+.banner strong{color:var(--green)}
+label{display:block;font-weight:700;margin:1rem 0 .3rem}
+textarea{width:100%;min-height:150px;padding:.8rem 1rem;border-radius:12px;border:2px solid rgba(42,31,45,.25);font:inherit;background:#fff;color:var(--ink);resize:vertical}
+.hint{font-size:.88rem;color:var(--ink-soft);margin-top:.3rem}
+.btn{display:inline-flex;align-items:center;padding:.8em 1.4em;border-radius:999px;font:inherit;font-weight:700;border:2px solid transparent;cursor:pointer}
+.btn-primary{background:var(--spritz);color:#fff}
+.btn-ghost{border-color:var(--ink);background:transparent;color:var(--ink)}
+.btn-sm{padding:.45em 1em;font-size:.9rem}
+.row{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1rem}
+.box{background:#fffaf1;border-radius:14px;padding:1rem 1.2rem;margin-bottom:1rem;border:1px solid rgba(42,31,45,.12)}
+.box h3{font-size:1.15rem;margin-bottom:.5rem}
+.warn{background:#fff1ea;border-left:4px solid var(--spritz);padding:.7rem 1rem;border-radius:0 10px 10px 0;margin-bottom:.6rem;font-size:.94rem;color:var(--ink)}
+.pairs{list-style:none;display:grid;gap:.4rem}
+.pairs li{background:#fff;border-radius:10px;padding:.5rem .9rem;border:1px solid rgba(42,31,45,.12);font-weight:500}
+.msg textarea{min-height:190px;font-size:.95rem}
+.check{list-style:none;display:grid;gap:.5rem}
+.check label{display:flex;gap:.6rem;align-items:flex-start;font-weight:500;margin:0}
+.check input{margin-top:.3rem;accent-color:var(--spritz)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Pannello organizzatore</h1>
+  <p>Tappa 7 · «Chi vuoi risentire». Calcola le scelte reciproche e prepara i messaggi con i contatti.</p>
+
+  <div class="banner">
+    <strong>Tutto resta nel tuo browser.</strong> Quello che incolli qui non viene inviato né salvato da nessuna parte: se chiudi o ricarichi la pagina sparisce. Non pubblicare scelte o contatti altrove e usali solo per questo invio. Entro 48 ore dalla fine del tour invia i contatti, poi cancella tutto.
+  </div>
+
+  <h2>1. Scelte ricevute</h2>
+  <label for="scelte">Una riga per persona</label>
+  <textarea id="scelte" placeholder="Nome 1: Nome 2, Nome 3&#10;Nome 2: Nome 1&#10;Nome 3: Nome 4, Nome 1, Nome 5"></textarea>
+  <p class="hint">Incolla il campo <code>riga</code> di ogni invio (formato «chi: scelta, scelta, scelta»). Va bene anche «chi → scelta, scelta» o un elenco JSON come <code>[{"chi":"Nome 1","scelte":["Nome 2"]}]</code>.</p>
+
+  <h2>2. Contatti</h2>
+  <label for="contatti">Una riga per persona: nome; contatto</label>
+  <textarea id="contatti" placeholder="Nome 1; nome1@esempio.it&#10;Nome 2; +39 333 0000000"></textarea>
+  <p class="hint">Servono solo per chi ha un abbinamento. Separa nome e contatto con «;», con un tab o con una virgola.</p>
+
+  <div class="row">
+    <button class="btn btn-primary" id="calc" type="button">Calcola gli abbinamenti</button>
+    <button class="btn btn-ghost" id="wipe" type="button">Cancella tutto da questa pagina</button>
+  </div>
+
+  <div id="out" hidden>
+    <h2>3. Abbinamenti reciproci</h2>
+    <div id="warns"></div>
+    <div class="box"><h3 id="pairsTitle"></h3><ul class="pairs" id="pairs"></ul></div>
+
+    <h2>4. Messaggi da inviare (entro 48 ore)</h2>
+    <p>Un messaggio per ogni persona che ha almeno un abbinamento, con i contatti solo di chi l'ha scelta a sua volta.</p>
+    <div id="msgs"></div>
+
+    <h2>5. Messaggio finale per tutti</h2>
+    <p>Per tutti i partecipanti, anche per chi non ha avuto abbinamenti: ringrazia, comunica la cancellazione dei dati e invita al sondaggio. Così nessuno può dedurre nulla dal fatto di aver ricevuto o meno un messaggio con i contatti.</p>
+    <div class="box msg">
+      <label for="final">Testo</label>
+      <textarea id="final" readonly></textarea>
+      <div class="row"><button class="btn btn-ghost btn-sm" data-copy="final" type="button">Copia</button></div>
+    </div>
+
+    <h2>6. Cancellazione</h2>
+    <div class="box">
+      <ul class="check">
+        <li><label><input type="checkbox"> Contatti inviati a chi aveva un abbinamento (entro 48 ore)</label></li>
+        <li><label><input type="checkbox"> Cancellate le risposte ricevute (email o dati del modulo di invio)</label></li>
+        <li><label><input type="checkbox"> Cancellati i contatti raccolti per questo scopo</label></li>
+        <li><label><input type="checkbox"> Cancellati i messaggi e gli appunti con le scelte</label></li>
+        <li><label><input type="checkbox"> Inviato a tutti il messaggio che conferma la cancellazione</label></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="partecipanti.js"></script>
+<script>
+(function(){
+  var NAMES=(window.PARTECIPANTI||[]).map(function(p){return p.nome}),
+      canon={};
+  NAMES.forEach(function(n){canon[n.trim().toLowerCase()]=n});
+
+  var $=function(id){return document.getElementById(id)};
+  var warns=[];
+
+  function norm(n){
+    var k=String(n||'').trim().toLowerCase();
+    if(!k)return null;
+    if(canon[k])return canon[k];
+    warns.push('Nome non riconosciuto (non è in partecipanti.js): «'+String(n).trim()+'»');
+    return null;
+  }
+
+  function parseChoices(txt){
+    var res={},order=[];
+    function add(chi,list){
+      var c=norm(chi);if(!c)return;
+      if(res[c]){warns.push('«'+c+'» compare più di una volta: uso la prima riga.');return}
+      var set=[];
+      (list||[]).forEach(function(x){
+        var n=norm(x);
+        if(!n)return;
+        if(n===c){warns.push('«'+c+'» ha scelto sé stesso: ignorato.');return}
+        if(set.indexOf(n)<0)set.push(n);
+      });
+      if(set.length>3){warns.push('«'+c+'» ha scelto più di 3 persone: uso le prime 3.');set=set.slice(0,3)}
+      res[c]=set;order.push(c);
+    }
+    txt=txt.trim();
+    if(!txt)return res;
+    if(txt.charAt(0)==='['||txt.charAt(0)==='{'){
+      try{
+        var j=JSON.parse(txt);j=Array.isArray(j)?j:[j];
+        j.forEach(function(o){
+          var s=o.scelte;if(typeof s==='string')s=s.split(/[,;]/);
+          add(o.chi,s);
+        });
+        return res;
+      }catch(e){warns.push('JSON non valido: provo a leggerlo come righe di testo.')}
+    }
+    txt.split(/\n+/).forEach(function(line){
+      line=line.trim();if(!line)return;
+      var m=/^(.*?)\s*(?:→|->|:)\s*(.*)$/.exec(line);
+      if(!m){warns.push('Riga non riconosciuta: «'+line+'»');return}
+      add(m[1],m[2].split(/[,;]/));
+    });
+    return res;
+  }
+
+  function parseContacts(txt){
+    var res={};
+    txt.split(/\n+/).forEach(function(line){
+      line=line.trim();if(!line)return;
+      var m=/^(.*?)\s*[;\t|]\s*(.*)$/.exec(line)||/^(.*?)\s*,\s*(.*)$/.exec(line);
+      if(!m){warns.push('Contatto non riconosciuto: «'+line+'»');return}
+      var n=norm(m[1]);if(n)res[n]=m[2].trim();
+    });
+    return res;
+  }
+
+  function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined)e.textContent=txt;return e}
+
+  function msgBox(name,text){
+    var box=el('div','box msg');
+    box.appendChild(el('h3','',name));
+    var ta=el('textarea');ta.readOnly=true;ta.value=text;box.appendChild(ta);
+    var row=el('div','row'),b=el('button','btn btn-ghost btn-sm','Copia');
+    b.type='button';
+    b.addEventListener('click',function(){copy(ta,b)});
+    row.appendChild(b);box.appendChild(row);
+    return box;
+  }
+  function copy(ta,btn){
+    function done(){var t=btn.textContent;btn.textContent='Copiato';setTimeout(function(){btn.textContent=t},1500)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(ta.value).then(done,function(){ta.select();document.execCommand('copy');done()});
+    }else{ta.select();document.execCommand('copy');done()}
+  }
+
+  function calc(){
+    warns=[];
+    var ch=parseChoices($('scelte').value),
+        ct=parseContacts($('contatti').value),
+        people=Object.keys(ch),
+        pairs=[],matches={};
+    people.forEach(function(a){
+      ch[a].forEach(function(b){
+        if(ch[b]&&ch[b].indexOf(a)>-1&&a<b){
+          pairs.push([a,b]);
+          (matches[a]=matches[a]||[]).push(b);
+          (matches[b]=matches[b]||[]).push(a);
+        }
+      });
+    });
+
+    $('out').hidden=false;
+    var wb=$('warns');wb.textContent='';
+    Object.keys(matches).forEach(function(n){
+      if(!ct[n])warns.push('Manca il contatto di «'+n+'», che è stato scelto da qualcuno: il suo contatto non potrà essere inviato.');
+      matches[n].forEach(function(m){
+        if(!ct[m])warns.push('Manca il contatto di «'+m+'»: «'+n+'» non potrà riceverlo.');
+      });
+    });
+    warns.filter(function(w,i){return warns.indexOf(w)===i}).forEach(function(w){wb.appendChild(el('div','warn',w))});
+
+    $('pairsTitle').textContent=pairs.length?(pairs.length+(pairs.length===1?' abbinamento reciproco':' abbinamenti reciproci')):'Nessun abbinamento reciproco';
+    var pl=$('pairs');pl.textContent='';
+    pairs.forEach(function(p){pl.appendChild(el('li','',p[0]+'  ↔  '+p[1]))});
+
+    var mb=$('msgs');mb.textContent='';
+    Object.keys(matches).sort(function(a,b){return a.localeCompare(b,'it')}).forEach(function(n){
+      var lines=matches[n].map(function(m){return '- '+m+': '+(ct[m]||'[contatto mancante]')});
+      var t='Ciao '+n+',\n'+
+        'grazie per aver camminato con noi a Milano! Hai scelto di risentire '+(matches[n].length>1?'alcune persone':'una persona')+' e anche loro hanno scelto te. Ecco '+(matches[n].length>1?'i contatti':'il contatto')+':\n\n'+
+        lines.join('\n')+'\n\n'+
+        'Come promesso, dopo questo invio cancelliamo tutti i dati di scelta e di contatto. Ti scriveremo per confermarlo.\n\n'+
+        'A presto, e buona chiacchierata!';
+      mb.appendChild(msgBox(n,t));
+    });
+    if(!Object.keys(matches).length)mb.appendChild(el('p','','Nessun messaggio con contatti da inviare.'));
+
+    $('final').value='Ciao a tutti,\n'+
+      'grazie per aver camminato con noi a Milano! Come promesso, abbiamo cancellato tutti i dati di scelta e di contatto raccolti per il gioco «Chi vuoi risentire».\n\n'+
+      'Ci aiuti a migliorare con un sondaggio di tre domande?\n'+
+      '1. Cosa ti è piaciuto?\n2. Cosa no?\n3. Dove vorresti tornare?\n'+
+      '[inserisci qui il link al sondaggio]\n\n'+
+      'A presto!';
+  }
+
+  $('calc').addEventListener('click',calc);
+  $('wipe').addEventListener('click',function(){
+    $('scelte').value='';$('contatti').value='';
+    $('out').hidden=true;$('msgs').textContent='';$('pairs').textContent='';$('warns').textContent='';$('final').value='';
+    [].slice.call(document.querySelectorAll('.check input')).forEach(function(c){c.checked=false});
+  });
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){copy($(b.getAttribute('data-copy')),b)});
+  });
+})();
+</script>
+</body>
+</html>

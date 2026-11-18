@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>San Satiro · Sesta tappa · Milano a Passo Lento</title>
+<meta name="description" content="Santa Maria presso San Satiro, Milano: il gioiello di Bramante nascosto in una via di shopping e la sua illusione prospettica, una falsa abside profonda meno di un metro.">
+<meta property="og:title" content="San Satiro · Milano a Passo Lento">
+<meta property="og:description" content="Dietro questa facciata c'è una delle illusioni ottiche più geniali del Rinascimento.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f2a98a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ef5a2a'/%3E%3Cpath d='M32 10l4 12v30h-8V22z' fill='%23fff3e6'/%3E%3Ccircle cx='32' cy='9' r='3.5' fill='%23ffd27a'/%3E%3Cpath d='M16 52V34l7-6v24zM48 52V34l-7-6v24z' fill='%23fff3e6' opacity='.8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#2a1f2d;
+  --ink-soft:#5d4e5c;
+  --marble:#f8f1e6;
+  --marble-2:#f1e5d3;
+  --rose:#e9c9bd;
+  --gold:#c9973f;
+  --spritz:#ef5a2a;
+  --navy:#1f2a4d;
+  --green:#2f6b4f;
+  --radius:22px;
+  --shadow:0 18px 40px -18px rgba(42,31,45,.45);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--marble);scroll-padding-top:80px}
+body{font-family:var(--sans);color:var(--ink);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(2rem,4.6vw,3.4rem)}
+em{font-style:italic;color:var(--spritz)}
+[hidden]{display:none!important}
+.eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--spritz);display:inline-flex;align-items:center;gap:.7em;margin-bottom:1rem}
+.eyebrow::before{content:"";width:34px;height:2px;background:currentColor}
+.btn{display:inline-flex;align-items:center;gap:.6em;padding:.95em 1.6em;border-radius:999px;font-weight:700;text-decoration:none;font-size:1rem;border:2px solid transparent;transition:transform .2s,box-shadow .2s,background .2s,color .2s;cursor:pointer;font-family:inherit}
+.btn-primary{background:var(--spritz);color:#fff;box-shadow:0 10px 24px -10px rgba(239,90,42,.8)}
+.btn-primary:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 16px 28px -10px rgba(239,90,42,.9)}
+.btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-ghost:hover{background:var(--ink);color:var(--marble)}
+.btn-light{border-color:rgba(248,241,230,.6);color:var(--marble);background:transparent}
+.btn-light:hover:not(:disabled){background:var(--marble);color:var(--ink)}
+.btn:disabled{opacity:.45;cursor:default}
+:focus-visible{outline:3px solid var(--navy);outline-offset:3px;border-radius:8px}
+
+/* NAV */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s}
+nav.solid{background:rgba(248,241,230,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(42,31,45,.08)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-family:var(--serif);font-weight:800;font-size:1.25rem}
+.logo svg{width:38px;height:38px}
+.nav-links{display:flex;gap:1.8rem;align-items:center;list-style:none}
+.nav-links a{text-decoration:none;font-weight:500;font-size:.95rem}
+.nav-links a:not(.btn):hover{color:var(--spritz)}
+.nav-links .btn{padding:.6em 1.2em;font-size:.9rem;color:#fff}
+@media(max-width:860px){.nav-links li:not(:last-child){display:none}.logo span{display:none}}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;min-height:100svh;display:flex;align-items:center;padding:130px 0 270px;background:linear-gradient(180deg,#f7d9bc 0%,#f4b998 42%,#ee9484 78%,#d98a82 100%)}
+.hero-in{position:relative;z-index:2;width:min(960px,100% - 40px);margin-inline:auto;text-align:center}
+.hero .eyebrow{color:#b8340f}
+.hero h1{font-size:clamp(2.5rem,6.8vw,5.6rem);font-weight:800;line-height:1.03}
+.hero h1 em{color:#d4431a;font-weight:600}
+.lead{font-size:clamp(1.05rem,1.9vw,1.3rem);max-width:36em;margin:1.5rem auto 0;opacity:.94}
+.ask{margin-top:1.6rem;font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,2.4vw,1.6rem)}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem;justify-content:center}
+.chip{background:rgba(255,248,236,.88);border:1px solid rgba(42,31,45,.12);padding:.4em 1em;border-radius:999px;font-size:.88rem;font-weight:500}
+.sun{position:absolute;z-index:1;width:min(34vw,380px);aspect-ratio:1;border-radius:50%;right:8%;top:10%;background:radial-gradient(circle,#fff4cf 0 42%,#ffd98f 43% 60%,rgba(255,217,143,0) 72%);animation:breathe 9s ease-in-out infinite}
+@keyframes breathe{50%{transform:scale(1.05)}}
+.hero-art{position:absolute;z-index:1;left:0;right:0;bottom:-1px;width:100%;height:min(38vh,320px)}
+
+/* SEZIONI */
+section{padding:clamp(90px,12vw,150px) 0}
+.sec-head{max-width:46rem;margin-bottom:3.2rem}
+.sec-head p{color:var(--ink-soft);margin-top:1rem;font-size:1.1rem}
+
+/* IN BREVE */
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(2rem,6vw,6rem);align-items:center}
+.about p{margin-top:1.1rem;color:var(--ink-soft)}
+.about p:first-of-type{margin-top:1.4rem}
+.fact-card{position:relative;background:#fffaf1;border-radius:var(--radius);padding:2.2rem 1.8rem 1.8rem;box-shadow:var(--shadow);border:2px dashed rgba(42,31,45,.14);transform:rotate(1.5deg)}
+.fact-card .tape{position:absolute;width:90px;height:26px;background:rgba(233,201,189,.85);left:calc(50% - 45px);top:-12px;transform:rotate(-4deg)}
+.fact-card dl div{padding:.8rem 0;border-bottom:1px dashed rgba(42,31,45,.2)}
+.fact-card dl div:last-child{border-bottom:0}
+.fact-card dt{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--green)}
+.fact-card dd{font-family:var(--serif);font-size:1.2rem;font-weight:600;line-height:1.25}
+@media(max-width:860px){.about{grid-template-columns:1fr}}
+
+/* FOTO DELL'ILLUSIONE */
+.photos{background:var(--marble-2)}
+.ba-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:1.6rem}
+.ba{background:#fffaf1;border-radius:var(--radius);padding:.8rem .8rem 1.3rem;box-shadow:0 10px 30px -22px rgba(42,31,45,.6)}
+.ba-img{position:relative;aspect-ratio:3/2;border-radius:14px;overflow:hidden;background:#e4d8c4}
+.ba-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;text-align:center;padding:1rem;color:var(--ink-soft);border:2px dashed rgba(42,31,45,.3);border-radius:14px;background:repeating-linear-gradient(135deg,rgba(42,31,45,.03) 0 14px,rgba(42,31,45,.07) 14px 28px)}
+.ph strong{font-family:var(--serif);font-size:1.25rem;color:var(--ink)}
+.ph span{font-size:.9rem}
+.ph code{background:rgba(42,31,45,.1);padding:.15em .6em;border-radius:6px;font-size:.88rem}
+.has-photo .ph{display:none}
+.ba figcaption{padding:1rem .5rem 0}
+.ba-tag{display:inline-block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;background:var(--gold);color:var(--ink);padding:.25em .9em;border-radius:999px}
+.ba figcaption p{margin-top:.6rem;color:var(--ink-soft);font-size:.98rem}
+.credit{display:block;margin-top:.6rem;font-size:.78rem;color:var(--ink-soft);opacity:.8}
+.credit:empty{display:none}
+.ask-box{margin-top:2.4rem;text-align:center;font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.6vw,1.8rem)}
+
+/* GIOCO · DUE VERITÀ E UNA BUGIA */
+.game-sec{background:var(--marble)}
+.start-note{margin-top:1rem;font-size:.92rem;color:var(--ink-soft)}
+.pairs-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1.4rem}
+.pair{flex:0 1 calc(50% - .7rem);min-width:260px;background:#fffaf1;border-radius:var(--radius);padding:1.5rem 1.2rem 1.4rem;text-align:center;box-shadow:0 10px 28px -20px rgba(42,31,45,.7);border:2px dashed rgba(42,31,45,.14);transform:rotate(var(--r,0deg))}
+@media(max-width:620px){.pair{flex-basis:100%}}
+.pair-n{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--green);margin-bottom:1rem}
+.pair-people{display:flex;align-items:flex-start;justify-content:center;gap:.7rem}
+.who{display:flex;flex-direction:column;align-items:center;gap:.6rem;flex:1;min-width:0}
+.avatar{width:80px;height:80px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-weight:800;font-size:1.9rem;background:var(--c,#f4b998);box-shadow:0 0 0 4px #fff,0 0 0 6px var(--c,#f4b998)}
+.who h3{font-size:1.2rem;overflow-wrap:anywhere}
+.amp{font-family:var(--serif);font-style:italic;font-size:2rem;color:var(--spritz);padding-top:1rem}
+.pair.trio .avatar{width:62px;height:62px;font-size:1.4rem}
+.pair.trio .who h3{font-size:1.05rem}
+.pop{animation:pop .6s cubic-bezier(.2,.8,.2,1) backwards}
+@keyframes pop{from{opacity:0;transform:translateY(24px) rotate(var(--r,0deg)) scale(.92)}}
+
+.play{margin:2.8rem auto 0;max-width:780px;background:var(--navy);color:var(--marble);border-radius:var(--radius);padding:2.2rem 1.6rem;box-shadow:var(--shadow);text-align:center}
+.play h3{font-size:clamp(1.8rem,4.4vw,2.6rem);margin-bottom:.6rem}
+.play > p{color:#c8c4da}
+.me{margin:1.4rem 0 .2rem}
+.me label{display:block;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#ffb089;margin-bottom:.5rem}
+.me select{font-family:inherit;font-size:1rem;padding:.7em 1.2em;border-radius:999px;border:2px solid rgba(248,241,230,.5);background:transparent;color:var(--marble);min-width:240px;max-width:100%}
+.me select option{color:var(--ink)}
+.me-out{min-height:1.6rem;margin-top:.8rem;font-size:1.05rem}
+.me-out strong{color:#ffb089}
+.me-out small{display:block;color:#c8c4da;margin-top:.3rem;font-size:.9rem}
+.timer{margin-top:1.6rem;padding-top:1.4rem;border-top:1px solid rgba(248,241,230,.2)}
+.t-round{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#ffb089}
+.t-who{min-height:1.6rem;font-family:var(--serif);font-size:1.3rem}
+.t-clock{font-family:var(--serif);font-weight:800;font-size:clamp(3.2rem,10vw,5rem);line-height:1.1;margin:.3rem 0 1rem;color:var(--gold)}
+.rules4{margin-top:2.4rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:1.2rem}
+.rules4 div{background:#fffaf1;border-radius:var(--radius);padding:1.3rem;box-shadow:0 10px 30px -22px rgba(42,31,45,.6)}
+.rules4 h4{font-size:1.15rem;margin-bottom:.4rem}
+.rules4 p{color:var(--ink-soft);font-size:.95rem}
+
+/* STORIA */
+.history{background:var(--marble-2)}
+.timeline{position:relative;max-width:820px;margin:0 auto;padding-left:2.4rem}
+.timeline::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:repeating-linear-gradient(180deg,var(--ink-soft) 0 6px,transparent 6px 12px);opacity:.45}
+.t-item{position:relative;margin-bottom:1.6rem}
+.t-item:last-child{margin-bottom:0}
+.t-item::before{content:"";position:absolute;left:-2.4rem;top:1.5rem;width:20px;height:20px;border-radius:50%;background:var(--spritz);border:4px solid var(--marble-2);box-shadow:0 0 0 2px var(--spritz)}
+.t-card{background:#fffaf1;border-radius:var(--radius);padding:1.4rem 1.6rem 1.5rem;box-shadow:0 10px 30px -22px rgba(42,31,45,.6)}
+.t-year{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--spritz)}
+.t-card h3{font-size:1.5rem;margin:.3rem 0 .5rem}
+.t-card p{color:var(--ink-soft);font-size:.98rem}
+.t-card p + p{margin-top:.6rem}
+.glossary{max-width:820px;margin:2.4rem auto 0;padding:1.2rem 1.4rem;background:rgba(201,151,63,.12);border-left:3px solid var(--gold);border-radius:0 12px 12px 0}
+.glossary h3{font-size:1.1rem;margin-bottom:.6rem}
+.glossary ul{list-style:none;display:grid;gap:.3rem;font-size:.96rem;color:var(--ink-soft)}
+.glossary strong{color:var(--ink)}
+
+/* CTA */
+.cta{text-align:center}
+.cta .wrap{max-width:780px}
+.cta blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,3vw,2.1rem);line-height:1.3;margin:0 0 2rem}
+.cta-btns{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
+
+/* FOOTER */
+footer{background:#1b1630;color:#cfc8de;padding:3rem 0 2rem;font-size:.92rem}
+.foot{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:center}
+footer a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.25)}
+footer a:hover{color:#fff}
+.madonnina{color:var(--gold)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .sun{animation:none!important}
+  .pop{animation:none!important}
+  .reveal{transition:none;opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+<noscript><style>.reveal{opacity:1;transform:none}.pairs-start{display:none}</style></noscript>
+</head>
+
+<body>
+
+<!-- ===== NAV ===== -->
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="index.html#top" aria-label="Milano a Passo Lento, torna alla home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#ef5a2a"/><path d="M32 12l4 12v28h-8V24z" fill="#fff3e6"/><circle cx="32" cy="10" r="3.5" fill="#ffd27a"/><path d="M14 52V36l8-6v22zM50 52V36l-8-6v22z" fill="#fff3e6" opacity=".8"/></svg>
+      <span>Milano a Passo Lento</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#illusione">L'illusione</a></li>
+      <li><a href="#gioco">Il gioco</a></li>
+      <li><a href="#storia">Storia</a></li>
+      <li><a class="btn btn-primary" href="index.html#partecipanti">← Torna al tour</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="top">
+  <div class="sun" aria-hidden="true"></div>
+  <div class="hero-in">
+    <span class="eyebrow">Sesta tappa · Santa Maria presso San Satiro</span>
+    <h1>Dietro questa facciata c'è <em>un'illusione</em>.</h1>
+    <p class="lead">Siete a due minuti dal Duomo, in una via piena di negozi. Dietro questa facciata c'è una delle illusioni ottiche più geniali del Rinascimento.</p>
+    <p class="ask">Quanto pensate sia profonda l'abside dietro l'altare? Dieci metri? Cinque?</p>
+    <div class="chips" aria-label="Il percorso di questa tappa">
+      <span class="chip">Oratorio del IX secolo</span>
+      <span class="chip">→ Miracolo</span>
+      <span class="chip">→ Bramante</span>
+      <span class="chip">→ Il trucco prospettico</span>
+    </div>
+  </div>
+
+  <!-- facciata con arco e archi che si restringono verso il fondo -->
+  <svg class="hero-art" viewBox="0 0 1440 300" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <rect y="0" width="570" height="300" fill="#e8c8b2"/>
+    <rect x="870" y="0" width="570" height="300" fill="#e8c8b2"/>
+    <g fill="#d9b7a0"><rect x="60" y="30" width="26" height="240"/><rect x="250" y="30" width="26" height="240"/><rect x="1164" y="30" width="26" height="240"/><rect x="1354" y="30" width="26" height="240"/></g>
+    <rect y="266" width="1440" height="34" fill="#b9806c"/>
+    <g stroke="#6e3f33" stroke-width="2">
+      <g transform="translate(720 165) scale(1) translate(-720 -165)"><path d="M570 270V150a150 150 0 0 1 300 0V270Z" fill="#e6a58f" vector-effect="non-scaling-stroke"/></g>
+      <g transform="translate(720 165) scale(.76) translate(-720 -165)"><path d="M570 270V150a150 150 0 0 1 300 0V270Z" fill="#dc9783" vector-effect="non-scaling-stroke"/></g>
+      <g transform="translate(720 165) scale(.58) translate(-720 -165)"><path d="M570 270V150a150 150 0 0 1 300 0V270Z" fill="#cf8873" vector-effect="non-scaling-stroke"/></g>
+      <g transform="translate(720 165) scale(.44) translate(-720 -165)"><path d="M570 270V150a150 150 0 0 1 300 0V270Z" fill="#c07763" vector-effect="non-scaling-stroke"/></g>
+      <g transform="translate(720 165) scale(.33) translate(-720 -165)"><path d="M570 270V150a150 150 0 0 1 300 0V270Z" fill="#ad6652" vector-effect="non-scaling-stroke"/></g>
+      <g transform="translate(720 165) scale(.25) translate(-720 -165)"><path d="M570 270V150a150 150 0 0 1 300 0V270Z" fill="#8f4f3f" vector-effect="non-scaling-stroke"/></g>
+    </g>
+  </svg>
+</header>
+
+<!-- ===== IN BREVE ===== -->
+<section id="intro">
+  <div class="wrap about">
+    <div class="reveal">
+      <span class="eyebrow">In breve</span>
+      <h2>Un gioiello <em>nascosto</em>.</h2>
+      <p>Nell'876 qui nasce un piccolo oratorio dedicato a San Satiro, fratello di Sant'Ambrogio. Nel Duecento una storia di devozione popolare lo trasforma in un santuario. Nel Quattrocento gli Sforza chiamano Bramante.</p>
+      <p>Il problema è lo spazio: dietro l'altare passa una strada. La soluzione è un trucco geniale. Lo scopriremo dentro: e fuori ci aspetta un gioco.</p>
+    </div>
+    <aside class="fact-card reveal" aria-label="Scheda della tappa">
+      <div class="tape"></div>
+      <dl>
+        <div><dt>Oratorio</dt><dd>876, Ansperto da Biassono</dd></div>
+        <div><dt>Architetto</dt><dd>Donato Bramante, 1480 circa</dd></div>
+        <div><dt>Il trucco</dt><dd>Una falsa abside, in prospettiva</dd></div>
+        <div><dt>Facciata</dt><dd>Neorinascimentale, 1871</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<!-- ===== FOTO DELL'ILLUSIONE ===== -->
+<section class="photos" id="illusione">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">L'illusione di Bramante</span>
+      <h2>Da lontano e <em>da vicino</em></h2>
+      <p>Due fotografie dello stesso punto: la prima dal fondo della navata, la seconda da vicino. Quale è vera?</p>
+    </div>
+
+    <!-- MODIFICA: salva le foto in images/ come satiro-fondo.jpg e satiro-vicino.jpg, adatta alt e didascalie
+         e scrivi fonte e licenza nel campo <small class="credit"> (se vuoto non si vede). -->
+    <div class="ba-grid">
+      <figure class="ba reveal" data-photo="satiro-fondo" data-alt="La falsa abside di San Satiro vista dal fondo della navata">
+        <div class="ba-img"><div class="ph"><strong>Dal fondo</strong><span>Salva il file come <code>images/satiro-fondo.jpg</code></span></div></div>
+        <figcaption>
+          <span class="ba-tag">Dal fondo della navata</span>
+          <p>Sembra una vera abside, profonda, con la volta a cassettoni.</p>
+          <small class="credit"></small>
+        </figcaption>
+      </figure>
+      <figure class="ba reveal" data-photo="satiro-vicino" data-alt="La falsa abside di San Satiro vista da vicino, con lo stucco a rilievo e la prospettiva dipinta">
+        <div class="ba-img"><div class="ph"><strong>Da vicino</strong><span>Salva il file come <code>images/satiro-vicino.jpg</code></span></div></div>
+        <figcaption>
+          <span class="ba-tag">Da vicino</span>
+          <p>Avvicinandosi l'illusione sparisce: stucco a rilievo e prospettiva dipinta.</p>
+          <small class="credit"></small>
+        </figcaption>
+      </figure>
+    </div>
+
+    <p class="ask-box reveal">Dove pensate che finisca davvero la chiesa?</p>
+  </div>
+</section>
+
+<!-- ===== GIOCO: DUE VERITÀ E UNA BUGIA ===== -->
+<section class="game-sec" id="gioco">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Il gioco · Due verità e una bugia</span>
+      <h2>Create <em>la vostra</em> illusione</h2>
+      <p>Bramante ha creato un'illusione; voi create la vostra. Obiettivo: rafforzare i legami a due con un gioco rapido.</p>
+    </div>
+
+    <div class="pairs-start" id="pairsStart">
+      <button class="btn btn-primary" id="makePairs" type="button">Forma le nuove coppie</button>
+      <p class="start-note" id="pairsMsg">Premete solo quando siete usciti dalla chiesa. Le coppie sono nuove, diverse da quelle della seconda tappa.</p>
+      <noscript><p class="start-note">Il gioco delle coppie richiede JavaScript.</p></noscript>
+    </div>
+
+    <div id="pairsStage" hidden>
+      <div class="pairs-grid" id="pairsGrid"></div>
+
+      <div class="play">
+        <h3>Si cammina!</h3>
+        <p>A turno ciascuno dice tre affermazioni su di sé: due vere e una falsa. L'altro indovina quale.</p>
+
+        <div class="me">
+          <label for="meSelect">Chi sei?</label>
+          <select id="meSelect"><option value="">Scegli il tuo nome…</option></select>
+          <div class="me-out" id="meOut" aria-live="polite"></div>
+        </div>
+
+        <div class="timer">
+          <p class="t-round" id="tRound">Giro 1 di 2</p>
+          <p class="t-who" id="tWho"></p>
+          <p class="t-clock" id="tClock" aria-live="off">1:00</p>
+          <button class="btn btn-primary" id="tBtn" type="button">Parte il minuto: giro 1</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="rules4">
+      <div class="reveal"><h4>Tre affermazioni</h4><p>Ciascuno ne dice tre su di sé: due vere, una falsa.</p></div>
+      <div class="reveal"><h4>L'altro indovina</h4><p>Quale è la bugia? Poi si cambia ruolo.</p></div>
+      <div class="reveal"><h4>Cose non banali</h4><p>Un viaggio strano, un lavoro fatto una volta sola.</p></div>
+      <div class="reveal"><h4>Due giri</h4><p>Un minuto per giro, camminando verso il Duomo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STORIA ===== -->
+<section class="history" id="storia">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Per chi vuole approfondire</span>
+      <h2>Da un oratorio <em>a un teatro di prospettiva</em></h2>
+    </div>
+
+    <!-- MODIFICA: controlla date e testi prima di pubblicare (datazione dell'affresco e del miracolo) -->
+    <div class="timeline">
+      <article class="t-item reveal"><div class="t-card">
+        <span class="t-year">876 · Un santuario medievale</span>
+        <h3>L'oratorio di Ansperto</h3>
+        <p>Nell'876 l'arcivescovo Ansperto da Biassono fa costruire qui un oratorio dedicato a San Satiro, fratello di Sant'Ambrogio. Il nome è rimasto nel titolo della chiesa.</p>
+        <p>Da osservare il campanile romanico del IX secolo, tra i più antichi di Milano, che si vede bene da via Falcone, sul retro. Siamo ancora nel tessuto dell'antica Mediolanum: le strade qui intorno seguono in parte l'impianto romano.</p>
+      </div></article>
+
+      <article class="t-item reveal"><div class="t-card">
+        <span class="t-year">1242 · Il miracolo, secondo la tradizione</span>
+        <h3>L'affresco e il coltello</h3>
+        <p>Secondo la tradizione, nel 1242 un uomo, arrabbiato per aver perso al gioco, colpì con un coltello un affresco della Madonna con Bambino. Dall'immagine sarebbe uscito del sangue.</p>
+        <p>Da quel momento l'affresco fu venerato come miracoloso e il luogo divenne meta di pellegrinaggio. Si trova ancora sull'altare maggiore. È una storia di devozione popolare, non un fatto storico verificato: l'afflusso di fedeli rese però la piccola chiesa insufficiente e portò alla ricostruzione voluta dagli Sforza.</p>
+      </div></article>
+
+      <article class="t-item reveal"><div class="t-card">
+        <span class="t-year">Dal 1478 circa · Gli Sforza</span>
+        <h3>Bramante e la falsa abside</h3>
+        <p>Dal 1478 circa gli Sforza, prima Gian Galeazzo Maria e poi Ludovico il Moro, fanno ampliare la chiesa. Tra gli architetti c'è Donato Bramante, arrivato a Milano da Urbino.</p>
+        <p>Il problema: dietro l'altare passava una strada, via Falcone, e non c'era spazio per un coro profondo. La soluzione: un finto presbiterio di poco meno di un metro (circa 97 cm) che appare profondo come una vera abside. Bramante usa stucco a rilievo e prospettiva dipinta: un trompe-l'œil architettonico.</p>
+        <p>Bramante e Leonardo lavoravano nella stessa corte sforzesca. La Biblioteca Ambrosiana, vista nella tappa precedente, custodisce il Codice Atlantico di Leonardo.</p>
+      </div></article>
+
+      <article class="t-item reveal"><div class="t-card">
+        <span class="t-year">Fine XV secolo · Dentro la chiesa</span>
+        <h3>Cosa non perdere</h3>
+        <p>Il sacello di San Satiro, la cappella della Pietà, è la parte più antica, con il gruppo in terracotta del Compianto sul Cristo morto (fine Quattrocento, attribuito ad Agostino de Fondutis).</p>
+        <p>La sacrestia ottagonale di Bramante, spesso chiamata «battistero», è uno spazio armonioso, tipico del Rinascimento.</p>
+      </div></article>
+
+      <article class="t-item reveal"><div class="t-card">
+        <span class="t-year">1871 · La facciata</span>
+        <h3>Fuori l'Ottocento, dentro il Quattrocento</h3>
+        <p>La facciata non è di Bramante: è neorinascimentale, del 1871, opera di Giuseppe Brentano.</p>
+      </div></article>
+    </div>
+
+    <div class="glossary reveal">
+      <h3>Parole chiave · Key words</h3>
+      <ul>
+        <li><strong>abside</strong> = apse, the rounded end of a church</li>
+        <li><strong>trompe-l'œil</strong> = optical illusion</li>
+        <li><strong>sacello</strong> = small chapel</li>
+        <li><strong>Compianto</strong> = lamentation over the dead Christ</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta">
+  <div class="wrap reveal">
+    <span class="eyebrow">La sesta tappa</span>
+    <blockquote>A Milano anche la mancanza di spazio può generare un capolavoro. Bramante non poteva costruire un'abside vera, allora l'ha inventata.</blockquote>
+    <div class="cta-btns">
+      <a class="btn btn-primary" href="piazza-duomo.html">Vai alla settima tappa →</a>
+      <a class="btn btn-ghost" href="index.html#partecipanti">← Torna al tour</a>
+      <a class="btn btn-ghost" href="piazza-san-sepolcro.html">← Quinta tappa</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap foot">
+    <div><strong class="madonnina">✦</strong> Milano a Passo Lento · Social walking tour<br><span style="opacity:.7">Fatto a mano, a piedi, a Milano.</span></div>
+    <div>
+      <!-- MODIFICA: inserisci i tuoi contatti reali -->
+      <a href="mailto:ciao@tuodominio.it">ciao@tuodominio.it</a> ·
+      <a href="https://instagram.com/" rel="noopener">Instagram</a>
+    </div>
+    <div style="opacity:.7">© <span id="year">2026</span> · Tutti i diritti riservati</div>
+  </div>
+</footer>
+
+<script src="partecipanti.js"></script>
+<script>
+(function(){
+  document.getElementById('year').textContent=new Date().getFullYear();
+
+  /* Nav piena dopo lo scroll */
+  var nav=document.getElementById('nav');
+  function onS(){nav.classList.toggle('solid',window.scrollY>40)}
+  window.addEventListener('scroll',onS,{passive:true});onS();
+
+  /* Reveal allo scroll */
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el,i){el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+
+  /* Foto: se in /images esiste il file indicato, sostituisce il segnaposto */
+  document.querySelectorAll('.ba').forEach(function(f){
+    var box=f.querySelector('.ba-img'),img=new Image();
+    img.alt=f.getAttribute('data-alt')||'';
+    img.decoding='async';
+    img.onload=function(){box.appendChild(img);f.classList.add('has-photo')};
+    img.src='images/'+f.getAttribute('data-photo')+'.jpg';
+  });
+
+  /* ===== Gioco: nuove coppie =====
+     Le coppie sono "casuali" ma calcolate dal codice del giro e dall'elenco in
+     partecipanti.js, quindi uguali su tutti i telefoni. Sono DIVERSE da quelle della
+     tappa 2: le coppie di quella tappa vengono ricalcolate (o lette dal telefono, se
+     salvate) e il sorteggio evita di ripeterle. Chi ha lo stesso valore "conosce"
+     non viene accoppiato. Con numero dispari l'ultimo gruppo è un trio. */
+  var LIST=(window.PARTECIPANTI||[]).filter(function(p){return p&&p.nome}),
+      startBtn=document.getElementById('makePairs');
+  if(!startBtn)return;
+  var startBox=document.getElementById('pairsStart'),
+      msg=document.getElementById('pairsMsg'),
+      stage=document.getElementById('pairsStage'),
+      grid=document.getElementById('pairsGrid'),
+      sel=document.getElementById('meSelect'),
+      out=document.getElementById('meOut'),
+      rEl=document.getElementById('tRound'),
+      wEl=document.getElementById('tWho'),
+      clock=document.getElementById('tClock'),
+      tBtn=document.getElementById('tBtn'),
+      COLORS=['#f4b998','#cfe3d7','#f7dc9d','#d9d4f0','#f2c6d0','#bcd9ea'],
+      reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches,
+      groups=[],meGroup=null,round=1,left=60,iv=null,finished=false;
+
+  function pad(n){return(n<10?'0':'')+n}
+  var d=new Date(),
+      code=(window.URLSearchParams&&new URLSearchParams(location.search).get('giro'))||window.GIRO||(d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()));
+
+  function hash(s){
+    var h=1779033703^s.length;
+    for(var i=0;i<s.length;i++){h=Math.imul(h^s.charCodeAt(i),3432918353);h=h<<13|h>>>19}
+    h=Math.imul(h^h>>>16,2246822507);h=Math.imul(h^h>>>13,3266489909);
+    return(h^h>>>16)>>>0;
+  }
+  function mulberry32(a){
+    return function(){
+      a|=0;a=a+0x6D2B79F5|0;
+      var t=Math.imul(a^a>>>15,1|a);
+      t=t+Math.imul(t^t>>>7,61|t)^t;
+      return((t^t>>>14)>>>0)/4294967296;
+    };
+  }
+  function shuffle(arr,rng){
+    var a=arr.slice();
+    for(var i=a.length-1;i>0;i--){var j=Math.floor(rng()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}
+    return a;
+  }
+  function conflicts(g){
+    var c=0;
+    for(var i=0;i<g.length;i++)for(var j=i+1;j<g.length;j++){
+      if(g[i].conosce&&g[i].conosce===g[j].conosce)c++;
+    }
+    return c;
+  }
+  function split(a){
+    var g=[],i=0;
+    while(a.length-i>=2){var take=(a.length-i===3)?3:2;g.push(a.slice(i,i+take));i+=take}
+    return g;
+  }
+  function key(a,b){return a<b?a+'|'+b:b+'|'+a}
+
+  /* stesso calcolo della tappa 2 (via-gorani.html) */
+  function groupsT2(){
+    var rng=mulberry32(hash(code+'|'+LIST.map(function(p){return p.nome}).join(',')));
+    var best=null,bs=1e9;
+    for(var t=0;t<300&&bs>0;t++){
+      var g=split(shuffle(LIST,rng)),s=0;
+      g.forEach(function(x){s+=conflicts(x)});
+      if(s<bs){bs=s;best=g}
+    }
+    return best||[];
+  }
+  function pastPairs(){
+    var names=null,set={};
+    try{
+      var s=JSON.parse(localStorage.getItem('mpt_coppie_tappa2')||'null');
+      if(s&&s.giro===code&&s.coppie)names=s.coppie;
+    }catch(e){}
+    if(!names)names=groupsT2().map(function(g){return g.map(function(p){return p.nome})});
+    names.forEach(function(g){
+      for(var i=0;i<g.length;i++)for(var j=i+1;j<g.length;j++)set[key(g[i],g[j])]=1;
+    });
+    return set;
+  }
+  function repeats(g,past){
+    var c=0;
+    for(var i=0;i<g.length;i++)for(var j=i+1;j<g.length;j++){
+      if(past[key(g[i].nome,g[j].nome)])c++;
+    }
+    return c;
+  }
+  function makeGroups(){
+    var past=pastPairs(),
+        rng=mulberry32(hash(code+'|t6|'+LIST.map(function(p){return p.nome}).join(','))),
+        best=null,bs=1e9;
+    for(var t=0;t<600&&bs>0;t++){
+      var g=split(shuffle(LIST,rng)),s=0;
+      g.forEach(function(x){s+=10*conflicts(x)+10*repeats(x,past)});
+      if(s<bs){bs=s;best=g}
+    }
+    return best||[];
+  }
+
+  function pairCard(g,i){
+    var art=document.createElement('article');
+    art.className='pair pop'+(g.length>2?' trio':'');
+    art.style.setProperty('--r',[-2,1.5,-1,2][i%4]+'deg');
+    var n=document.createElement('span');
+    n.className='pair-n';
+    n.textContent=(g.length>2?'Trio ':'Coppia ')+(i+1);
+    var row=document.createElement('div');
+    row.className='pair-people';
+    g.forEach(function(p,k){
+      if(k>0){
+        var amp=document.createElement('span');
+        amp.className='amp';amp.textContent='&';amp.setAttribute('aria-hidden','true');
+        row.appendChild(amp);
+      }
+      var w=document.createElement('div');w.className='who';
+      var av=document.createElement('div');
+      av.className='avatar';av.setAttribute('aria-hidden','true');
+      av.style.setProperty('--c',COLORS[LIST.indexOf(p)%COLORS.length]);
+      av.textContent=p.nome.charAt(0).toUpperCase();
+      var h=document.createElement('h3');h.textContent=p.nome;
+      w.appendChild(av);w.appendChild(h);row.appendChild(w);
+    });
+    art.appendChild(n);art.appendChild(row);
+    return art;
+  }
+
+  /* timer: un minuto per giro, 2 giri per coppia (3 se si è in tre), nessun suono */
+  function nR(){return meGroup?meGroup.length:2}
+  function paint(){
+    rEl.textContent='Giro '+round+' di '+nR();
+    wEl.textContent=meGroup?('Parla '+meGroup[(round-1)%meGroup.length].nome):'';
+  }
+  function fmt(s){return Math.floor(s/60)+':'+pad(s%60)}
+  function resetTimer(){
+    clearInterval(iv);iv=null;
+    round=1;left=60;finished=false;
+    clock.textContent=fmt(60);
+    tBtn.disabled=false;tBtn.textContent='Parte il minuto: giro 1';
+    paint();
+  }
+  tBtn.addEventListener('click',function(){
+    if(iv)return;
+    if(finished){resetTimer()}
+    left=60;clock.textContent=fmt(left);paint();
+    tBtn.disabled=true;
+    iv=setInterval(function(){
+      left--;
+      clock.textContent=left>0?fmt(left):'Tempo!';
+      if(left<=0){
+        clearInterval(iv);iv=null;tBtn.disabled=false;
+        if(round<nR()){round++;paint();tBtn.textContent='Parte il minuto: giro '+round}
+        else{finished=true;tBtn.textContent='Ricomincia'}
+      }
+    },1000);
+  });
+
+  function renderMe(name){
+    out.textContent='';meGroup=null;
+    if(name){
+      var g=groups.filter(function(x){return x.some(function(p){return p.nome===name})})[0];
+      if(g){
+        meGroup=g;
+        var others=g.filter(function(p){return p.nome!==name}).map(function(p){return p.nome});
+        out.appendChild(document.createTextNode(others.length>1?'I tuoi compagni sono ':'Il tuo compagno è '));
+        var s=document.createElement('strong');s.textContent=others.join(' e ');out.appendChild(s);
+        var sm=document.createElement('small');
+        sm.textContent='Ordine dei giri: '+g.map(function(p){return p.nome}).join(' → ')+(g.length>2?' (in tre, gli altri due indovinano insieme)':'');
+        out.appendChild(sm);
+      }
+    }
+    resetTimer();
+  }
+
+  startBtn.addEventListener('click',function(){
+    if(LIST.length<2){
+      msg.textContent='Servono almeno due partecipanti: controlla il file partecipanti.js.';
+      return;
+    }
+    groups=makeGroups();
+    try{localStorage.setItem('mpt_coppie_tappa6',JSON.stringify({giro:code,coppie:groups.map(function(g){return g.map(function(p){return p.nome})})}))}catch(e){}
+    grid.textContent='';
+    groups.forEach(function(g,i){grid.appendChild(pairCard(g,i))});
+    LIST.forEach(function(p){
+      var o=document.createElement('option');o.value=p.nome;o.textContent=p.nome;sel.appendChild(o);
+    });
+    startBox.hidden=true;stage.hidden=false;
+    try{
+      var saved=localStorage.getItem('mpt_io');   /* il nome scelto alla tappa 2 */
+      if(saved&&LIST.some(function(p){return p.nome===saved})){sel.value=saved;renderMe(saved)}
+      else resetTimer();
+    }catch(e){resetTimer()}
+    stage.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+  });
+  sel.addEventListener('change',function(){
+    renderMe(sel.value);
+    try{localStorage.setItem('mpt_io',sel.value)}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
