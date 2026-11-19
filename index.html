@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Milano a Passo Lento · Social walking tour a Milano</title>
+<title>Ciao bella Milano · Social walking tour a Milano</title>
 <meta name="description" content="Passeggiate in piccoli gruppi alla scoperta di Milano: Duomo, Brera, Navigli, Isola e angoli segreti. Si cammina, si chiacchiera, si finisce con un aperitivo.">
-<meta property="og:title" content="Milano a Passo Lento · Social walking tour">
+<meta property="og:title" content="Ciao bella Milano · Social walking tour">
 <meta property="og:description" content="Scopri Milano a piedi, in buona compagnia.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#f2a98a">
@@ -41,11 +41,9 @@ h2{font-size:clamp(2rem,4.6vw,3.4rem)}
 em{font-style:italic;color:var(--spritz)}
 .eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--spritz);display:inline-flex;align-items:center;gap:.7em;margin-bottom:1rem}
 .eyebrow::before{content:"";width:34px;height:2px;background:currentColor}
-.btn{display:inline-flex;align-items:center;gap:.6em;padding:.95em 1.6em;border-radius:999px;font-weight:700;text-decoration:none;font-size:1rem;border:2px solid transparent;transition:transform .2s,box-shadow .2s,background .2s,color .2s;cursor:pointer;font-family:inherit}
+.btn{display:inline-flex;align-items:center;gap:.6em;padding:.95em 1.6em;border-radius:999px;font-weight:700;text-decoration:none;font-size:1rem;border:2px solid transparent;transition:transform .2s,box-shadow .2s;cursor:pointer;font-family:inherit}
 .btn-primary{background:var(--spritz);color:#fff;box-shadow:0 10px 24px -10px rgba(239,90,42,.8)}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 28px -10px rgba(239,90,42,.9)}
-.btn-ghost{border-color:var(--ink);color:var(--ink)}
-.btn-ghost:hover{background:var(--ink);color:var(--marble)}
 :focus-visible{outline:3px solid var(--navy);outline-offset:3px;border-radius:8px}
 
 /* ===== SFONDI FISSI (sfumano con lo scroll) ===== */
@@ -64,9 +62,6 @@ em{font-style:italic;color:var(--spritz)}
   radial-gradient(1.2px 1.2px at 66% 46%,#fff 50%,transparent 52%),
   linear-gradient(180deg,#141a3a 0%,#2a2a5a 60%,#4a3a6a 100%)}
 .l2{opacity:0;background:radial-gradient(ellipse at 80% 10%,#fff6e6 0,transparent 55%),var(--marble)}
-.l3{opacity:0;background:
-  radial-gradient(rgba(42,31,45,.07) 1.2px,transparent 1.4px) 0 0/22px 22px,
-  linear-gradient(180deg,#f7dccb,#f1c1aa)}
 
 .sun{position:absolute;width:min(38vw,420px);aspect-ratio:1;border-radius:50%;right:12%;top:16%;background:radial-gradient(circle,#fff4cf 0 42%,#ffd98f 43% 60%,rgba(255,217,143,0) 72%);animation:breathe 9s ease-in-out infinite}
 @keyframes breathe{50%{transform:scale(1.05)}}
@@ -90,8 +85,7 @@ nav.solid{background:rgba(248,241,230,.92);backdrop-filter:blur(10px);box-shadow
 .logo svg{width:38px;height:38px}
 .nav-links{display:flex;gap:1.8rem;align-items:center;list-style:none}
 .nav-links a{text-decoration:none;font-weight:500;font-size:.95rem}
-.nav-links a:not(.btn):hover{color:var(--spritz)}
-.nav-links .btn{padding:.6em 1.2em;font-size:.9rem;color:#fff}
+.nav-links a:hover{color:var(--spritz)}
 @media(max-width:860px){.nav-links{display:none}}
 
 /* ===== HERO A SCORRIMENTO ===== */
@@ -103,9 +97,6 @@ nav.solid{background:rgba(248,241,230,.92);backdrop-filter:blur(10px);box-shadow
 .sub{opacity:0;margin-top:1.8rem;will-change:opacity,transform}
 .sub .eyebrow{margin-bottom:.9rem}
 .sub .lead{font-size:clamp(1.05rem,1.9vw,1.3rem);max-width:36em;margin:0 auto 1.8rem;opacity:.92}
-.sub .hero-cta{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
-.stage .btn-ghost{color:inherit;border-color:currentColor}
-.stage .btn-ghost:hover{background:#f8f1e6;color:#2a1f2d;border-color:#f8f1e6}
 .chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem;justify-content:center}
 .chip{background:rgba(255,248,236,.85);color:#2a1f2d;border:1px solid rgba(42,31,45,.12);padding:.4em 1em;border-radius:999px;font-size:.88rem;font-weight:500}
 .scroll-hint{position:absolute;left:0;right:0;bottom:5vh;text-align:center;color:#fff8ec;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;text-shadow:0 1px 8px rgba(0,0,0,.35)}
@@ -119,48 +110,22 @@ section{padding:clamp(90px,12vw,150px) 0;scroll-margin-top:74px}
 
 /* PROGETTO */
 .about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem);align-items:center}
-.about p{margin-top:1.1rem;color:var(--ink-soft)}
-.about p:first-of-type{margin-top:1.4rem}
 .values{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:2rem}
 .value{border-left:3px solid var(--gold);padding-left:1rem}
 .value strong{display:block;font-family:var(--serif);font-size:1.1rem;color:var(--ink)}
-.value span{font-size:.92rem;color:var(--ink-soft)}
 .cards-stack{position:relative;height:520px}
-.cards-stack .stack{position:absolute;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:8px solid #fffaf1;background:#fffaf1}
+.cards-stack .stack{position:absolute;border-radius:6px;overflow:hidden;box-shadow:var(--shadow);border:8px solid #fffaf1;background:#fffaf1}
 .s1{width:68%;height:62%;left:0;top:0;transform:rotate(-3deg)}
 .s2{width:62%;height:56%;right:0;bottom:0;transform:rotate(4deg)}
 .s3{width:38%;height:30%;right:6%;top:-3%;transform:rotate(8deg);z-index:2}
 .tape{position:absolute;width:90px;height:26px;background:rgba(233,201,189,.85);left:42%;top:-12px;transform:rotate(-4deg);z-index:3}
 @media(max-width:860px){.about{grid-template-columns:1fr}.cards-stack{height:420px}}
 
-/* ART (SVG + foto opzionali) */
+/* ART (SVG + foto opzionali) — riempiono sempre il riquadro, senza spazi bianchi */
 .art{position:relative;overflow:hidden;background:var(--rose)}
-.art svg{width:100%;height:100%;object-fit:cover}
+.art svg{position:absolute;inset:0;width:100%;height:100%}
 .art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s}
 .art img.on{opacity:1}
-
-/* TAPPE (card senza descrizione) */
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem}
-@media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:620px){.grid{grid-template-columns:1fr}}
-.card{background:#fffaf1;border-radius:var(--radius);overflow:hidden;box-shadow:0 10px 30px -18px rgba(42,31,45,.5);transition:transform .35s,box-shadow .35s;display:flex;flex-direction:column}
-.card:hover{transform:translateY(-8px) rotate(-.4deg);box-shadow:var(--shadow)}
-.card .art{aspect-ratio:4/3}
-.card .art svg{transition:transform .8s}
-.card:hover .art svg{transform:scale(1.07)}
-.card-body{padding:1.3rem 1.5rem 1.4rem;display:flex;flex-direction:column;gap:.45rem}
-.tag{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--green)}
-.card h3{font-size:1.55rem}
-.meta{display:flex;gap:1rem;font-size:.85rem;font-weight:500;padding-top:.8rem;border-top:1px dashed rgba(42,31,45,.2);margin-top:.5rem;color:var(--ink-soft)}
-
-/* COME FUNZIONA */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;counter-reset:s}
-@media(max-width:820px){.steps{grid-template-columns:1fr}}
-.step{position:relative;padding:2rem 1.6rem 1.8rem;background:#fff;border-radius:var(--radius);box-shadow:0 10px 30px -22px rgba(42,31,45,.6)}
-.step::before{counter-increment:s;content:counter(s);position:absolute;top:-26px;left:1.4rem;width:52px;height:52px;border-radius:50%;background:var(--spritz);color:#fff;font-family:var(--serif);font-weight:800;font-size:1.5rem;display:grid;place-items:center;box-shadow:0 8px 16px -8px var(--spritz)}
-.step svg{width:62px;height:62px;margin-bottom:.8rem}
-.step h3{font-size:1.4rem;margin-bottom:.5rem}
-.step p{color:var(--ink-soft);font-size:.98rem}
 
 /* MARQUEE */
 .marquee{background:var(--spritz);color:#fff8ec;overflow:hidden;padding:1.05rem 0;position:relative;z-index:5}
@@ -171,27 +136,44 @@ section{padding:clamp(90px,12vw,150px) 0;scroll-margin-top:74px}
 /* CARTOLINE */
 .postcards{background:var(--navy);color:var(--marble);position:relative;overflow:hidden}
 .postcards h2 em{color:#ffb089}
-.postcards .sec-head p{color:#c8c4da}
-.mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:14px}
-.tile{position:relative;border-radius:16px;overflow:hidden;cursor:default}
+.mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:18px}
+.tile{position:relative;overflow:hidden;cursor:default;border:7px solid #fffaf1;border-radius:6px;background:#fffaf1;box-shadow:0 14px 28px -14px rgba(0,0,0,.6);transform:rotate(var(--tr,0deg));transition:transform .35s}
+.tile:nth-child(3n){--tr:-1.2deg}
+.tile:nth-child(3n+1){--tr:.8deg}
+.tile:nth-child(3n+2){--tr:-.4deg}
+.tile:hover{transform:rotate(0) scale(1.02);z-index:2}
 .tile .art{position:absolute;inset:0}
 .tile .art svg{transition:transform .8s,filter .5s;filter:saturate(.9) sepia(.12)}
 .tile:hover .art svg{transform:scale(1.08);filter:none}
-.tile figcaption{position:absolute;left:0;right:0;bottom:0;padding:2.2rem 1rem .8rem;background:linear-gradient(transparent,rgba(20,18,40,.78));font-family:var(--serif);font-style:italic;font-size:1.02rem;color:#fff;transform:translateY(8px);opacity:0;transition:.35s}
+.tile:not(.t-quote)::after{content:"MILANO";position:absolute;top:10px;right:10px;padding:.25em .6em;border:2px dashed rgba(255,250,241,.85);color:#fffaf1;font:700 .62rem var(--sans);letter-spacing:.2em;border-radius:3px;transform:rotate(5deg);background:rgba(20,18,40,.25);backdrop-filter:blur(2px);z-index:1}
+.tile figcaption{position:absolute;left:0;right:0;bottom:0;padding:2.2rem 1rem .8rem;background:linear-gradient(transparent,rgba(20,18,40,.78));font-family:var(--serif);font-style:italic;font-size:1.02rem;color:#fff;transform:translateY(8px);opacity:0;transition:.35s;z-index:1}
 .tile:hover figcaption{opacity:1;transform:none}
 .t-a{grid-column:span 2;grid-row:span 2}
 .t-b{grid-row:span 2}
 .t-e{grid-column:span 2}
 .t-f{grid-row:span 2}
-.t-quote{grid-column:span 2;background:var(--gold);color:var(--ink);display:flex;align-items:center;padding:1.6rem;font-family:var(--serif);font-size:clamp(1.25rem,2.4vw,1.85rem);font-style:italic;line-height:1.25}
-.t-quote span{display:block;font-family:var(--sans);font-style:normal;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-top:.9rem;font-weight:700}
+
+/* CAROSELLO FRASI */
+/* CAROSELLO FRASI */
+.t-quote{grid-column:span 2;background:var(--gold);color:var(--ink);display:flex;flex-direction:row;align-items:center;gap:.8rem;padding:1rem .8rem;font-family:var(--serif);font-style:italic;line-height:1.25}
+.q-body{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;transition:opacity .25s;overflow:auto;max-height:100%}
+.q-body.out{opacity:0}
+.t-quote p{font-size:clamp(.9rem,1.5vw,1.2rem)}
+.t-quote span#qAuthor{display:block;font-family:var(--sans);font-style:normal;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;margin-top:.7rem;font-weight:700}
+.q-arrow{flex:0 0 auto;width:40px;height:40px;border-radius:50%;border:2px solid var(--ink);background:transparent;color:var(--ink);font-size:1.2rem;cursor:pointer;transition:background .2s,color .2s}
+.q-arrow:hover{background:var(--ink);color:var(--gold)}
+#qCount{display:block;margin-top:.4rem;font:700 .7rem var(--sans);font-style:normal;letter-spacing:.14em;opacity:.7}
+
 @media(max-width:900px){.mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}.t-a{grid-column:span 2}.t-e,.t-quote{grid-column:span 2}}
 @media(hover:none){.tile figcaption{opacity:1;transform:none}}
 
 /* PARTECIPANTI */
 [hidden]{display:none!important}
 .people{background:var(--marble);position:relative}
+.people-start{text-align:center}
 .people-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1.6rem}
+.people-finish{margin:3.5rem auto 0;max-width:560px;text-align:center;background:var(--navy);color:var(--marble);border-radius:var(--radius);padding:2.4rem 1.6rem;box-shadow:var(--shadow)}
+.people-finish h3{font-size:clamp(2rem,5vw,3rem);margin-bottom:1.4rem}
 .person{flex:0 1 calc(25% - 1.2rem);min-width:0}
 @media(max-width:980px){.person{flex-basis:calc(50% - .8rem)}}
 @media(max-width:460px){.people-grid{gap:1rem}.person{flex-basis:calc(50% - .5rem)}}
@@ -200,34 +182,12 @@ section{padding:clamp(90px,12vw,150px) 0;scroll-margin-top:74px}
 .person svg{width:112px;height:112px;margin:0 auto .9rem;border-radius:50%;box-shadow:0 0 0 5px #fff,0 0 0 7px var(--chip,#f4b998)}
 .person h3{font-size:1.35rem}
 .adj{display:inline-block;margin-top:.55rem;padding:.25em 1em;border-radius:999px;background:var(--chip,#f4b998);color:var(--ink);font-size:.85rem;font-weight:700;letter-spacing:.04em}
-
-.people-start,.people-next{text-align:center;margin-top:2.4rem}
-.people-start{margin-top:0}
-.btn-arrow{width:64px;height:64px;padding:0;justify-content:center}
-.btn-arrow svg{width:28px;height:28px}
-
-.people-finish{margin:3.5rem auto 0;max-width:560px;text-align:center;background:var(--navy);color:var(--marble);border-radius:var(--radius);padding:2.4rem 1.6rem;box-shadow:var(--shadow)}
-.people-finish h3{font-size:clamp(2rem,5vw,3rem);margin-bottom:1.4rem}
-
 .pop{animation:pop .6s cubic-bezier(.2,.8,.2,1) backwards}
 @keyframes pop{from{opacity:0;transform:translateY(24px) rotate(var(--r,0deg)) scale(.92)}}
-
-/* FAQ */
-.faq{background:var(--marble-2)}
-.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem;align-items:start}
-@media(max-width:860px){.faq-grid{grid-template-columns:1fr;gap:2rem}}
-details{background:#fffaf1;border-radius:16px;padding:1.1rem 1.4rem;margin-bottom:.8rem;box-shadow:0 6px 20px -18px rgba(42,31,45,.7)}
-summary{cursor:pointer;font-family:var(--serif);font-weight:600;font-size:1.15rem;list-style:none;display:flex;justify-content:space-between;gap:1rem}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";color:var(--spritz);font-size:1.5rem;line-height:1;transition:transform .25s}
-details[open] summary::after{transform:rotate(45deg)}
-details p{margin-top:.7rem;color:var(--ink-soft);font-size:.98rem}
 
 /* FOOTER */
 footer{background:#1b1630;color:#cfc8de;padding:3rem 0 2rem;font-size:.92rem}
 .foot{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:center}
-footer a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.25)}
-footer a:hover{color:#fff}
 .madonnina{color:var(--gold)}
 
 /* REVEAL */
@@ -239,7 +199,6 @@ footer a:hover{color:#fff}
   html{scroll-behavior:auto}
 }
 </style>
-<noscript><style>.sub{opacity:1!important}.hero{height:auto}.stage{position:relative;height:auto;min-height:100svh}.l1{opacity:0}.reveal{opacity:1;transform:none}#peopleStage[hidden]{display:block!important}.person[hidden]{display:block!important}.people-start,.people-next{display:none}#peopleFinish[hidden]{display:block!important}</style></noscript>
 </head>
 
 <body>
@@ -260,8 +219,7 @@ footer a:hover{color:#fff}
       <circle cx="4" cy="13" r="7" fill="#3d7a51"/><circle cx="33" cy="11" r="7.5" fill="#2f6b4f"/><circle cx="19" cy="14" r="4.5" fill="#58a06a"/><circle cx="12" cy="8" r="3" fill="#4f9261"/><circle cx="26" cy="9" r="3" fill="#6bb07a"/>
     </pattern>
     <pattern id="p-cobble" width="22" height="14" patternUnits="userSpaceOnUse"><rect width="22" height="14" fill="#8a766b"/><path d="M0 7h22M11 0v7M0 14" stroke="#6b5a52" stroke-width="1.5" fill="none"/></pattern>
-  
-    <linearGradient id="g-glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#86c0e6"/><stop offset="1" stop-color="#eaf6fc"/></linearGradient>
+
     <linearGradient id="g-cyl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".3"/><stop offset=".38" stop-color="#fff" stop-opacity=".14"/><stop offset="1" stop-color="#000" stop-opacity=".34"/></linearGradient>
     <pattern id="p-brick" width="16" height="8" patternUnits="userSpaceOnUse"><rect width="16" height="8" fill="#c8795a"/><path d="M0 .5H16M0 4.5H16M4 0V4M12 4V8" stroke="#a65a42" stroke-width="1" fill="none" opacity=".7"/></pattern>
   </defs>
@@ -295,17 +253,14 @@ footer a:hover{color:#fff}
     </g>
   </defs>
 
-  <!-- cielo -->
   <rect width="400" height="300" fill="url(#g-morning)"/><circle cx="338" cy="62" r="24" fill="#fff3c9"/>
   <g fill="#fff" opacity=".85"><ellipse cx="62" cy="58" rx="38" ry="11"/><ellipse cx="92" cy="50" rx="26" ry="10"/><ellipse cx="308" cy="118" rx="30" ry="8"/></g>
 
-  <!-- foresta di guglie dietro la facciata -->
   <g opacity=".7">
     <use href="#d-spire" transform="translate(84 156) scale(.7)"/><use href="#d-spire" transform="translate(126 140) scale(.85)"/><use href="#d-spire" transform="translate(170 116) scale(.8)"/>
     <use href="#d-spire" transform="translate(316 156) scale(.7)"/><use href="#d-spire" transform="translate(274 140) scale(.85)"/><use href="#d-spire" transform="translate(230 116) scale(.8)"/>
   </g>
 
-  <!-- tiburio e guglia maggiore con la Madonnina -->
   <rect x="178" y="66" width="44" height="40" fill="#ead3c4" stroke="#b08e79" stroke-width="1"/>
   <path d="M185 100V80a3 3 0 0 1 6 0V100ZM197 100V76a3 3 0 0 1 6 0V100ZM209 100V80a3 3 0 0 1 6 0V100Z" fill="#9b7f8c"/>
   <use href="#d-spire" transform="translate(180 68) scale(.55)"/><use href="#d-spire" transform="translate(220 68) scale(.55)"/>
@@ -316,48 +271,39 @@ footer a:hover{color:#fff}
   <path d="M198.8 12L199.3 5.5H200.7L201.2 12Z" fill="#d9a63f"/><circle cx="200" cy="4.2" r="1.3" fill="#d9a63f"/>
   <path d="M197.8 5L200 6.8L202.2 5" stroke="#d9a63f" stroke-width="1" fill="none" stroke-linecap="round"/>
 
-  <!-- facciata a profilo spiovente -->
   <path d="M66 160L157 124L200 84L243 124L334 160V268H66Z" fill="url(#d-marble)" stroke="#b08e79" stroke-width="1.6" stroke-linejoin="round"/>
   <path d="M66 160L157 124L200 84L243 124L334 160V268H66Z" fill="url(#d-ribs)" opacity=".7"/>
   <path d="M66 164L157 128L200 88L243 128L334 164" fill="none" stroke="#d6b9a6" stroke-width="1.2"/>
 
-  <!-- sei contrafforti con nicchie -->
   <use href="#d-pier" x="72" y="158"/><use href="#d-pier" x="114" y="141"/><use href="#d-pier" x="157" y="124"/>
   <use href="#d-pier" x="243" y="124"/><use href="#d-pier" x="286" y="141"/><use href="#d-pier" x="328" y="158"/>
   <use href="#d-pn" x="72"/><use href="#d-pn" x="114"/><use href="#d-pn" x="157"/><use href="#d-pn" x="243"/><use href="#d-pn" x="286"/><use href="#d-pn" x="328"/>
   <use href="#d-niche" x="114" y="154"/><use href="#d-niche" x="157" y="154"/><use href="#d-niche" x="243" y="154"/><use href="#d-niche" x="286" y="154"/>
 
-  <!-- finestra gotica nel frontone e nicchie ai lati -->
   <path d="M191 126V107L200 94L209 107V126Z" fill="#efdccf" stroke="#b08e79" stroke-width=".9" stroke-linejoin="round"/>
   <path d="M194 124V108L200 98L206 108V124Z" fill="#7f96ad" stroke="#b08e79" stroke-width=".9" stroke-linejoin="round"/>
   <use href="#d-niche" transform="translate(168 152) scale(1.4)"/><use href="#d-niche" transform="translate(232 152) scale(1.4)"/>
 
-  <!-- finestra centrale -->
   <path d="M175 150L200 128L225 150Z" fill="#f5e6da" stroke="#b08e79" stroke-width=".9" stroke-linejoin="round"/>
   <rect x="178" y="150" width="44" height="66" fill="#efdccf" stroke="#b08e79" stroke-width=".9"/>
   <rect x="183" y="155" width="34" height="58" fill="#7f96ad" stroke="#b08e79" stroke-width=".9"/>
   <path d="M200 155V213M183 176H217M183 196H217" stroke="#5a6f86" fill="none"/>
 
-  <!-- finestre laterali -->
   <use href="#d-win" x="93" y="216"/><use href="#d-win" x="136" y="216"/><use href="#d-win" x="264" y="216"/><use href="#d-win" x="307" y="216"/>
   <rect x="66" y="216" width="268" height="5" fill="#e7cfbf" stroke="#b08e79" stroke-width=".8"/>
 
-  <!-- cinque portali -->
   <use href="#d-portal" x="93" y="266"/><use href="#d-portal" x="136" y="266"/><use href="#d-portal" x="264" y="266"/><use href="#d-portal" x="307" y="266"/>
   <rect x="181" y="222" width="38" height="44" fill="#efdccf" stroke="#b08e79" stroke-width=".9"/>
   <path d="M186 266V236Q200 220 214 236V266Z" fill="#6b4f5a"/><path d="M200 228V266" stroke="#3f2d37" fill="none"/>
 
-  <!-- zoccolo e sagrato -->
   <rect x="58" y="266" width="284" height="6" fill="#d9c3b3"/>
   <rect y="272" width="400" height="28" fill="#cdb9a8"/>
 
-  <!-- guglie sui contrafforti e sul tetto -->
   <use href="#d-spire" transform="translate(72 158) scale(.82)"/><use href="#d-spire" transform="translate(114 141) scale(.92)"/><use href="#d-spire" transform="translate(157 124) scale(1.05)"/>
   <use href="#d-spire" transform="translate(243 124) scale(1.05)"/><use href="#d-spire" transform="translate(286 141) scale(.92)"/><use href="#d-spire" transform="translate(328 158) scale(.82)"/>
   <use href="#d-spire" transform="translate(93 149) scale(.4)"/><use href="#d-spire" transform="translate(135 133) scale(.45)"/><use href="#d-spire" transform="translate(178 104) scale(.4)"/>
   <use href="#d-spire" transform="translate(222 104) scale(.4)"/><use href="#d-spire" transform="translate(265 133) scale(.45)"/><use href="#d-spire" transform="translate(307 149) scale(.4)"/>
 
-  <!-- passanti -->
   <g fill="#2a1f2d"><circle cx="40" cy="282" r="5"/><rect x="35" y="287" width="10" height="12" rx="4"/><circle cx="66" cy="284" r="5"/><rect x="61" y="289" width="10" height="11" rx="4"/><circle cx="340" cy="283" r="5"/><rect x="335" y="288" width="10" height="12" rx="4"/><circle cx="364" cy="285" r="5"/><rect x="359" y="290" width="10" height="10" rx="4"/></g>
 </symbol>
 
@@ -396,7 +342,6 @@ footer a:hover{color:#fff}
   <rect y="254" width="400" height="46" fill="#d9c9b0"/><path d="M0 270H400M0 286H400" stroke="#c4b296" stroke-width="2"/>
   <circle cx="14" cy="244" r="20" fill="#3d7a51"/><circle cx="34" cy="252" r="14" fill="#4f9261"/><circle cx="388" cy="242" r="22" fill="#3d7a51"/><circle cx="366" cy="252" r="14" fill="#4f9261"/>
 
-  <!-- cortina muraria: mattoni, beccatelli, merli ghibellini -->
   <rect x="48" y="192" width="304" height="62" fill="url(#p-brick)"/>
   <rect x="48" y="246" width="304" height="8" fill="#a65a42"/><path d="M48 246H352" stroke="#7d4030" stroke-width="1.5"/>
   <rect x="48" y="180" width="304" height="12" fill="url(#c-mach)"/>
@@ -405,49 +350,39 @@ footer a:hover{color:#fff}
   <use href="#c-win" x="90" y="214"/><use href="#c-win" x="118" y="214"/><use href="#c-win" x="146" y="214"/>
   <use href="#c-win" x="254" y="214"/><use href="#c-win" x="282" y="214"/><use href="#c-win" x="310" y="214"/>
 
-  <!-- torri cilindriche angolari -->
   <use href="#c-tower" x="52" y="156"/><use href="#c-tower" x="348" y="156"/>
 
-  <!-- TORRE DEL FILARETE -->
   <rect x="170" y="150" width="60" height="104" fill="url(#p-brick)"/>
   <rect x="170" y="150" width="4" height="104" fill="#efe6d6"/><rect x="226" y="150" width="4" height="104" fill="#efe6d6"/>
   <rect x="166" y="144" width="68" height="6" fill="#efe6d6" stroke="#cbb9a0" stroke-width=".8"/>
-  <!-- portale -->
   <path d="M180 254V224a20 20 0 0 1 40 0V254Z" fill="#efe6d6"/>
   <path d="M185 254V224a15 15 0 0 1 30 0V254Z" fill="#3a2424"/>
   <path d="M194 254V212M200 254V209M206 254V212M185 238H215" stroke="#5c3b3b" stroke-width="1.3" fill="none"/>
-  <!-- nicchia con Sant'Ambrogio a cavallo -->
   <path d="M188 198V178a12 12 0 0 1 24 0V198Z" fill="#efe6d6"/>
   <path d="M191 196V179a9 9 0 0 1 18 0V196Z" fill="#8a5a4a"/>
   <g fill="#efe6d6"><ellipse cx="200" cy="189" rx="6" ry="3.2"/><circle cx="200.5" cy="181" r="1.8"/><rect x="199.2" y="182.5" width="2.6" height="5" rx="1"/><path d="M204 187L207.5 183L208.5 184.5L206 189Z"/><path d="M195 190V195M198 191V195M202 191V195M205 190V195" stroke="#efe6d6" stroke-width="1.2" fill="none"/></g>
-  <!-- fusto con orologio -->
   <rect x="178" y="98" width="44" height="46" fill="url(#p-brick)"/>
   <rect x="178" y="98" width="4" height="46" fill="#efe6d6"/><rect x="218" y="98" width="4" height="46" fill="#efe6d6"/>
   <circle cx="200" cy="121" r="14" fill="#efe6d6" stroke="#cbb9a0" stroke-width=".8"/>
   <circle cx="200" cy="121" r="11" fill="#f8f3e6" stroke="#5a2a25" stroke-width="1.8"/>
   <path d="M200 111v2M200 129v2M190 121h2M208 121h2M200 121V114M200 121L205 124" stroke="#2a1f2d" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-  <!-- cella campanaria a tre archi -->
   <rect x="173" y="92" width="54" height="6" fill="#efe6d6" stroke="#cbb9a0" stroke-width=".8"/>
   <rect x="182" y="58" width="36" height="34" fill="#efe6d6" stroke="#cbb9a0" stroke-width=".8"/>
   <path d="M185 92V72a4 4 0 0 1 8 0V92ZM196 92V72a4 4 0 0 1 8 0V92ZM207 92V72a4 4 0 0 1 8 0V92Z" fill="#5a3a3a"/>
   <rect x="178" y="52" width="44" height="6" fill="#efe6d6" stroke="#cbb9a0" stroke-width=".8"/>
   <path d="M-3 0V-12L0 -20L3 -12V0Z" transform="translate(181 52)" fill="#efe6d6" stroke="#cbb9a0" stroke-width=".8"/>
   <path d="M-3 0V-12L0 -20L3 -12V0Z" transform="translate(219 52)" fill="#efe6d6" stroke="#cbb9a0" stroke-width=".8"/>
-  <!-- guglia -->
   <path d="M184 52L200 10L216 52Z" fill="#7a5a5a"/><path d="M200 10L216 52H200Z" fill="#664646"/>
   <path d="M193 30H207M190 40H210" stroke="#8f6e6e" stroke-width="1" fill="none"/>
   <circle cx="200" cy="8" r="2.4" fill="#c9973f"/><path d="M200 6V1" stroke="#c9973f" stroke-width="1.2"/>
 
-  <!-- fontana e passanti -->
   <ellipse cx="200" cy="284" rx="40" ry="8" fill="#efe6d6"/><ellipse cx="200" cy="283" rx="34" ry="6" fill="#b7d3db"/><path d="M200 283V268M194 283L190 272M206 283L210 272" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".9"/>
   <g fill="#2a1f2d"><circle cx="110" cy="278" r="5"/><rect x="105" y="283" width="10" height="14" rx="4"/><circle cx="130" cy="280" r="5"/><rect x="125" y="285" width="10" height="12" rx="4"/><circle cx="272" cy="278" r="5"/><rect x="267" y="283" width="10" height="14" rx="4"/></g>
 </symbol>
 
-
 <!-- NAVIGLI -->
 <symbol id="s-navigli" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
   <defs>
-    <!-- due campate per piano: persiane verdi, finestra illuminata o spenta, ringhiera in ferro -->
     <pattern id="n-fl" x="0" y="18" width="28" height="30" patternUnits="userSpaceOnUse">
       <rect x="1.2" y="3.5" width="2.2" height="17" fill="#2f6b4f"/><rect x="10.6" y="3.5" width="2.2" height="17" fill="#2f6b4f"/>
       <rect x="3.4" y="3.5" width="7.2" height="17" fill="#ffd27a"/><path d="M7 3.5V20.5" stroke="#b9792f" stroke-width=".6"/>
@@ -462,7 +397,6 @@ footer a:hover{color:#fff}
     <linearGradient id="n-shade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34376f" stop-opacity="0"/><stop offset="1" stop-color="#34376f" stop-opacity=".38"/></linearGradient>
     <clipPath id="n-clip"><rect y="217" width="400" height="83"/></clipPath>
 
-    <!-- bottega con tenda a righe -->
     <g id="n-shop">
       <rect x="2" y="8" width="44" height="20" fill="#2a1f2d"/>
       <rect x="4" y="10" width="40" height="18" fill="#ffd88a"/>
@@ -471,7 +405,6 @@ footer a:hover{color:#fff}
       <path d="M0 10Q3 15 6 10Q9 15 12 10Q15 15 18 10Q21 15 24 10Q27 15 30 10Q33 15 36 10Q39 15 42 10Q45 15 48 10Z" fill="url(#n-awn)"/>
     </g>
 
-    <!-- tavolino con sedie -->
     <g id="n-tbl">
       <ellipse cx="0" cy="0" rx="9" ry="3" fill="#f8f1e6"/>
       <path d="M0 2V12M-5 12H5" stroke="#2a1f2d" stroke-width="1.6" fill="none"/>
@@ -479,9 +412,7 @@ footer a:hover{color:#fff}
       <circle cy="-2.2" r="1.6" fill="#ffd27a"/>
     </g>
 
-    <!-- fila di case di ringhiera -->
     <g id="n-row">
-      <!-- A: 3 piani -->
       <g transform="translate(4 0)">
         <path d="M-6 108L2 97H54L62 108Z" fill="url(#n-tile)"/>
         <rect x="-4" y="108" width="64" height="90" fill="#e7a77b"/>
@@ -490,7 +421,6 @@ footer a:hover{color:#fff}
         <rect x="-4" y="166" width="64" height="2" fill="#a96b4d"/>
         <use href="#n-shop" x="4" y="170"/>
       </g>
-      <!-- B: 4 piani -->
       <g transform="translate(68 0)">
         <rect x="58" y="70" width="8" height="12" fill="#8a4a40"/><rect x="56" y="68" width="12" height="3" fill="#5a2f27"/>
         <path d="M-6 78L2 67H82L90 78Z" fill="url(#n-tile)"/>
@@ -500,7 +430,6 @@ footer a:hover{color:#fff}
         <rect x="-4" y="166" width="92" height="2" fill="#a2543d"/>
         <use href="#n-shop" x="18" y="170"/>
       </g>
-      <!-- C: 3 piani -->
       <g transform="translate(160 0)">
         <path d="M-6 108L2 97H54L62 108Z" fill="url(#n-tile)"/>
         <rect x="-4" y="108" width="64" height="90" fill="#f0c987"/>
@@ -509,7 +438,6 @@ footer a:hover{color:#fff}
         <rect x="-4" y="166" width="64" height="2" fill="#b98f4a"/>
         <use href="#n-shop" x="4" y="170"/>
       </g>
-      <!-- D: 4 piani -->
       <g transform="translate(248 0)">
         <rect x="12" y="70" width="8" height="12" fill="#8a4a40"/><rect x="10" y="68" width="12" height="3" fill="#5a2f27"/>
         <path d="M-6 78L2 67H82L90 78Z" fill="url(#n-tile)"/>
@@ -519,7 +447,6 @@ footer a:hover{color:#fff}
         <rect x="-4" y="166" width="92" height="2" fill="#9a4e44"/>
         <use href="#n-shop" x="18" y="170"/>
       </g>
-      <!-- E: 3 piani -->
       <g transform="translate(340 0)">
         <path d="M-6 108L2 97H54L62 108Z" fill="url(#n-tile)"/>
         <rect x="-4" y="108" width="64" height="90" fill="#e8b890"/>
@@ -532,7 +459,6 @@ footer a:hover{color:#fff}
     </g>
   </defs>
 
-  <!-- cielo al tramonto, sole e campanile lontano nel vicolo -->
   <rect width="400" height="300" fill="url(#g-dusk)"/>
   <g fill="#fff" opacity=".22"><ellipse cx="70" cy="40" rx="50" ry="8"/><ellipse cx="330" cy="56" rx="44" ry="7"/></g>
   <circle cx="232" cy="112" r="56" fill="#ffd9a0" opacity=".25"/>
@@ -540,20 +466,16 @@ footer a:hover{color:#fff}
   <g fill="#6a4a78"><rect x="228" y="104" width="9" height="62"/><path d="M226 104L232.5 88L239 104Z"/></g>
   <rect x="231" y="116" width="3" height="6" fill="#ffd27a"/>
 
-  <!-- case -->
   <use href="#n-row"/>
 
-  <!-- alzaia in ciottoli -->
   <rect y="198" width="400" height="14" fill="url(#p-cobble)"/><rect y="198" width="400" height="14" fill="#2b3566" opacity=".32"/>
 
-  <!-- acqua con riflessi -->
   <rect y="217" width="400" height="83" fill="#2b3566"/>
   <g clip-path="url(#n-clip)"><use href="#n-row" transform="translate(0 396) scale(1 -1)" opacity=".3"/></g>
   <g stroke="#ffd9a0" stroke-linecap="round" stroke-width="2.5" opacity=".6"><path d="M222 228h20M226 238h12M220 249h24M228 262h8"/></g>
   <g stroke="#ffc58a" stroke-linecap="round" stroke-width="2.5" opacity=".6"><path d="M41 226h12M43 235h8M40 245h14M347 226h12M349 235h8M346 245h14"/></g>
   <g stroke="#5b66aa" stroke-width="1.3" stroke-linecap="round" opacity=".6" fill="none"><path d="M14 232q9-3 18 0M164 244q10-3 20 0M280 228q9-3 18 0M330 262q10-3 20 0M60 270q10-3 20 0M180 280q12-3 24 0"/></g>
 
-  <!-- barche ormeggiate -->
   <g transform="translate(70 232)">
     <ellipse cx="42" cy="17" rx="44" ry="3.5" fill="#141833" opacity=".55"/>
     <path d="M0 0H84L74 15H10Z" fill="#7a4b32"/>
@@ -568,10 +490,8 @@ footer a:hover{color:#fff}
     <path d="M34 0V-12" stroke="#2a1f2d" stroke-width="1.6" fill="none"/><circle cx="34" cy="-14" r="3" fill="#ffd27a"/>
   </g>
 
-  <!-- cordolo di pietra -->
   <rect y="212" width="400" height="5" fill="#b7a48f"/><rect y="217" width="400" height="1.5" fill="#6b5a52"/>
 
-  <!-- tavolini e passanti -->
   <use href="#n-tbl" transform="translate(30 202) scale(.8)"/><use href="#n-tbl" transform="translate(110 202) scale(.8)"/><use href="#n-tbl" transform="translate(188 203) scale(.8)"/><use href="#n-tbl" transform="translate(290 202) scale(.8)"/><use href="#n-tbl" transform="translate(368 203) scale(.8)"/>
   <g fill="#2a1f2d">
     <circle cx="140" cy="196" r="3.6"/><rect x="136.4" y="199.6" width="7.2" height="12" rx="3"/>
@@ -580,12 +500,10 @@ footer a:hover{color:#fff}
     <circle cx="326" cy="196" r="3.6"/><rect x="322.4" y="199.6" width="7.2" height="12" rx="3"/>
   </g>
 
-  <!-- lampioni -->
   <g stroke="#2a1f2d" fill="none" stroke-linecap="round" stroke-width="3"><path d="M36 213V146M36 148H46"/><path d="M364 213V146M364 148H354"/></g>
   <circle cx="47" cy="150" r="16" fill="#ffd27a" opacity=".22"/><circle cx="353" cy="150" r="16" fill="#ffd27a" opacity=".22"/>
   <circle cx="47" cy="150" r="5.5" fill="#ffd27a"/><circle cx="353" cy="150" r="5.5" fill="#ffd27a"/>
 
-  <!-- catenarie di lampadine sul canale -->
   <g fill="none" stroke-linecap="round">
     <path d="M0 128Q100 166 200 128Q300 166 400 128" stroke="#2f2230" stroke-width=".9"/>
     <path d="M0 128Q100 166 200 128Q300 166 400 128" stroke="#ffd27a" stroke-width="4" stroke-dasharray="1 12"/>
@@ -594,27 +512,27 @@ footer a:hover{color:#fff}
   </g>
 </symbol>
 
-  <!-- BOSCO VERTICALE -->
-  <symbol id="s-bosco" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
-    <rect width="400" height="300" fill="url(#g-morning)"/>
-    <g fill="#fff" opacity=".9"><ellipse cx="320" cy="60" rx="36" ry="10"/><ellipse cx="60" cy="90" rx="30" ry="9"/></g>
-    <g fill="#b9c3cb"><rect x="20" y="170" width="46" height="130"/><rect x="330" y="150" width="56" height="150"/></g>
-    <rect x="212" y="78" width="64" height="222" fill="url(#p-bosco)"/>
-    <rect x="266" y="78" width="10" height="222" fill="#10171f" opacity=".55"/>
-    <rect x="212" y="72" width="64" height="6" fill="#2a3441"/>
-    <rect x="118" y="24" width="82" height="276" fill="url(#p-bosco)"/>
-    <rect x="188" y="24" width="12" height="276" fill="#10171f" opacity=".55"/>
-    <rect x="118" y="18" width="82" height="6" fill="#2a3441"/>
-    <rect x="118" y="24" width="2" height="276" fill="#fff" opacity=".25"/>
-    <g fill="#3d7a51"><circle cx="126" cy="16" r="9"/><circle cx="148" cy="12" r="8"/><circle cx="168" cy="15" r="9"/><circle cx="190" cy="14" r="9"/><circle cx="222" cy="70" r="8"/><circle cx="246" cy="66" r="9"/><circle cx="268" cy="70" r="8"/></g>
-    <g fill="#58a06a"><circle cx="138" cy="10" r="5"/><circle cx="180" cy="8" r="5"/><circle cx="236" cy="62" r="5"/></g>
-    <rect y="268" width="400" height="32" fill="#a89d92"/>
-    <g fill="#3d7a51"><circle cx="40" cy="266" r="16"/><circle cx="355" cy="264" r="18"/><circle cx="290" cy="270" r="12"/></g>
-    <g stroke="#2a1f2d" stroke-width="3" fill="none"><circle cx="90" cy="284" r="9"/><circle cx="122" cy="284" r="9"/><path d="M90 284L102 270H114L122 284M102 270L98 262"/></g>
-  </symbol>
+<!-- BOSCO VERTICALE -->
+<symbol id="s-bosco" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+  <rect width="400" height="300" fill="url(#g-morning)"/>
+  <g fill="#fff" opacity=".9"><ellipse cx="320" cy="60" rx="36" ry="10"/><ellipse cx="60" cy="90" rx="30" ry="9"/></g>
+  <g fill="#b9c3cb"><rect x="20" y="170" width="46" height="130"/><rect x="330" y="150" width="56" height="150"/></g>
+  <rect x="212" y="78" width="64" height="222" fill="url(#p-bosco)"/>
+  <rect x="266" y="78" width="10" height="222" fill="#10171f" opacity=".55"/>
+  <rect x="212" y="72" width="64" height="6" fill="#2a3441"/>
+  <rect x="118" y="24" width="82" height="276" fill="url(#p-bosco)"/>
+  <rect x="188" y="24" width="12" height="276" fill="#10171f" opacity=".55"/>
+  <rect x="118" y="18" width="82" height="6" fill="#2a3441"/>
+  <rect x="118" y="24" width="2" height="276" fill="#fff" opacity=".25"/>
+  <g fill="#3d7a51"><circle cx="126" cy="16" r="9"/><circle cx="148" cy="12" r="8"/><circle cx="168" cy="15" r="9"/><circle cx="190" cy="14" r="9"/><circle cx="222" cy="70" r="8"/><circle cx="246" cy="66" r="9"/><circle cx="268" cy="70" r="8"/></g>
+  <g fill="#58a06a"><circle cx="138" cy="10" r="5"/><circle cx="180" cy="8" r="5"/><circle cx="236" cy="62" r="5"/></g>
+  <rect y="268" width="400" height="32" fill="#a89d92"/>
+  <g fill="#3d7a51"><circle cx="40" cy="266" r="16"/><circle cx="355" cy="264" r="18"/><circle cx="290" cy="270" r="12"/></g>
+  <g stroke="#2a1f2d" stroke-width="3" fill="none"><circle cx="90" cy="284" r="9"/><circle cx="122" cy="284" r="9"/><path d="M90 284L102 270H114L122 284M102 270L98 262"/></g>
+</symbol>
 
-  <!-- TRAM -->
-  <symbol id="s-tram" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+<!-- TRAM -->
+<symbol id="s-tram" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
   <rect width="400" height="300" fill="url(#g-warm)"/>
   <g><rect x="0" y="36" width="120" height="200" fill="#e0a57a"/><rect x="120" y="66" width="120" height="170" fill="#d38a6f"/><rect x="240" y="26" width="160" height="210" fill="#ecc090"/></g>
   <g fill="url(#p-win)"><rect x="0" y="40" width="120" height="190"/><rect x="120" y="70" width="120" height="160"/><rect x="240" y="30" width="160" height="200"/></g>
@@ -641,32 +559,28 @@ footer a:hover{color:#fff}
   <rect x="314" y="144" width="24" height="60" rx="3" fill="#c76a1c"/><rect x="318" y="148" width="16" height="32" rx="2" fill="#31405f"/><path d="M326 148V180" stroke="#1d2640" stroke-width="1.5"/>
   <rect x="318" y="126" width="24" height="11" rx="2" fill="#f8f1e6"/><text x="330" y="135" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-weight="700" font-size="9" fill="#2a1f2d">1928</text>
   <circle cx="346" cy="186" r="5" fill="#fff3c9"/><rect x="342" y="204" width="11" height="6" rx="2" fill="#2a1f2d"/><path d="M58 204V216M344 204V216" stroke="#6b3320" stroke-width="2"/>
-  </symbol>
+</symbol>
 
 <!-- TORRE VELASCA -->
 <symbol id="s-velasca" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
   <defs>
     <pattern id="v-w" width="8" height="9" patternUnits="userSpaceOnUse"><rect x="1.6" y="2" width="4.8" height="5.4" fill="#2b2233"/></pattern>
-    <pattern id="v-wl" width="40" height="36" patternUnits="userSpaceOnUse"><path d="M1.6 2h4.8v5.4H1.6zM25.6 2h4.8v5.4h-4.8zM9.6 11h4.8v5.4H9.6zM33.6 11h4.8v5.4h-4.8zM17.6 20h4.8v5.4h-4.8zM1.6 20h4.8v5.4H1.6zM9.6 29h4.8v5.4H9.6zM33.6 29h4.8v5.4h-4.8z" fill="#ffd27a"/></pattern>
+    <pattern id="v-wl" width="40" height="36" patternUnits="userSpaceOnUse"><path d="M1.6 2h4.8v5.4H1.6zM25.6 2h4.8v5.4h-4.8zM9.6 11h4.8v5.4H9.6zM33.6 11h4.8v5.4H33.6zM17.6 20h4.8v5.4h-4.8zM1.6 20h4.8v5.4H1.6zM9.6 29h4.8v5.4H9.6zM33.6 29h4.8v5.4h-4.8z" fill="#ffd27a"/></pattern>
     <linearGradient id="v-sh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".12"/><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></linearGradient>
   </defs>
 
-  <!-- cielo -->
   <rect width="400" height="300" fill="url(#g-night)"/>
   <g fill="#fff" opacity=".85"><circle cx="40" cy="40" r="1.8"/><circle cx="90" cy="80" r="1.4"/><circle cx="360" cy="40" r="1.8"/><circle cx="372" cy="120" r="1.3"/><circle cx="280" cy="30" r="1.4"/><circle cx="60" cy="150" r="1.2"/><circle cx="140" cy="30" r="1.5"/><circle cx="110" cy="120" r="1.1"/></g>
   <circle cx="324" cy="76" r="22" fill="#fff3c9"/><circle cx="334" cy="70" r="20" fill="#1f2248"/>
 
-  <!-- edifici bassi ai lati -->
   <g fill="#1a1838"><rect x="0" y="214" width="104" height="60"/><rect x="296" y="206" width="104" height="68"/><rect x="96" y="240" width="60" height="34"/><rect x="244" y="236" width="58" height="38"/></g>
   <g fill="url(#p-win-lit)" opacity=".7"><rect x="4" y="220" width="96" height="50"/><rect x="300" y="212" width="96" height="58"/></g>
 
-  <!-- fusto stretto -->
   <rect x="168" y="126" width="64" height="135" fill="#b78a70"/>
   <rect x="168" y="126" width="64" height="135" fill="url(#v-w)"/>
   <rect x="168" y="126" width="64" height="135" fill="url(#v-wl)"/>
   <rect x="168" y="126" width="64" height="135" fill="url(#v-sh)"/>
 
-  <!-- zona di transizione: i puntoni diagonali -->
   <path d="M152 108H248L232 126H168Z" fill="#2c2230"/>
   <g fill="#c9a085" stroke="#7d5a48" stroke-width=".8" stroke-linejoin="round">
     <path d="M169.5 126H174.5L157.5 108H152.5Z"/>
@@ -677,46 +591,42 @@ footer a:hover{color:#fff}
   </g>
   <rect x="150" y="106" width="100" height="3" fill="#8a6a58"/>
 
-  <!-- volume superiore a sbalzo -->
   <rect x="152" y="45" width="96" height="63" fill="#b78a70"/>
   <rect x="152" y="45" width="96" height="63" fill="url(#v-w)"/>
   <rect x="152" y="45" width="96" height="63" fill="url(#v-wl)"/>
   <rect x="152" y="45" width="96" height="63" fill="url(#v-sh)"/>
   <rect x="150" y="43" width="100" height="3" fill="#cfa88c"/>
 
-  <!-- tetto basso a padiglione e antenna -->
   <path d="M150 43L162 33H238L250 43Z" fill="#5a4650"/>
   <rect x="182" y="25" width="36" height="8" fill="#4a3a44"/>
   <path d="M200 25V9" stroke="#cfd6e6" stroke-width="2"/><circle cx="200" cy="8" r="2" fill="#ff4b3a"/><circle cx="200" cy="8" r="6" fill="#ff4b3a" opacity=".22"/>
 
-  <!-- podio con negozi -->
   <rect x="148" y="240" width="104" height="21" fill="#7e6052"/>
   <rect x="146" y="238" width="108" height="3" fill="#a07f6c"/>
   <path d="M156 261V249h10v12zM172 261V249h10v12zM188 261V249h10v12zM204 261V249h10v12zM220 261V249h10v12zM236 261V249h8v12z" fill="#ffd27a" opacity=".85"/>
 
-  <!-- strada e lampione -->
   <rect y="261" width="400" height="39" fill="#141230"/>
   <path d="M64 268V232M64 234H74" stroke="#0e0c22" stroke-width="3" fill="none" stroke-linecap="round"/>
   <circle cx="75" cy="236" r="4" fill="#ffd27a"/><circle cx="75" cy="236" r="14" fill="#ffd27a" opacity=".2"/>
   <g fill="#ffd27a" opacity=".8"><circle cx="110" cy="282" r="2.4"/><circle cx="290" cy="284" r="2.4"/><circle cx="340" cy="280" r="2.4"/></g>
 </symbol>
 
-  <!-- APERITIVO -->
-  <symbol id="s-aperitivo" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
-    <rect width="400" height="300" fill="url(#g-warm)"/>
-    <path d="M0 60Q100 100 200 60T400 60" stroke="#fff3c9" stroke-width="6" stroke-dasharray="1 14" stroke-linecap="round" fill="none"/>
-    <g><path d="M358 270V70" stroke="#2f2230" stroke-width="6"/><path d="M340 70h36l-6 -26h-24z" fill="#2f2230"/><rect x="346" y="48" width="24" height="20" fill="#ffd27a"/></g>
-    <rect y="236" width="400" height="64" fill="url(#p-cobble)"/>
-    <rect x="30" y="214" width="320" height="22" rx="6" fill="#7a4b32"/>
-    <ellipse cx="86" cy="206" rx="46" ry="10" fill="#f8f1e6"/>
-    <g fill="#6c7a2b"><circle cx="70" cy="200" r="8"/><circle cx="90" cy="198" r="8"/><circle cx="106" cy="202" r="8"/></g><g fill="#c0392b"><circle cx="70" cy="200" r="2.6"/><circle cx="90" cy="198" r="2.6"/><circle cx="106" cy="202" r="2.6"/></g>
-    <path d="M168 78H268Q268 160 218 176Q168 160 168 78Z" fill="#ef5a2a"/>
-    <path d="M168 78H268" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".6"/>
-    <g fill="#fff" opacity=".5"><rect x="186" y="104" width="22" height="22" rx="4" transform="rotate(-12 197 115)"/><rect x="224" y="118" width="22" height="22" rx="4" transform="rotate(10 235 129)"/></g>
-    <g><circle cx="270" cy="76" r="24" fill="#ffb347"/><circle cx="270" cy="76" r="18" fill="#ffd27a"/><path d="M270 58V94M252 76H288M257 63L283 89M283 63L257 89" stroke="#ffb347" stroke-width="2"/></g>
-    <rect x="214" y="176" width="8" height="34" fill="#f8f1e6" opacity=".9"/><ellipse cx="218" cy="212" rx="34" ry="6" fill="#f8f1e6" opacity=".9"/>
-    <path d="M232 60L250 26" stroke="#2a1f2d" stroke-width="4" stroke-linecap="round"/>
-  </symbol>
+<!-- APERITIVO -->
+<symbol id="s-aperitivo" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+  <rect width="400" height="300" fill="url(#g-warm)"/>
+  <path d="M0 60Q100 100 200 60T400 60" stroke="#fff3c9" stroke-width="6" stroke-dasharray="1 14" stroke-linecap="round" fill="none"/>
+  <g><path d="M358 270V70" stroke="#2f2230" stroke-width="6"/><path d="M340 70h36l-6 -26h-24z" fill="#2f2230"/><rect x="346" y="48" width="24" height="20" fill="#ffd27a"/></g>
+  <rect y="236" width="400" height="64" fill="url(#p-cobble)"/>
+  <rect x="30" y="214" width="320" height="22" rx="6" fill="#7a4b32"/>
+  <ellipse cx="86" cy="206" rx="46" ry="10" fill="#f8f1e6"/>
+  <g fill="#6c7a2b"><circle cx="70" cy="200" r="8"/><circle cx="90" cy="198" r="8"/><circle cx="106" cy="202" r="8"/></g><g fill="#c0392b"><circle cx="70" cy="200" r="2.6"/><circle cx="90" cy="198" r="2.6"/><circle cx="106" cy="202" r="2.6"/></g>
+  <path d="M168 78H268Q268 160 218 176Q168 160 168 78Z" fill="#ef5a2a"/>
+  <path d="M168 78H268" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+  <g fill="#fff" opacity=".5"><rect x="186" y="104" width="22" height="22" rx="4" transform="rotate(-12 197 115)"/><rect x="224" y="118" width="22" height="22" rx="4" transform="rotate(10 235 129)"/></g>
+  <g><circle cx="270" cy="76" r="24" fill="#ffb347"/><circle cx="270" cy="76" r="18" fill="#ffd27a"/><path d="M270 58V94M252 76H288M257 63L283 89M283 63L257 89" stroke="#ffb347" stroke-width="2"/></g>
+  <rect x="214" y="176" width="8" height="34" fill="#f8f1e6" opacity=".9"/><ellipse cx="218" cy="212" rx="34" ry="6" fill="#f8f1e6" opacity=".9"/>
+  <path d="M232 60L250 26" stroke="#2a1f2d" stroke-width="4" stroke-linecap="round"/>
+</symbol>
 
 <!-- PORTA NUOVA -->
 <symbol id="s-porta" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
@@ -728,24 +638,20 @@ footer a:hover{color:#fff}
     <linearGradient id="pn-ug" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a9bbd9"/><stop offset=".5" stop-color="#6d8bbd"/><stop offset="1" stop-color="#3d5688"/></linearGradient>
   </defs>
 
-  <!-- cielo, sole basso e nuvole -->
   <rect width="400" height="300" fill="url(#g-dusk)"/>
   <circle cx="60" cy="176" r="52" fill="#ffd9a0" opacity=".22"/>
   <circle cx="60" cy="176" r="30" fill="#ffd9a0" opacity=".92"/>
   <g fill="#fff" opacity=".2"><ellipse cx="300" cy="50" rx="52" ry="7"/><ellipse cx="90" cy="80" rx="40" ry="6"/></g>
 
-  <!-- edifici lontani -->
   <g fill="#3a3a78" opacity=".75"><rect x="0" y="192" width="38" height="76"/><rect x="38" y="216" width="30" height="52"/><rect x="154" y="204" width="22" height="64"/><rect x="224" y="214" width="20" height="54"/><rect x="288" y="206" width="26" height="62"/><rect x="368" y="200" width="32" height="68"/></g>
   <g fill="url(#p-win-lit)" opacity=".35"><rect x="2" y="198" width="34" height="66"/><rect x="156" y="210" width="18" height="54"/><rect x="290" y="212" width="22" height="54"/><rect x="370" y="206" width="28" height="58"/></g>
 
-  <!-- TORRE DIAMANTE: prisma sfaccettato -->
   <path d="M104 268V134L152 112V268Z" fill="#7189ad"/>
   <path d="M104 268V134L152 112V268Z" fill="url(#pn-dia)"/>
   <path d="M104 268V134L152 112V268Z" fill="url(#pn-lit)" opacity=".5"/>
   <path d="M104 134L128 123V268H104Z" fill="#fff" opacity=".1"/>
   <path d="M104 268V134L152 112" fill="none" stroke="#dce6f6" stroke-width="1" opacity=".6"/>
 
-  <!-- TORRE SOLARIA: terrazze verdi e tetto con pannelli -->
   <rect x="244" y="108" width="44" height="160" fill="#4c5b87"/>
   <rect x="244" y="108" width="44" height="160" fill="url(#pn-fin)"/>
   <rect x="244" y="108" width="44" height="160" fill="url(#pn-lit)" opacity=".35"/>
@@ -753,12 +659,10 @@ footer a:hover{color:#fff}
   <path d="M244 108L284 98L288 108Z" fill="#1f2a4d"/>
   <path d="M244 108H288" stroke="#cfd8ea" stroke-width="1.4"/>
 
-  <!-- BOSCO VERTICALE -->
   <rect x="312" y="142" width="28" height="126" fill="url(#p-bosco)"/><rect x="333" y="142" width="7" height="126" fill="#10171f" opacity=".5"/>
   <rect x="346" y="184" width="22" height="84" fill="url(#p-bosco)"/><rect x="362" y="184" width="6" height="84" fill="#10171f" opacity=".5"/>
   <g fill="#3d7a51"><circle cx="318" cy="140" r="6"/><circle cx="330" cy="138" r="6"/><circle cx="352" cy="182" r="5"/><circle cx="362" cy="181" r="5"/></g>
 
-  <!-- TORRE UNICREDIT: fusto, corona rastremata e guglia -->
   <path d="M176 268V104H224V268Z" fill="url(#pn-ug)"/>
   <rect x="176" y="104" width="48" height="164" fill="url(#pn-gl)"/>
   <rect x="176" y="104" width="48" height="164" fill="url(#pn-lit)" opacity=".6"/>
@@ -770,7 +674,6 @@ footer a:hover{color:#fff}
   <rect x="197" y="40" width="6" height="4" fill="#cfd8ea"/>
   <circle cx="200" cy="7" r="6" fill="#ff4b3a" opacity=".25"/><circle cx="200" cy="7" r="2" fill="#ff4b3a"/>
 
-  <!-- PIAZZA GAE AULENTI: basamento curvo, fontana, padiglione -->
   <rect y="268" width="400" height="32" fill="#1a1838"/>
   <path d="M290 247C298 230 334 228 340 247Z" fill="#b97a4c"/>
   <path d="M302 244C310 234 326 233 334 244" fill="none" stroke="#ffe2b0" stroke-width="1.2"/>
@@ -780,54 +683,53 @@ footer a:hover{color:#fff}
   <path d="M14 252Q200 230 386 252" fill="none" stroke="#ffd27a" stroke-width="2.4"/>
   <path d="M14 249Q200 227 386 249" fill="none" stroke="#fff3c9" stroke-width="3.2" stroke-dasharray="1 15" stroke-linecap="round"/>
 
-  <!-- passanti e luci a terra -->
   <g fill="#ffd27a"><circle cx="40" cy="284" r="2.6"/><circle cx="120" cy="288" r="2.6"/><circle cx="260" cy="286" r="2.6"/><circle cx="350" cy="284" r="2.6"/></g>
   <g fill="#0e0c22"><circle cx="90" cy="278" r="3.6"/><rect x="86.4" y="281.6" width="7.2" height="12" rx="3"/><circle cx="100" cy="279" r="3.4"/><rect x="96.6" y="282.4" width="6.8" height="11" rx="3"/><circle cx="300" cy="278" r="3.6"/><rect x="296.4" y="281.6" width="7.2" height="12" rx="3"/></g>
 </symbol>
 
-  <!-- AVATAR PARTECIPANTI (colori via variabili CSS: --bg --skin --hair --cloth --hat --accent) -->
-  <symbol id="av1" viewBox="0 0 120 120">
-    <rect width="120" height="120" fill="var(--bg)"/>
-    <path d="M18 120C20 94 40 84 60 84S100 94 102 120Z" fill="var(--cloth)"/>
-    <rect x="52" y="70" width="16" height="18" rx="6" fill="var(--skin)"/>
-    <ellipse cx="60" cy="54" rx="22" ry="25" fill="var(--skin)"/>
-    <path d="M37 52C34 28 50 21 62 21S88 29 83 52C79 42 71 38 60 38S42 42 37 52Z" fill="var(--hair)"/>
-    <g fill="none" stroke="#2a1f2d" stroke-width="2.4"><circle cx="51" cy="56" r="7"/><circle cx="69" cy="56" r="7"/><path d="M58 56h4"/></g>
-    <circle cx="51" cy="56" r="2" fill="#2a1f2d"/><circle cx="69" cy="56" r="2" fill="#2a1f2d"/>
-    <path d="M52 70Q60 76 68 70" stroke="#2a1f2d" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-  </symbol>
-  <symbol id="av2" viewBox="0 0 120 120">
-    <rect width="120" height="120" fill="var(--bg)"/>
-    <path d="M32 60C28 26 46 16 60 16S92 26 88 60V94H32Z" fill="var(--hair)"/>
-    <path d="M18 120C20 94 40 84 60 84S100 94 102 120Z" fill="var(--cloth)"/>
-    <rect x="52" y="70" width="16" height="18" rx="6" fill="var(--skin)"/>
-    <ellipse cx="60" cy="54" rx="22" ry="25" fill="var(--skin)"/>
-    <path d="M37 50C40 32 54 30 60 30S80 32 83 50C75 42 67 38 60 38S45 42 37 50Z" fill="var(--hair)"/>
-    <circle cx="51" cy="56" r="2.2" fill="#2a1f2d"/><circle cx="69" cy="56" r="2.2" fill="#2a1f2d"/>
-    <circle cx="38" cy="66" r="3" fill="#c9973f"/><circle cx="82" cy="66" r="3" fill="#c9973f"/>
-    <path d="M52 69Q60 76 68 69" stroke="#2a1f2d" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-  </symbol>
-  <symbol id="av3" viewBox="0 0 120 120">
-    <rect width="120" height="120" fill="var(--bg)"/>
-    <path d="M18 120C20 94 40 84 60 84S100 94 102 120Z" fill="var(--cloth)"/>
-    <rect x="52" y="70" width="16" height="18" rx="6" fill="var(--skin)"/>
-    <ellipse cx="60" cy="54" rx="22" ry="25" fill="var(--skin)"/>
-    <path d="M36 46C36 22 48 16 60 16S84 22 84 46Z" fill="var(--hat)"/>
-    <rect x="34" y="42" width="52" height="11" rx="5.5" fill="var(--accent)"/>
-    <circle cx="60" cy="14" r="6" fill="var(--accent)"/>
-    <circle cx="51" cy="60" r="2.2" fill="#2a1f2d"/><circle cx="69" cy="60" r="2.2" fill="#2a1f2d"/>
-    <path d="M50 70Q60 80 70 70" stroke="#2a1f2d" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-  </symbol>
-  <symbol id="av4" viewBox="0 0 120 120">
-    <rect width="120" height="120" fill="var(--bg)"/>
-    <path d="M18 120C20 94 40 84 60 84S100 94 102 120Z" fill="var(--cloth)"/>
-    <rect x="52" y="70" width="16" height="18" rx="6" fill="var(--skin)"/>
-    <ellipse cx="60" cy="54" rx="22" ry="25" fill="var(--skin)"/>
-    <g fill="var(--hair)"><circle cx="38" cy="44" r="11"/><circle cx="46" cy="30" r="12"/><circle cx="60" cy="25" r="13"/><circle cx="74" cy="30" r="12"/><circle cx="82" cy="44" r="11"/></g>
-    <path d="M40 86Q60 98 80 86L84 98Q60 112 36 98Z" fill="var(--accent)"/>
-    <circle cx="51" cy="58" r="2.2" fill="#2a1f2d"/><circle cx="69" cy="58" r="2.2" fill="#2a1f2d"/>
-    <path d="M52 70Q60 77 68 70" stroke="#2a1f2d" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-  </symbol>
+<!-- AVATAR PARTECIPANTI -->
+<symbol id="av1" viewBox="0 0 120 120">
+  <rect width="120" height="120" fill="var(--bg)"/>
+  <path d="M18 120C20 94 40 84 60 84S100 94 102 120Z" fill="var(--cloth)"/>
+  <rect x="52" y="70" width="16" height="18" rx="6" fill="var(--skin)"/>
+  <ellipse cx="60" cy="54" rx="22" ry="25" fill="var(--skin)"/>
+  <path d="M37 52C34 28 50 21 62 21S88 29 83 52C79 42 71 38 60 38S42 42 37 52Z" fill="var(--hair)"/>
+  <g fill="none" stroke="#2a1f2d" stroke-width="2.4"><circle cx="51" cy="56" r="7"/><circle cx="69" cy="56" r="7"/><path d="M58 56h4"/></g>
+  <circle cx="51" cy="56" r="2" fill="#2a1f2d"/><circle cx="69" cy="56" r="2" fill="#2a1f2d"/>
+  <path d="M52 70Q60 76 68 70" stroke="#2a1f2d" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+</symbol>
+<symbol id="av2" viewBox="0 0 120 120">
+  <rect width="120" height="120" fill="var(--bg)"/>
+  <path d="M32 60C28 26 46 16 60 16S92 26 88 60V94H32Z" fill="var(--hair)"/>
+  <path d="M18 120C20 94 40 84 60 84S100 94 102 120Z" fill="var(--cloth)"/>
+  <rect x="52" y="70" width="16" height="18" rx="6" fill="var(--skin)"/>
+  <ellipse cx="60" cy="54" rx="22" ry="25" fill="var(--skin)"/>
+  <path d="M37 50C40 32 54 30 60 30S80 32 83 50C75 42 67 38 60 38S45 42 37 50Z" fill="var(--hair)"/>
+  <circle cx="51" cy="56" r="2.2" fill="#2a1f2d"/><circle cx="69" cy="56" r="2.2" fill="#2a1f2d"/>
+  <circle cx="38" cy="66" r="3" fill="#c9973f"/><circle cx="82" cy="66" r="3" fill="#c9973f"/>
+  <path d="M52 69Q60 76 68 69" stroke="#2a1f2d" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+</symbol>
+<symbol id="av3" viewBox="0 0 120 120">
+  <rect width="120" height="120" fill="var(--bg)"/>
+  <path d="M18 120C20 94 40 84 60 84S100 94 102 120Z" fill="var(--cloth)"/>
+  <rect x="52" y="70" width="16" height="18" rx="6" fill="var(--skin)"/>
+  <ellipse cx="60" cy="54" rx="22" ry="25" fill="var(--skin)"/>
+  <path d="M36 46C36 22 48 16 60 16S84 22 84 46Z" fill="var(--hat)"/>
+  <rect x="34" y="42" width="52" height="11" rx="5.5" fill="var(--accent)"/>
+  <circle cx="60" cy="14" r="6" fill="var(--accent)"/>
+  <circle cx="51" cy="60" r="2.2" fill="#2a1f2d"/><circle cx="69" cy="60" r="2.2" fill="#2a1f2d"/>
+  <path d="M50 70Q60 80 70 70" stroke="#2a1f2d" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+</symbol>
+<symbol id="av4" viewBox="0 0 120 120">
+  <rect width="120" height="120" fill="var(--bg)"/>
+  <path d="M18 120C20 94 40 84 60 84S100 94 102 120Z" fill="var(--cloth)"/>
+  <rect x="52" y="70" width="16" height="18" rx="6" fill="var(--skin)"/>
+  <ellipse cx="60" cy="54" rx="22" ry="25" fill="var(--skin)"/>
+  <g fill="var(--hair)"><circle cx="38" cy="44" r="11"/><circle cx="46" cy="30" r="12"/><circle cx="60" cy="25" r="13"/><circle cx="74" cy="30" r="12"/><circle cx="82" cy="44" r="11"/></g>
+  <path d="M40 86Q60 98 80 86L84 98Q60 112 36 98Z" fill="var(--accent)"/>
+  <circle cx="51" cy="58" r="2.2" fill="#2a1f2d"/><circle cx="69" cy="58" r="2.2" fill="#2a1f2d"/>
+  <path d="M52 70Q60 77 68 70" stroke="#2a1f2d" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+</symbol>
 </svg>
 
 <script>
@@ -850,11 +752,9 @@ footer a:hover{color:#fff}
     return el('path',at);
   }
 
-  /* 1. Ottagono in fondo e braccio opposto */
   arch(ZE,0,WH,'url(#gv-end)');
   arch(FAR,0,WH,'#ffffff',{stroke:'#e6cd96','stroke-width':.8});
 
-  /* 2. Pavimento a mosaico */
   quad(P(-1,0,ZS),P(1,0,ZS),P(1,0,FAR),P(-1,0,FAR),'#e8d6ae');
   var i=0,j,z0,z1,fill,x0;
   for(z0=ZS;z0<ZE;z0+=.62,i++){
@@ -874,7 +774,6 @@ footer a:hover{color:#fff}
     disc(m[0],m[1],'#7a2f24');disc(m[0],m[1]*.82,'#f3e8cc');disc(m[0],m[1]*.62,'#2f6b4f');disc(m[0],m[1]*.34,'#c9973f');
   });
 
-  /* 3. Pareti: vetrine, balconi, finestre, lesene, cornicione */
   var SIGN=['#a9372a','#1f4a3a','#1f2a4d','#9a6f1f'];
   [-1,1].forEach(function(s){
     var L=s<0,k,zk,a,b,m,q;
@@ -904,7 +803,6 @@ footer a:hover{color:#fff}
     if(L)wall(s,0,2.76,ZS,ZE,'#2a1f2d',{opacity:.14});
   });
 
-  /* 4. Volta di ferro e vetro: costoloni longitudinali e archi trasversali */
   for(var ang=15;ang<=165;ang+=15){
     var t=ang*Math.PI/180,X=Math.cos(t),Y=WH+Math.sin(t);
     el('path',{d:'M'+pt(P(X,Y,.6))+'L'+pt(P(X,Y,ZE)),stroke:RIB,'stroke-width':.8,opacity:.6,fill:'none'});
@@ -919,10 +817,8 @@ footer a:hover{color:#fff}
     if(q2<11)rib(zr+.31,F*.03/(zr+.31));
   }
 
-  /* 5. Raggi di sole dalla volta */
   poly([[70,0],[125,0],[232,300],[140,300]],'#fff8dc',{opacity:.13});
 
-  /* 6. Passanti (dal fondo verso di noi) */
   [[0,6.2,'#1f2a4d'],[-.45,5.2,'#8c2f2a'],[.5,4.4,'#2f6b4f'],[.05,3.6,'#2a1f2d'],[-.62,3.0,'#c9973f'],
    [.3,2.3,'#3a2a4a'],[.66,1.7,'#2a1f2d'],[-.38,1.35,'#8c2f2a'],[.15,1.0,'#1f2a4d']].forEach(function(p){
     var u=F/p[1],c=P(p[0],0,p[1]),w=.075*u,h=.19*u,r=.028*u;
@@ -969,35 +865,26 @@ footer a:hover{color:#fff}
   </div>
   <div class="layer l1" id="L1"></div>
   <div class="layer l2" id="L2"></div>
-  <div class="layer l3" id="L3"></div>
 </div>
 
 <!-- ===== NAV ===== -->
 <nav id="nav">
   <div class="wrap nav-in">
-    <a class="logo" href="#top" aria-label="Milano a Passo Lento, torna all'inizio">
+    <a class="logo" href="#top" aria-label="Ciao bella Milano, torna all'inizio">
       <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#ef5a2a"/><path d="M32 12l4 12v28h-8V24z" fill="#fff3e6"/><circle cx="32" cy="10" r="3.5" fill="#ffd27a"/><path d="M14 52V36l8-6v22zM50 52V36l-8-6v22z" fill="#fff3e6" opacity=".8"/></svg>
-      Milano a Passo Lento
+      Ciao bella Milano
     </a>
-    <ul class="nav-links">
-      <li><a href="#progetto">Il progetto</a></li>
-      <li><a href="#come">Come funziona</a></li>
-      <li><a href="#partecipanti">Partecipanti</a></li>
-    </ul>
   </div>
 </nav>
 
-<!-- ===== HERO: prima solo il titolo, poi (scorrendo) sfuma lo sfondo e compare il sottotitolo ===== -->
+<!-- ===== HERO ===== -->
 <header class="hero" id="top">
   <div class="stage" id="stage">
     <div class="stage-in" id="stageIn">
       <h1 id="heroTitle">Milano si scopre <em>a piedi</em>, e meglio in compagnia.</h1>
       <div class="sub" id="heroSub">
         <span class="eyebrow">Social walking tour · Milano</span>
-        <p class="lead">Passeggiate di gruppo tra cortili nascosti, botteghe, navigli e grattacieli. Si cammina piano, si fanno due chiacchiere con sconosciuti che non lo restano a lungo, e si finisce sempre con un brindisi.</p>
-        <div class="hero-cta">
-          <a class="btn btn-ghost" href="#progetto">Come nasce il progetto</a>
-        </div>
+        <p class="lead">Passeggiate di gruppo tra cortili nascosti, botteghe, navigli e grattacieli. Si cammina piano, si fanno due chiacchiere con sconosciuti che non lo restano a lungo.</p>
         <div class="chips" aria-label="In breve">
           <span class="chip">👟 Passo lento</span>
           <span class="chip">👥 Gruppi piccoli</span>
@@ -1015,14 +902,12 @@ footer a:hover{color:#fff}
   <div class="wrap about">
     <div class="reveal">
       <span class="eyebrow">Il progetto</span>
-      <h2>Una città si capisce con le <em>scarpe</em>, non con la mappa.</h2>
-      <p>Milano a Passo Lento nasce da una convinzione semplice: la città più veloce d'Italia dà il meglio quando la si attraversa piano. Ogni passeggiata è un piccolo racconto, costruito a mano: storie vere, cortili che si aprono solo se sai dove bussare, il bar giusto al momento giusto.</p>
-      <p>Non è una visita guidata da cartolina. È una camminata tra persone curiose, con un ritmo gentile e tanto spazio per le domande, le deviazioni e le risate.</p>
+      <h2>Per noi, che sappiamo che Milano è <em>bellezza nascosta</em>, che può scoprire solo chi ha pazienza.</h2>
       <div class="values">
-        <div class="value"><strong>Percorsi su misura</strong><span>Ogni tappa è studiata e provata a piedi, più volte.</span></div>
-        <div class="value"><strong>Gruppi raccolti</strong><span>Pochi partecipanti, nessuna folla con l'ombrellino.</span></div>
-        <div class="value"><strong>Storie, non date</strong><span>Aneddoti, persone e luoghi invece di elenchi.</span></div>
-        <div class="value"><strong>Si finisce insieme</strong><span>Un brindisi per chiudere e scambiarsi i consigli.</span></div>
+        <div class="value"><strong>Si catturano dettagli che normalmente non vedremmo.</strong></div>
+        <div class="value"><strong>Ci si pongono domande ad ogni nuova scoperta.</strong></div>
+        <div class="value"><strong>Si scoprono storie, della città e di chi cammina con noi</strong></div>
+        <div class="value"><strong>Si cammina insieme, con spirito di apertura.</strong></div>
       </div>
     </div>
     <div class="cards-stack reveal">
@@ -1034,47 +919,19 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<!-- ===== COME FUNZIONA ===== -->
-<section id="come">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Come funziona</span>
-      <h2>Tre mosse, poi <em>si cammina</em></h2>
-    </div>
-    <div class="steps">
-      <div class="step reveal">
-        <svg viewBox="0 0 64 64" fill="none" stroke="#2a1f2d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="14" width="44" height="40" rx="6" fill="#ffd9b0"/><path d="M10 26h44M22 8v12M42 8v12"/><path d="M24 40l6 6 12-14" stroke="#ef5a2a"/></svg>
-        <h3>Iscriviti</h3>
-        <p>Compila il modulo di iscrizione e scegli la passeggiata che ti ispira. Ti confermiamo il posto con punto d'incontro e tutti i dettagli.</p>
-      </div>
-      <div class="step reveal">
-        <svg viewBox="0 0 64 64" fill="none" stroke="#2a1f2d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 56S14 40 14 26a18 18 0 0 1 36 0c0 14-18 30-18 30z" fill="#f4b998"/><circle cx="32" cy="26" r="6" fill="#fff"/></svg>
-        <h3>Ci vediamo in piazza</h3>
-        <p>Ci si trova al punto d'incontro, ci si presenta e si parte. Scarpe comode, curiosità e nessun'altra preparazione.</p>
-      </div>
-      <div class="step reveal">
-        <svg viewBox="0 0 64 64" fill="none" stroke="#2a1f2d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 12h32c0 14-6 22-16 24C22 34 16 26 16 12z" fill="#ef5a2a" stroke="#2a1f2d"/><path d="M32 36v16M22 54h20"/><circle cx="46" cy="14" r="6" fill="#ffd27a"/></svg>
-        <h3>Brindisi e nuovi amici</h3>
-        <p>Si chiude con un aperitivo, due consigli per il resto della settimana e, spesso, un numero di telefono in più.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ===== MARQUEE ===== -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track" id="marquee">
-    <span>Duomo</span><span>Brera</span><span>Navigli</span><span>Isola</span><span>Sant'Ambrogio</span><span>Porta Venezia</span><span>Porta Nuova</span><span>Castello Sforzesco</span><span>Cinque Vie</span><span>Torre Velasca</span><span>Parco Sempione</span><span>NoLo</span>
+    <span>Duomo</span><span>Brera</span><span>Corvetto</span><span>Navigli</span><span>Isola</span><span>Sant'Ambrogio</span><span>Porta Venezia</span><span>Porta Nuova</span><span>Castello Sforzesco</span><span>Cinque Vie</span><span>Torre Velasca</span><span>Parco Sempione</span><span>NoLo</span>
   </div>
 </div>
 
-<!-- ===== CARTOLINE / GALLERIA ===== -->
+<!-- ===== CARTOLINE ===== -->
 <section class="postcards" id="cartoline">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow" style="color:#ffb089">Cartoline da Milano</span>
-      <h2>Una città da guardare <em>con calma</em></h2>
-      <p>Alcuni dei luoghi, dei colori e delle luci che incontreremo lungo la strada.</p>
+      <h2>Milano è un milione di <em>bellezze diverse</em></h2>
     </div>
     <div class="mosaic">
       <figure class="tile t-a reveal"><div class="art" data-photo="duomo" data-alt="Il Duomo"><svg viewBox="0 0 400 300"><use href="#s-duomo"/></svg></div><figcaption>La Madonnina veglia dall'alto</figcaption></figure>
@@ -1085,13 +942,21 @@ footer a:hover{color:#fff}
       <figure class="tile t-f reveal"><div class="art" data-photo="velasca" data-alt="Torre Velasca"><svg viewBox="0 0 400 300"><use href="#s-velasca"/></svg></div><figcaption>La Velasca di notte</figcaption></figure>
       <figure class="tile reveal"><div class="art" data-photo="galleria" data-alt="Galleria"><svg viewBox="0 0 400 300"><use href="#s-galleria"/></svg></div><figcaption>Sotto la volta di vetro</figcaption></figure>
       <figure class="tile reveal"><div class="art" data-photo="castello" data-alt="Castello"><svg viewBox="0 0 400 300"><use href="#s-castello"/></svg></div><figcaption>Mattoni rossi e prato</figcaption></figure>
-      <figure class="tile t-quote reveal"><p>«Milano non si dà subito. Va guadagnata, un portone alla volta.»<span>Il motto del progetto</span></p></figure>
+<figure class="tile t-quote reveal" id="quotes" aria-roledescription="carosello">  <button type="button" id="qPrev" class="q-arrow q-prev" aria-label="Frase precedente">←</button><div class="q-body"><p id="qText"></p><span id="qAuthor"></span><span id="qCount" aria-live="polite"></span></div> <button type="button" id="qNext" class="q-arrow q-next" aria-label="Frase successiva">→</button>
+</figure>
+        <div class="q-body"><p id="qText"></p><span id="qAuthor"></span></div>
+        <div class="q-nav">
+          <button type="button" id="qPrev" aria-label="Frase precedente">←</button>
+          <span id="qCount" aria-live="polite"></span>
+          <button type="button" id="qNext" aria-label="Frase successiva">→</button>
+        </div>
+      </figure>
       <figure class="tile reveal"><div class="art" data-photo="porta" data-alt="Porta Nuova"><svg viewBox="0 0 400 300"><use href="#s-porta"/></svg></div><figcaption>Porta Nuova al crepuscolo</figcaption></figure>
     </div>
   </div>
 </section>
 
-<!-- ===== SCOPRIAMO I PARTECIPANTI ===== -->
+<!-- ===== PARTECIPANTI ===== -->
 <section class="people" id="partecipanti">
   <div class="wrap">
     <div class="sec-head reveal">
@@ -1100,67 +965,36 @@ footer a:hover{color:#fff}
       <p>Una faccia, un nome e un aggettivo ciascuno: così si riconoscono i compagni di strada.</p>
     </div>
 
-    <!-- MODIFICA: sostituisci "Nome" e "Aggettivo" (e, se vuoi, i colori dell'avatar).
-         Usa solo nomi/foto di persone che hanno dato il loro consenso alla pubblicazione. -->
     <div class="people-start" id="peopleStart">
       <button class="btn btn-primary" id="showPeople" type="button">Mostra i partecipanti</button>
     </div>
 
     <div id="peopleStage" hidden>
-    <div class="people-grid" id="peopleGrid" aria-live="polite"></div>
-      <div class="people-next" id="peopleNext">
-        <button class="btn btn-primary btn-arrow" id="nextPerson" type="button" aria-label="Mostra il prossimo partecipante">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </button>
-      </div>
-    </div>
-
-    <div class="people-finish" id="peopleFinish" hidden>
-      <h3>Cominciamo!</h3>
-      <a class="btn btn-primary" id="goFirst" href="castello.html">Vai alla prima tappa</a>
+      <div class="people-grid" id="peopleGrid" aria-live="polite"></div>
     </div>
   </div>
 </section>
 
-<!-- ===== FAQ ===== -->
-<section class="faq" id="faq">
-  <div class="wrap faq-grid">
-    <div class="reveal">
-      <span class="eyebrow">Domande frequenti</span>
-      <h2>Prima di <em>partire</em></h2>
-      <p style="margin-top:1rem;color:var(--ink-soft)">Non trovi la risposta? Scrivici, rispondiamo volentieri.</p>
-    </div>
-    <div class="reveal">
-      <!-- MODIFICA: adatta le risposte alle tue regole reali -->
-      <details><summary>Quanto dura una passeggiata?</summary><p>In media due ore, a passo tranquillo, con soste frequenti. I percorsi non sono mai impegnativi.</p></details>
-      <details><summary>Devo essere un esperto di storia o di arte?</summary><p>Assolutamente no. Basta la curiosità. Le storie sono pensate per essere ascoltate camminando, non studiate.</p></details>
-      <details><summary>E se piove?</summary><p>Milano con la pioggia è bellissima, e molti percorsi hanno portici e gallerie. In caso di maltempo forte ti avvisiamo e troviamo insieme una soluzione.</p></details>
-      <details><summary>Posso venire da solo/a?</summary><p>Anzi: è il caso più comune. Il tour è pensato proprio per conoscere persone nuove.</p></details>
-      <details><summary>Si può partecipare con amici, famiglia o cani?</summary><p>Certo. Scrivici all'atto dell'iscrizione e ci organizziamo.</p></details>
-    </div>
-  </div>
-</section>
+<div class="people-finish" id="peopleFinish" hidden>
+  <h3>Cominciamo!</h3>
+  <a class="btn btn-primary" id="goFirst" href="castello.html">Vai alla prima tappa</a>
+</div>
 
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="wrap foot">
-    <div><strong class="madonnina">✦</strong> Milano a Passo Lento · Social walking tour<br><span style="opacity:.7">Fatto a mano, a piedi, a Milano.</span></div>
-    <div>
-      <!-- MODIFICA: inserisci i tuoi contatti reali -->
-      <a href="mailto:ciao@tuodominio.it">ciao@tuodominio.it</a> ·
-      <a href="https://instagram.com/" rel="noopener">Instagram</a>
-    </div>
-    <div style="opacity:.7">© <span id="year">2026</span> · Tutti i diritti riservati</div>
+    <div><strong class="madonnina">✦</strong> Ciao bella Milano · Social walking tour<br><span style="opacity:.7">Fatto a mano, a piedi, da chi ama Milano per chi ama Milano.</span></div>
+    <div style="opacity:.7"><span id="year">2026</span> · Diritti riservati</div>
   </div>
 </footer>
 
 <script src="partecipanti.js"></script>
 <script>
+/* Costruzione delle card dei partecipanti */
 (function(){
   var grid=document.getElementById('peopleGrid');
   if(!grid)return;
   var NS='http://www.w3.org/2000/svg';
-  /* 8 aspetti: av = avatar, r = inclinazione, chip = colore, v = variabili SVG */
   var LOOKS=[
     {av:'av1',r:-2,  chip:'#f4b998',v:{skin:'#f0c8a4',hair:'#2a1f2d',cloth:'#1f2a4d'}},
     {av:'av2',r:1.5, chip:'#cfe3d7',v:{skin:'#c98f6b',hair:'#3a2a22',cloth:'#ef5a2a'}},
@@ -1200,44 +1034,52 @@ footer a:hover{color:#fff}
 })();
 </script>
 
-<!-- ===== Partecipanti: rivelazione uno alla volta ===== -->
 <script>
+/* Un solo tasto: i partecipanti compaiono uno dopo l'altro */
 (function(){
   var start=document.getElementById('showPeople');
   if(!start)return;
-  var startBox=document.getElementById('peopleStart'),
-      stage=document.getElementById('peopleStage'),
-      next=document.getElementById('nextPerson'),
-      nextBox=document.getElementById('peopleNext'),
-      finish=document.getElementById('peopleFinish'),
-      goFirst=document.getElementById('goFirst'),
-      persons=[].slice.call(document.querySelectorAll('#peopleGrid .person')),
-      shown=0,
-      reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-
-  function showNext(){
-    if(shown>=persons.length)return;
-    var p=persons[shown++];
-    p.hidden=false;
-    p.classList.add('pop');
-    if(shown<persons.length){
-      next.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'});
-    }else{
-      nextBox.hidden=true;
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var finish=document.getElementById('peopleFinish');
+  start.addEventListener('click',function(){
+    document.getElementById('peopleStart').hidden=true;
+    document.getElementById('peopleStage').hidden=false;
+    var persons=document.querySelectorAll('#peopleGrid .person');
+    var step=reduce?0:450;
+    persons.forEach(function(p,i){
+      setTimeout(function(){p.hidden=false;p.classList.add('pop')},i*step);
+    });
+    setTimeout(function(){
       finish.hidden=false;
       finish.classList.add('pop');
-      goFirst.focus({preventScroll:true});
       finish.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'});
-    }
-  }
-
-  start.addEventListener('click',function(){
-    startBox.hidden=true;
-    stage.hidden=false;
-    showNext();
-    next.focus({preventScroll:true});
+    },persons.length*step);
   });
-  next.addEventListener('click',showNext);
+})();
+</script>
+
+<script>
+/* Carosello di frasi: incolla qui i testi */
+(function(){
+  var FRASI=[
+  { t: '“Sapessi, amore mio, come mi piace partire quando Milano dorme ancora: vederla sonnecchiare e accorgermi che è bella prima che cominci a correre e ad urlare.”', a: 'Fabio Concato' },
+  { t: '“Amo Milano, una città grande e generosa che anche quando trema non si lascia travolgere, che pensa al domani senza fermarsi all’oggi, e che non conosce la parola arrendersi.”', a: 'Giorgio Armani' },
+  { t: '“Darsi appuntamenti a Milano in un grande magazzino, in piazza o in galleria, che pazzia! Eppure in questo posto impossibile tu mi hai detto ti amo.”', a: 'Nemo Remigi' }
+];;
+  var i=0,body=document.querySelector('#quotes .q-body'),
+      T=document.getElementById('qText'),A=document.getElementById('qAuthor'),C=document.getElementById('qCount');
+  function show(n){
+    i=(n+FRASI.length)%FRASI.length;
+    body.classList.add('out');
+    setTimeout(function(){
+      T.textContent=FRASI[i].t;A.textContent=FRASI[i].a;
+      C.textContent=(i+1)+' / '+FRASI.length;
+      body.classList.remove('out');
+    },200);
+  }
+  document.getElementById('qPrev').onclick=function(){show(i-1)};
+  document.getElementById('qNext').onclick=function(){show(i+1)};
+  show(0);
 })();
 </script>
 
@@ -1248,13 +1090,16 @@ footer a:hover{color:#fff}
   /* Marquee: duplico il contenuto per il loop continuo */
   var m=document.getElementById('marquee');m.innerHTML+=m.innerHTML;
 
+  /* Le illustrazioni coprono sempre il riquadro, senza spazi bianchi */
+  document.querySelectorAll('.art > svg').forEach(function(s){s.setAttribute('preserveAspectRatio','xMidYMid slice')});
+
   /* Skyline: guglie del Duomo e alberi del Bosco Verticale */
   var NS='http://www.w3.org/2000/svg';
   var sp=document.getElementById('spires');
   for(var i=0;i<15;i++){
     var d=Math.abs(i-7);var cx=800+i*15;
-    var roof=262+d*9.7;                      /* linea del tetto della facciata */
-    var h=(i===7)?170:62+(7-d)*3.5+(i%2)*8;  /* guglie sui contrafforti */
+    var roof=262+d*9.7;
+    var h=(i===7)?170:62+(7-d)*3.5+(i%2)*8;
     var w=(i===7)?6:4;
     var p=document.createElementNS(NS,'path');
     p.setAttribute('d','M'+(cx-w)+' '+(roof+14)+'V'+(roof-h*0.35)+'L'+cx+' '+(roof-h)+'L'+(cx+w)+' '+(roof-h*0.35)+'V'+(roof+14)+'Z');
@@ -1287,13 +1132,12 @@ footer a:hover{color:#fff}
   /* ===== Scroll-storytelling =====
      0 → solo titolo su tramonto
      1 → lo sfondo sfuma nella notte, appare il sottotitolo
-     2 → lo sfondo sfuma nel marmo: il progetto
-     3 → lo sfondo sfuma nel rosa: come funziona */
+     2 → lo sfondo sfuma nel marmo: il progetto */
   var nav=document.getElementById('nav');
   var hero=document.getElementById('top'),stage=document.getElementById('stage'),stageIn=document.getElementById('stageIn');
   var title=document.getElementById('heroTitle'),sub=document.getElementById('heroSub'),hint=document.getElementById('hint');
-  var L1=document.getElementById('L1'),L2=document.getElementById('L2'),L3=document.getElementById('L3');
-  var secProject=document.getElementById('progetto'),secWalks=document.getElementById('come');
+  var L1=document.getElementById('L1'),L2=document.getElementById('L2');
+  var secProject=document.getElementById('progetto');
   var INK=[42,31,45],MARBLE=[248,241,230],EM_A=[212,67,26],EM_B=[255,150,104];
 
   function clamp(x){return Math.min(1,Math.max(0,x))}
@@ -1309,34 +1153,25 @@ footer a:hover{color:#fff}
     var range=Math.max(1,hero.offsetHeight-vh);
     var p=clamp(y/range);
 
-    /* sfondo 0 → 1 e colore del testo */
     var s1=sm(.12,.45,p);
     L1.style.opacity=s1;
     stage.style.color=mix(INK,MARBLE,s1);
     stage.style.setProperty('--em',mix(EM_A,EM_B,s1));
 
-    /* sottotitolo e spostamento del titolo */
     var sSub=sm(.32,.58,p);
     sub.style.opacity=sSub;
     sub.style.transform='translateY('+((1-sSub)*28)+'px)';
     sub.style.pointerEvents=sSub>.3?'auto':'none';
     title.style.transform='translateY('+((1-sSub)*8)+'vh)';
 
-    /* indicatore "Scorri" */
     hint.style.opacity=1-sm(0,.05,p);
 
-    /* uscita del testo a fine hero */
     var out=1-sm(.9,1,p);
     stageIn.style.opacity=out;
     stageIn.style.visibility=out<.02?'hidden':'visible';
 
-    /* sfondo 2: marmo, quando arriva il progetto */
     var t2=clamp((vh-secProject.getBoundingClientRect().top)/(vh*.7));
     L2.style.opacity=sm(0,1,t2);
-
-    /* sfondo 3: rosa, quando arrivano le passeggiate */
-    var t3=clamp((vh*.95-secWalks.getBoundingClientRect().top)/(vh*.6));
-    L3.style.opacity=sm(0,1,t3);
   }
   function req(){if(!ticking){ticking=true;requestAnimationFrame(update)}}
   window.addEventListener('scroll',req,{passive:true});

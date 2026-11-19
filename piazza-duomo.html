@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Piazza del Duomo · Settima tappa · Milano a Passo Lento</title>
-<meta name="description" content="Il Duomo e Piazza Duomo, Milano: sei secoli di cantiere. Dal battistero di Ambrogio alla Madonnina, dal marmo di Candoglia alla Galleria.">
-<meta property="og:title" content="Piazza del Duomo · Milano a Passo Lento">
-<meta property="og:description" content="Sei secoli di cantiere nel cuore di Milano.">
+<title>Il Duomo · Settima tappa · Ciao bella Milano</title>
+<meta name="description" content="L'ultima tappa: il Duomo, il cantiere che non finisce mai, e il filo rosso che lega tutto il tour. Milano non cancella: costruisce sopra.">
+<meta property="og:title" content="Il Duomo · Ciao bella Milano">
+<meta property="og:description" content="Il filo rosso del tour: Milano non cancella, costruisce sopra.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#f2a98a">
+<meta name="theme-color" content="#1f2a4d">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ef5a2a'/%3E%3Cpath d='M32 10l4 12v30h-8V22z' fill='%23fff3e6'/%3E%3Ccircle cx='32' cy='9' r='3.5' fill='%23ffd27a'/%3E%3Cpath d='M16 52V34l7-6v24zM48 52V34l-7-6v24z' fill='%23fff3e6' opacity='.8'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,19 +16,10 @@
 
 <style>
 :root{
-  --ink:#2a1f2d;
-  --ink-soft:#5d4e5c;
-  --marble:#f8f1e6;
-  --marble-2:#f1e5d3;
-  --rose:#e9c9bd;
-  --gold:#c9973f;
-  --spritz:#ef5a2a;
-  --navy:#1f2a4d;
-  --green:#2f6b4f;
-  --radius:22px;
+  --ink:#2a1f2d;--ink-soft:#5d4e5c;--marble:#f8f1e6;--marble-2:#f1e5d3;--rose:#e9c9bd;
+  --gold:#c9973f;--spritz:#ef5a2a;--navy:#1f2a4d;--green:#2f6b4f;--radius:22px;
   --shadow:0 18px 40px -18px rgba(42,31,45,.45);
-  --serif:'Fraunces',Georgia,serif;
-  --sans:'DM Sans',system-ui,sans-serif;
+  --serif:'Fraunces',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;background:var(--marble);scroll-padding-top:80px}
@@ -44,15 +35,17 @@ em{font-style:italic;color:var(--spritz)}
 .eyebrow::before{content:"";width:34px;height:2px;background:currentColor}
 .btn{display:inline-flex;align-items:center;gap:.6em;padding:.95em 1.6em;border-radius:999px;font-weight:700;text-decoration:none;font-size:1rem;border:2px solid transparent;transition:transform .2s,box-shadow .2s,background .2s,color .2s;cursor:pointer;font-family:inherit}
 .btn-primary{background:var(--spritz);color:#fff;box-shadow:0 10px 24px -10px rgba(239,90,42,.8)}
-.btn-primary:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 16px 28px -10px rgba(239,90,42,.9)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 28px -10px rgba(239,90,42,.9)}
 .btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
-.btn-ghost:hover:not(:disabled){background:var(--ink);color:var(--marble)}
-.btn:disabled{opacity:.45;cursor:default}
+.btn-ghost:hover{background:var(--ink);color:var(--marble)}
+.btn-light{border-color:rgba(248,241,230,.6);color:var(--marble);background:transparent}
+.btn-light:hover{background:var(--marble);color:var(--ink)}
 :focus-visible{outline:3px solid var(--navy);outline-offset:3px;border-radius:8px}
 
 /* NAV */
 nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s}
 nav.solid{background:rgba(248,241,230,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(42,31,45,.08)}
+nav:not(.solid) .logo,nav:not(.solid) .nav-links a:not(.btn){color:var(--marble)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
 .logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-family:var(--serif);font-weight:800;font-size:1.25rem}
 .logo svg{width:38px;height:38px}
@@ -62,117 +55,148 @@ nav.solid{background:rgba(248,241,230,.92);backdrop-filter:blur(10px);box-shadow
 .nav-links .btn{padding:.6em 1.2em;font-size:.9rem;color:#fff}
 @media(max-width:860px){.nav-links li:not(:last-child){display:none}.logo span{display:none}}
 
-/* HERO */
-.hero{position:relative;overflow:hidden;min-height:100svh;display:flex;align-items:center;padding:130px 0 290px;background:linear-gradient(180deg,#f7d9bc 0%,#f4b998 40%,#ee9484 74%,#d98a82 100%)}
+/* HERO · tramonto sul Duomo */
+.hero{position:relative;overflow:hidden;min-height:100svh;display:flex;align-items:center;padding:130px 0 300px;color:var(--marble);
+  background:
+  radial-gradient(1.6px 1.6px at 12% 14%,#fff 50%,transparent 52%),
+  radial-gradient(1.2px 1.2px at 28% 30%,#fff 50%,transparent 52%),
+  radial-gradient(1.8px 1.8px at 44% 10%,#fff 50%,transparent 52%),
+  radial-gradient(1.2px 1.2px at 62% 24%,#fff 50%,transparent 52%),
+  radial-gradient(1.6px 1.6px at 78% 12%,#fff 50%,transparent 52%),
+  radial-gradient(1.2px 1.2px at 90% 34%,#fff 50%,transparent 52%),
+  linear-gradient(180deg,#1b2147 0%,#3a3566 38%,#c4607a 74%,#f4b07e 100%)}
 .hero-in{position:relative;z-index:2;width:min(960px,100% - 40px);margin-inline:auto;text-align:center}
-.hero .eyebrow{color:#b8340f}
-.hero h1{font-size:clamp(2.5rem,6.8vw,5.6rem);font-weight:800;line-height:1.03}
-.hero h1 em{color:#d4431a;font-weight:600}
-.lead{font-size:clamp(1.05rem,1.9vw,1.3rem);max-width:36em;margin:1.5rem auto 0;opacity:.94}
-.ask{margin-top:1.6rem;font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,2.4vw,1.6rem)}
-.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem;justify-content:center}
-.chip{background:rgba(255,248,236,.88);border:1px solid rgba(42,31,45,.12);padding:.4em 1em;border-radius:999px;font-size:.88rem;font-weight:500}
-.sun{position:absolute;z-index:1;width:min(34vw,380px);aspect-ratio:1;border-radius:50%;left:8%;top:10%;background:radial-gradient(circle,#fff4cf 0 42%,#ffd98f 43% 60%,rgba(255,217,143,0) 72%);animation:breathe 9s ease-in-out infinite}
-@keyframes breathe{50%{transform:scale(1.05)}}
-.hero-art{position:absolute;z-index:1;left:0;right:0;bottom:-1px;width:100%;height:min(40vh,340px)}
+.hero .eyebrow{color:#ffb089}
+.hero h1{font-size:clamp(2.6rem,7.2vw,5.8rem);font-weight:800;line-height:1.02}
+.hero h1 em{color:#ffb089;font-weight:600}
+.lead{font-size:clamp(1.05rem,1.9vw,1.3rem);max-width:37em;margin:1.6rem auto 0;opacity:.94}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.8rem;justify-content:center}
+.chip{background:rgba(255,248,236,.14);color:var(--marble);border:1px solid rgba(255,255,255,.28);padding:.4em 1em;border-radius:999px;font-size:.88rem;font-weight:500}
+.moon{position:absolute;z-index:1;left:9%;top:14%;width:min(18vw,120px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#fff6d6 0 52%,rgba(255,246,214,0) 72%);animation:breathe 9s ease-in-out infinite}
+@keyframes breathe{50%{transform:scale(1.06)}}
+.hero-art{position:absolute;z-index:1;left:0;right:0;bottom:-1px;width:100%;height:min(46vh,400px)}
 
 /* SEZIONI */
 section{padding:clamp(90px,12vw,150px) 0}
 .sec-head{max-width:46rem;margin-bottom:3.2rem}
+.sec-head.center{margin-inline:auto;text-align:center}
 .sec-head p{color:var(--ink-soft);margin-top:1rem;font-size:1.1rem}
 
-/* IN BREVE */
-.about{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(2rem,6vw,6rem);align-items:center}
-.about p{margin-top:1.1rem;color:var(--ink-soft)}
-.about p:first-of-type{margin-top:1.4rem}
-.fact-card{position:relative;background:#fffaf1;border-radius:var(--radius);padding:2.2rem 1.8rem 1.8rem;box-shadow:var(--shadow);border:2px dashed rgba(42,31,45,.14);transform:rotate(1.5deg)}
-.fact-card .tape{position:absolute;width:90px;height:26px;background:rgba(233,201,189,.85);left:calc(50% - 45px);top:-12px;transform:rotate(-4deg)}
-.fact-card dl div{padding:.8rem 0;border-bottom:1px dashed rgba(42,31,45,.2)}
-.fact-card dl div:last-child{border-bottom:0}
-.fact-card dt{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--green)}
-.fact-card dd{font-family:var(--serif);font-size:1.2rem;font-weight:600;line-height:1.25}
-@media(max-width:860px){.about{grid-template-columns:1fr}}
-.callout{margin-top:1.4rem;padding:1rem 1.2rem;border-left:3px solid var(--gold);background:rgba(201,151,63,.12);border-radius:0 12px 12px 0;color:var(--ink-soft);font-size:.98rem}
+/* IL FILO ROSSO */
+.thread{background:var(--marble)}
+.thread-box{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.thread-box p{color:var(--ink-soft);margin-top:1.1rem}
+.thread-box p:first-of-type{margin-top:1.4rem}
+.big{font-family:var(--serif);font-weight:800;font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1.1}
+@media(max-width:860px){.thread-box{grid-template-columns:1fr}}
+.figure{background:#fffaf1;border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow);border:2px dashed rgba(42,31,45,.14)}
+.figure figcaption{font-size:.85rem;color:var(--ink-soft);padding:.8rem .6rem 0;text-align:center}
 
-/* STORIA */
-.history{background:var(--marble-2)}
-.timeline{position:relative;max-width:820px;margin:0 auto;padding-left:2.4rem}
+/* STRATI */
+.strata{background:var(--navy);color:var(--marble)}
+.strata h2 em{color:#ffb089}
+.strata .sec-head p{color:#c8c4da}
+.strata-fig{max-width:980px;margin:0 auto}
+.strata-fig svg{width:100%;height:auto;border-radius:var(--radius);box-shadow:0 22px 50px -24px rgba(0,0,0,.7)}
+.strata-note{text-align:center;margin-top:1.6rem;color:#c8c4da;font-size:.95rem}
+
+/* MAPPA */
+.route{background:var(--marble-2)}
+.route-fig{max-width:980px;margin:0 auto;background:#fffaf1;border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow)}
+.route-fig svg{width:100%;height:auto}
+.route-fig .stop{cursor:pointer}
+.route-fig .stop:hover circle.dot{fill:var(--navy)}
+.route-fig a:focus-visible{outline:none}
+.route-fig a:focus-visible circle.dot{stroke:var(--navy);stroke-width:4}
+.route-note{text-align:center;margin-top:1rem;font-size:.9rem;color:var(--ink-soft)}
+
+/* RECAP */
+.recap{background:var(--marble)}
+.recap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+@media(max-width:980px){.recap-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.recap-grid{grid-template-columns:1fr}}
+.stop-card{position:relative;background:#fffaf1;border-radius:var(--radius);padding:1.8rem 1.5rem 1.5rem;box-shadow:0 10px 30px -22px rgba(42,31,45,.6);transition:transform .35s,box-shadow .35s;display:flex;flex-direction:column}
+.stop-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.stop-n{position:absolute;top:-16px;left:1.3rem;width:40px;height:40px;border-radius:50%;background:var(--spritz);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-weight:800;font-size:1.2rem;box-shadow:0 6px 14px -6px rgba(239,90,42,.8)}
+.stop-card .tag{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--green)}
+.stop-card h3{font-size:1.4rem;margin:.3rem 0 .5rem}
+.stop-card p{color:var(--ink-soft);font-size:.96rem}
+.stop-card .lesson{margin-top:.9rem;padding-top:.8rem;border-top:1px dashed rgba(42,31,45,.2);font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--ink)}
+.stop-card a.more{margin-top:auto;padding-top:1rem;font-size:.88rem;font-weight:700;color:var(--spritz);text-decoration:none}
+.stop-card a.more:hover{text-decoration:underline}
+
+/* QUATTRO GESTI */
+.gestures{background:var(--navy);color:var(--marble)}
+.gestures h2 em{color:#ffb089}
+.gestures .sec-head p{color:#c8c4da}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem}
+@media(max-width:980px){.g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.g4{grid-template-columns:1fr}}
+.gest{background:rgba(255,255,255,.07);border:1px solid rgba(248,241,230,.18);border-radius:var(--radius);padding:1.6rem 1.3rem}
+.gest svg{width:64px;height:64px;margin-bottom:.9rem}
+.gest h3{font-size:1.35rem;margin-bottom:.5rem;color:#fff}
+.gest p{color:#c8c4da;font-size:.95rem}
+.gest .where{display:block;margin-top:.9rem;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#ffb089}
+
+/* DUOMO */
+.duomo{background:var(--marble-2)}
+.duomo-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+@media(max-width:860px){.duomo-grid{grid-template-columns:1fr}}
+.duomo-grid p{color:var(--ink-soft);margin-top:1.1rem}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.4rem}
+@media(max-width:760px){.facts{grid-template-columns:repeat(2,1fr)}}
+.fact{background:#fffaf1;border-radius:var(--radius);padding:1.2rem 1rem;text-align:center;box-shadow:0 10px 30px -22px rgba(42,31,45,.6)}
+.fact strong{display:block;font-family:var(--serif);font-weight:800;font-size:2rem;color:var(--spritz);line-height:1}
+.fact span{display:block;margin-top:.4rem;font-size:.85rem;color:var(--ink-soft)}
+.timeline{position:relative;max-width:820px;margin:3.4rem auto 0;padding-left:2.4rem}
 .timeline::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:repeating-linear-gradient(180deg,var(--ink-soft) 0 6px,transparent 6px 12px);opacity:.45}
-.t-item{position:relative;margin-bottom:1.6rem}
+.t-item{position:relative;margin-bottom:1.5rem}
 .t-item:last-child{margin-bottom:0}
 .t-item::before{content:"";position:absolute;left:-2.4rem;top:1.5rem;width:20px;height:20px;border-radius:50%;background:var(--spritz);border:4px solid var(--marble-2);box-shadow:0 0 0 2px var(--spritz)}
-.t-card{background:#fffaf1;border-radius:var(--radius);padding:1.4rem 1.6rem 1.5rem;box-shadow:0 10px 30px -22px rgba(42,31,45,.6)}
+.t-card{background:#fffaf1;border-radius:var(--radius);padding:1.3rem 1.6rem 1.4rem;box-shadow:0 10px 30px -22px rgba(42,31,45,.6)}
 .t-year{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--spritz)}
-.t-card h3{font-size:1.5rem;margin:.3rem 0 .5rem}
-.t-card p{color:var(--ink-soft);font-size:.98rem}
-.t-card p + p{margin-top:.6rem}
-.glossary{max-width:820px;margin:2.4rem auto 0;padding:1.2rem 1.4rem;background:rgba(201,151,63,.12);border-left:3px solid var(--gold);border-radius:0 12px 12px 0}
-.glossary h3{font-size:1.1rem;margin-bottom:.6rem}
-.glossary ul{list-style:none;display:grid;gap:.3rem;font-size:.96rem;color:var(--ink-soft)}
-.glossary strong{color:var(--ink)}
+.t-card h3{font-size:1.4rem;margin:.3rem 0 .4rem}
+.t-card p{color:var(--ink-soft);font-size:.98rem;margin:0}
 
-/* GIOCO · CHI VUOI RISENTIRE */
+/* GIOCO */
 .game-sec{background:var(--marble)}
-.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:1.2rem;margin-bottom:2.6rem}
-.how div{background:#fffaf1;border-radius:var(--radius);padding:1.3rem;box-shadow:0 10px 30px -22px rgba(42,31,45,.6)}
-.how h4{font-size:1.15rem;margin-bottom:.4rem}
-.how p{color:var(--ink-soft);font-size:.95rem}
-.form-card{max-width:680px;background:var(--navy);color:var(--marble);border-radius:var(--radius);padding:2.2rem 1.6rem;box-shadow:var(--shadow)}
-.form-card h3{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:.4rem}
-.form-card > p,.form-card .sub{color:#c8c4da}
-.field{margin-top:1.4rem}
-.field label,.field legend{display:block;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#ffb089;margin-bottom:.6rem}
-.field fieldset{border:0}
-.field select{font-family:inherit;font-size:1rem;padding:.7em 1.2em;border-radius:999px;border:2px solid rgba(248,241,230,.5);background:transparent;color:var(--marble);min-width:240px;max-width:100%}
-.field select option{color:var(--ink)}
-.picks{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.6rem}
-.pick{position:relative}
-.pick input{position:absolute;opacity:0;pointer-events:none}
-.pick span{display:block;padding:.7em 1em;border-radius:14px;border:2px solid rgba(248,241,230,.4);cursor:pointer;font-weight:500}
-.pick input:checked + span{background:var(--marble);color:var(--ink);border-color:var(--marble)}
-.pick input:disabled + span{opacity:.35;cursor:default}
-.pick input:focus-visible + span{outline:3px solid #ffb089;outline-offset:3px}
-.picks-hint{margin-top:.6rem;font-size:.9rem;color:#c8c4da}
-.consent{display:flex;gap:.7rem;align-items:flex-start;margin-top:1.4rem;font-size:.95rem;color:#e6e2f0}
-.consent input{margin-top:.3rem;width:18px;height:18px;accent-color:var(--spritz);flex:none}
-.actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
-.btn-lightline{border-color:rgba(248,241,230,.6);color:var(--marble);background:transparent}
-.btn-lightline:hover:not(:disabled){background:var(--marble);color:var(--ink)}
-.err{margin-top:1rem;padding:.8rem 1rem;border-radius:12px;background:rgba(255,120,90,.16);color:#ffd2c4;font-size:.95rem}
-.locked{max-width:680px;background:var(--navy);color:var(--marble);border-radius:var(--radius);padding:2.4rem 1.6rem;box-shadow:var(--shadow);text-align:center}
-.locked h3{font-size:clamp(1.8rem,4.4vw,2.6rem);margin-bottom:.8rem}
-.locked p{color:#c8c4da}
-.after{margin-top:2.6rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1.2rem}
-.after div{background:#fffaf1;border-radius:var(--radius);padding:1.3rem;box-shadow:0 10px 30px -22px rgba(42,31,45,.6)}
-.after h4{font-size:1.15rem;margin-bottom:.4rem}
-.after p{color:var(--ink-soft);font-size:.95rem}
+.word-start{text-align:center}
+.word-panel{max-width:820px;margin:0 auto;background:var(--navy);color:var(--marble);border-radius:var(--radius);padding:2.4rem 1.6rem;box-shadow:var(--shadow);text-align:center}
+.word-panel h3{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:.6rem}
+.word-panel > p{color:#c8c4da}
+.word-turn{margin:1.8rem 0 .4rem;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#ffb089}
+.word-name{font-family:var(--serif);font-weight:800;font-size:clamp(2.4rem,8vw,4.4rem);line-height:1.05;min-height:1.2em}
+.word-actions{margin-top:1.6rem;display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.pop{animation:pop .6s cubic-bezier(.2,.8,.2,1) backwards}
+@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.94)}}
 
-/* FINALE */
-.finale{background:var(--marble-2);text-align:center}
-.finale .wrap{max-width:820px}
-.finale blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,3vw,2.1rem);line-height:1.3;margin:0 0 1.6rem}
-.finale p{color:var(--ink-soft);margin-bottom:1rem}
-.next-list{list-style:none;display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin:1.4rem 0 2rem}
-.next-list li{background:#fffaf1;border:1px solid rgba(42,31,45,.12);padding:.4em 1em;border-radius:999px;font-size:.92rem;font-weight:500}
-.cta-btns{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
+/* MANIFESTO */
+.manifesto{background:linear-gradient(180deg,#1b2147 0%,#3a3566 60%,#a8566f 100%);color:var(--marble);text-align:center;padding-bottom:clamp(90px,12vw,140px)}
+.manifesto .wrap{max-width:820px}
+.manifesto .eyebrow{color:#ffb089}
+.manifesto h2{font-size:clamp(2.2rem,5.4vw,4rem);font-weight:800}
+.manifesto h2 em{color:#ffb089}
+.mani-list{list-style:none;margin:2.4rem 0;display:grid;gap:1rem;text-align:left}
+.mani-list li{background:rgba(255,255,255,.08);border:1px solid rgba(248,241,230,.18);border-radius:18px;padding:1rem 1.3rem;font-size:1.08rem}
+.mani-list strong{font-family:var(--serif);font-size:1.2rem;color:#ffb089}
+.mani-end{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,3vw,2.1rem);line-height:1.3;margin:2rem 0}
+.mani-btns{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
 
 /* FOOTER */
 footer{background:#1b1630;color:#cfc8de;padding:3rem 0 2rem;font-size:.92rem}
 .foot{display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:center}
-footer a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.25)}
-footer a:hover{color:#fff}
 .madonnina{color:var(--gold)}
 
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){
-  .sun{animation:none!important}
+  .moon{animation:none!important}.pop{animation:none!important}
   .reveal{transition:none;opacity:1;transform:none}
   html{scroll-behavior:auto}
 }
 </style>
-<noscript><style>.reveal{opacity:1;transform:none}.form-card{display:none}</style></noscript>
+<noscript><style>.reveal{opacity:1;transform:none}.word-start{display:none}</style></noscript>
 </head>
 
 <body>
@@ -180,15 +204,12 @@ footer a:hover{color:#fff}
 <!-- ===== NAV ===== -->
 <nav id="nav">
   <div class="wrap nav-in">
-    <a class="logo" href="index.html#top" aria-label="Milano a Passo Lento, torna alla home">
+    <a class="logo" href="index.html#top" aria-label="Ciao bella Milano, torna alla home">
       <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#ef5a2a"/><path d="M32 12l4 12v28h-8V24z" fill="#fff3e6"/><circle cx="32" cy="10" r="3.5" fill="#ffd27a"/><path d="M14 52V36l8-6v22zM50 52V36l-8-6v22z" fill="#fff3e6" opacity=".8"/></svg>
-      <span>Milano a Passo Lento</span>
+      <span>Ciao bella Milano</span>
     </a>
     <ul class="nav-links">
-      <li><a href="#storia">Storia</a></li>
-      <li><a href="#gioco">Il gioco</a></li>
-      <li><a href="#finale">Fine del giro</a></li>
-      <li><a class="btn btn-primary" href="index.html#partecipanti">← Torna al tour</a></li>
+      <li><a class="btn btn-primary" href="index.html#partecipanti">← Torna alla home</a></li>
     </ul>
   </div>
 </nav>
@@ -197,234 +218,332 @@ footer a:hover{color:#fff}
 
 <!-- ===== HERO ===== -->
 <header class="hero" id="top">
-  <div class="sun" aria-hidden="true"></div>
+  <div class="moon" aria-hidden="true"></div>
   <div class="hero-in">
     <span class="eyebrow">Settima tappa · Piazza del Duomo</span>
-    <h1>Il punto in cui Milano <em>si mostra al mondo</em>.</h1>
-    <p class="lead">Davanti a voi c'è una chiesa che ha richiesto quasi 600 anni per essere finita.</p>
-    <p class="ask">Secondo voi, quanti anni ci sono voluti per costruirlo?</p>
-    <div class="chips" aria-label="Il percorso di questa tappa">
-      <span class="chip">Sotto la piazza</span>
-      <span class="chip">→ Il cantiere gotico</span>
-      <span class="chip">→ La facciata e Napoleone</span>
-      <span class="chip">→ La Madonnina</span>
-      <span class="chip">→ L'interno</span>
-      <span class="chip">→ La piazza moderna</span>
+    <h1>Siamo arrivati. E il Duomo <em>non è ancora finito</em>.</h1>
+    <p class="lead">Sei tappe, duemila anni, una sola idea. Prima di salutarci, guardiamo indietro e scopriamo che cosa tiene insieme tutto quello che abbiamo visto: che cosa è davvero Milano.</p>
+    <div class="chips" aria-label="In breve">
+      <span class="chip">🧵 Il filo rosso</span>
+      <span class="chip">🗺️ Il percorso</span>
+      <span class="chip">⛪ Il cantiere infinito</span>
+      <span class="chip">💬 Una parola a testa</span>
     </div>
   </div>
 
-  <!-- silhouette: la facciata del Duomo con le sue guglie -->
-  <svg class="hero-art" viewBox="0 0 1440 330" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-    <defs><path id="sp" d="M-5 0V-34L-2 -52L0 -66L2 -52L5 -34V0Z"/></defs>
-    <rect y="328" width="1440" height="2" fill="#b9806c"/>
-    <g transform="translate(0 60)">
-      <rect y="268" width="1440" height="32" fill="#c7a98c" transform="translate(0 0)"/>
-      <g stroke="#9b6f6f" stroke-width="1.4" stroke-linejoin="round">
-        <rect x="680" y="40" width="80" height="60" fill="#d4aaa3"/>
-        <use href="#sp" transform="translate(720 40) scale(1.3)" fill="#ecd3cb"/>
-        <path d="M470 268V160L720 70L970 160V268Z" fill="#dbb9b0"/>
-        <g fill="#ecd3cb">
-          <use href="#sp" transform="translate(470 160)"/><use href="#sp" transform="translate(532 138)"/><use href="#sp" transform="translate(595 115)"/><use href="#sp" transform="translate(657 93)"/>
-          <use href="#sp" transform="translate(720 70) scale(1.1)"/>
-          <use href="#sp" transform="translate(782 93)"/><use href="#sp" transform="translate(845 115)"/><use href="#sp" transform="translate(907 138)"/><use href="#sp" transform="translate(970 160)"/>
-        </g>
+  <!-- Duomo in silhouette -->
+  <svg class="hero-art" viewBox="0 0 1440 400" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <defs>
+      <g id="sp"><path d="M-5 0V-14L-2.5 -40L0 -78L2.5 -40L5 -14V0Z"/></g>
+    </defs>
+    <g fill="#2b2250">
+      <!-- guglie sullo sfondo -->
+      <g opacity=".75">
+        <use href="#sp" x="300" y="250"/><use href="#sp" x="340" y="232" transform="translate(0 0)"/><use href="#sp" x="380" y="214"/><use href="#sp" x="420" y="196"/><use href="#sp" x="460" y="178"/><use href="#sp" x="500" y="162"/><use href="#sp" x="540" y="148"/><use href="#sp" x="580" y="134"/><use href="#sp" x="620" y="122"/>
+        <use href="#sp" x="1140" y="250"/><use href="#sp" x="1100" y="232"/><use href="#sp" x="1060" y="214"/><use href="#sp" x="1020" y="196"/><use href="#sp" x="980" y="178"/><use href="#sp" x="940" y="162"/><use href="#sp" x="900" y="148"/><use href="#sp" x="860" y="134"/><use href="#sp" x="820" y="122"/>
       </g>
-      <g fill="#8c6a73" opacity=".55">
-        <rect x="540" y="180" width="14" height="52" rx="7"/><rect x="620" y="170" width="14" height="52" rx="7"/><rect x="706" y="150" width="14" height="52" rx="7"/><rect x="760" y="150" width="14" height="52" rx="7"/><rect x="806" y="170" width="14" height="52" rx="7"/><rect x="886" y="180" width="14" height="52" rx="7"/>
-      </g>
-      <g fill="#6d4a52"><path d="M488 268V248a14 14 0 0 1 28 0V268Z"/><path d="M590 268V244a16 16 0 0 1 32 0V268Z"/><path d="M700 268V236a20 20 0 0 1 40 0V268Z"/><path d="M820 268V244a16 16 0 0 1 32 0V268Z"/><path d="M924 268V248a14 14 0 0 1 28 0V268Z"/></g>
+      <!-- corpo e facciata -->
+      <path d="M270 400V256L520 160L720 100L920 160L1170 256V400Z"/>
+      <!-- guglia maggiore -->
+      <rect x="696" y="60" width="48" height="60"/>
+      <path d="M700 60L716 8L720 -30L724 8L740 60Z" transform="translate(0 40)"/>
+      <path d="M714 100V50L720 -2L726 50V100Z"/>
     </g>
-    <circle cx="720" cy="14" r="3" fill="#e7b64f"/>
+    <circle cx="720" cy="22" r="5" fill="#ffd27a"/>
+    <path d="M718 40V26M722 40V26" stroke="#ffd27a" stroke-width="1.5"/>
+    <!-- finestre illuminate -->
+    <g fill="#ffd27a" opacity=".8">
+      <path d="M690 396V330a30 30 0 0 1 60 0V396Z"/>
+      <rect x="560" y="300" width="18" height="60" rx="9"/><rect x="600" y="290" width="18" height="70" rx="9"/><rect x="640" y="284" width="18" height="76" rx="9"/>
+      <rect x="782" y="284" width="18" height="76" rx="9"/><rect x="822" y="290" width="18" height="70" rx="9"/><rect x="862" y="300" width="18" height="60" rx="9"/>
+    </g>
+    <!-- guglie in primo piano -->
+    <g fill="#1b1630">
+      <use href="#sp" x="290" y="300" transform="translate(0 0) scale(1)"/><use href="#sp" x="1150" y="300"/>
+      <use href="#sp" x="520" y="262"/><use href="#sp" x="920" y="262"/><use href="#sp" x="640" y="232"/><use href="#sp" x="800" y="232"/>
+    </g>
+    <rect y="394" width="1440" height="6" fill="#141230"/>
   </svg>
 </header>
 
-<!-- ===== IN BREVE ===== -->
-<section id="intro">
-  <div class="wrap about">
+<!-- ===== IL FILO ROSSO ===== -->
+<section class="thread" id="filo">
+  <div class="wrap thread-box">
     <div class="reveal">
-      <span class="eyebrow">In breve</span>
-      <h2>Un cantiere <em>che non finisce mai</em>.</h2>
-      <p>Se qualcuno vi dice «è come la fabbrica del Duomo», in italiano significa: un lavoro che non finisce mai. La posa della prima pietra è del 1386 e le ultime porte di bronzo sono del 1965: quasi sei secoli.</p>
-      <p>Girate su voi stessi: da un lato la cattedrale, dall'altro la Galleria, il Palazzo Reale, l'Arengario e il monumento equestre. Sotto i vostri piedi, invece, ci sono i romani e il battistero di Ambrogio.</p>
-      <p class="callout"><strong>Duomo</strong> significa «cattedrale», non «cupola» (<em style="color:inherit">dome</em>). Spesso si crea confusione.</p>
+      <span class="eyebrow">Il filo rosso</span>
+      <h2>Milano <em>non cancella</em>.<br>Costruisce sopra.</h2>
+      <p>Roma ha le sue rovine a cielo aperto, Venezia la sua laguna immobile. Milano fa un'altra cosa: quando qualcosa cade, ci costruisce sopra; quando qualcosa le fa male, lo trasforma; quando qualcosa le manca, lo inventa.</p>
+      <p class="big" style="margin-top:1.6rem">Per questo la sua bellezza è nascosta: non sta in un monumento solo, ma negli strati. E gli strati si vedono solo camminando piano.</p>
     </div>
-    <aside class="fact-card reveal" aria-label="Scheda della tappa">
-      <div class="tape"></div>
-      <dl>
-        <div><dt>Prima pietra</dt><dd>1386, con Gian Galeazzo Visconti</dd></div>
-        <div><dt>Ultima porta</dt><dd>1965, fine simbolica dei lavori</dd></div>
-        <div><dt>Dedicato a</dt><dd>Santa Maria Nascente</dd></div>
-        <div><dt>Marmo</dt><dd>Di Candoglia, arrivato per via d'acqua</dd></div>
-      </dl>
-    </aside>
+    <figure class="figure reveal">
+      <svg viewBox="0 0 400 300" role="img" aria-label="Disegno: un filo rosso che attraversa sei luoghi fino al Duomo">
+        <rect width="400" height="300" rx="14" fill="#f8f1e6"/>
+        <path d="M40 240C80 200 60 150 110 150S150 220 200 190S250 100 290 120S340 90 360 50" fill="none" stroke="#ef5a2a" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 10"/>
+        <path d="M40 240C80 200 60 150 110 150S150 220 200 190S250 100 290 120S340 90 360 50" fill="none" stroke="#ef5a2a" stroke-width="2.4" stroke-linecap="round" opacity=".55"/>
+        <g font-family="Fraunces,Georgia,serif" font-weight="800" font-size="14" text-anchor="middle" fill="#fff">
+          <circle cx="40" cy="240" r="14" fill="#ef5a2a"/><text x="40" y="245">1</text>
+          <circle cx="100" cy="162" r="14" fill="#ef5a2a"/><text x="100" y="167">2</text>
+          <circle cx="150" cy="200" r="14" fill="#ef5a2a"/><text x="150" y="205">3</text>
+          <circle cx="215" cy="180" r="14" fill="#ef5a2a"/><text x="215" y="185">4</text>
+          <circle cx="285" cy="122" r="14" fill="#ef5a2a"/><text x="285" y="127">5</text>
+          <circle cx="335" cy="100" r="14" fill="#ef5a2a"/><text x="335" y="105">6</text>
+          <circle cx="360" cy="50" r="18" fill="#1f2a4d"/><text x="360" y="56">7</text>
+        </g>
+        <text x="200" y="278" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" fill="#5d4e5c">un solo filo, sette luoghi</text>
+      </svg>
+      <figcaption>Ogni tappa è un punto diverso dello stesso disegno.</figcaption>
+    </figure>
   </div>
 </section>
 
-<!-- ===== STORIA ===== -->
-<section class="history" id="storia">
+<!-- ===== GLI STRATI ===== -->
+<section class="strata" id="strati">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" style="color:#ffb089">Il grafico</span>
+      <h2>Milano è <em>fatta a strati</em></h2>
+      <p>Se potessimo tagliare la città come una torta, vedremmo le epoche impilate una sull'altra. Ecco dove si trova ciascuna tappa.</p>
+    </div>
+    <figure class="strata-fig reveal">
+      <svg viewBox="0 0 900 480" role="img" aria-label="Sezione della città: sei strati storici dall'epoca romana a oggi, con le tappe del tour collocate nel loro strato">
+        <defs>
+          <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 8L8 0" stroke="#fff" stroke-opacity=".12" stroke-width="1"/></pattern>
+        </defs>
+        <rect width="900" height="480" fill="#141230"/>
+        <!-- strati, dal basso verso l'alto -->
+        <rect x="40" y="380" width="820" height="70" fill="#7a4b32"/><rect x="40" y="380" width="820" height="70" fill="url(#hatch)"/>
+        <rect x="40" y="310" width="820" height="70" fill="#a9765f"/><rect x="40" y="310" width="820" height="70" fill="url(#hatch)"/>
+        <rect x="40" y="240" width="820" height="70" fill="#c8795a"/><rect x="40" y="240" width="820" height="70" fill="url(#hatch)"/>
+        <rect x="40" y="170" width="820" height="70" fill="#d9a76f"/><rect x="40" y="170" width="820" height="70" fill="url(#hatch)"/>
+        <rect x="40" y="100" width="820" height="70" fill="#9aa8b8"/><rect x="40" y="100" width="820" height="70" fill="url(#hatch)"/>
+        <rect x="40" y="30" width="820" height="70" fill="#5f8fa8"/><rect x="40" y="30" width="820" height="70" fill="url(#hatch)"/>
+        <g font-family="Fraunces,Georgia,serif" font-weight="700" font-size="19" fill="#fff">
+          <text x="60" y="412">I–IV sec. · Mediolanum</text>
+          <text x="60" y="342">IX–XII sec. · Medioevo</text>
+          <text x="60" y="272">XIV–XV sec. · Visconti e Sforza</text>
+          <text x="60" y="202">XVI–XVIII sec. · Spagnoli e barocco</text>
+          <text x="60" y="132">XIX–XX sec. · Napoleone, Borsa, bombe</text>
+          <text x="60" y="62">Oggi · e noi</text>
+        </g>
+        <g font-family="DM Sans,sans-serif" font-size="13" fill="#fff" fill-opacity=".92">
+          <text x="60" y="432">Palazzo di Massimiano · teatro e foro · circo</text>
+          <text x="60" y="362">Torre dei Gorani · oratorio di San Satiro · chiesa del Sepolcro</text>
+          <text x="60" y="292">Castello di Porta Giovia · cantiere del Duomo · Bramante</text>
+          <text x="60" y="222">Richini · cittadella del Castello · Madonnina</text>
+          <text x="60" y="152">Borsa · restauro del Castello · le bombe del 1943</text>
+          <text x="60" y="82">Piazza Gae Aulenti · Bosco Verticale · questa passeggiata</text>
+        </g>
+        <!-- pallini delle tappe -->
+        <g font-family="Fraunces,Georgia,serif" font-weight="800" font-size="14" text-anchor="middle" fill="#fff">
+          <circle cx="770" cy="415" r="14" fill="#ef5a2a"/><text x="770" y="420">2</text>
+          <circle cx="810" cy="415" r="14" fill="#ef5a2a"/><text x="810" y="420">5</text>
+          <circle cx="730" cy="345" r="14" fill="#ef5a2a"/><text x="730" y="350">2</text>
+          <circle cx="770" cy="345" r="14" fill="#ef5a2a"/><text x="770" y="350">6</text>
+          <circle cx="810" cy="345" r="14" fill="#ef5a2a"/><text x="810" y="350">5</text>
+          <circle cx="730" cy="275" r="14" fill="#ef5a2a"/><text x="730" y="280">1</text>
+          <circle cx="770" cy="275" r="14" fill="#ef5a2a"/><text x="770" y="280">6</text>
+          <circle cx="810" cy="275" r="14" fill="#1f2a4d"/><text x="810" y="280">7</text>
+          <circle cx="770" cy="205" r="14" fill="#ef5a2a"/><text x="770" y="210">3</text>
+          <circle cx="810" cy="205" r="14" fill="#ef5a2a"/><text x="810" y="210">1</text>
+          <circle cx="690" cy="135" r="14" fill="#ef5a2a"/><text x="690" y="140">1</text>
+          <circle cx="730" cy="135" r="14" fill="#ef5a2a"/><text x="730" y="140">2</text>
+          <circle cx="770" cy="135" r="14" fill="#ef5a2a"/><text x="770" y="140">3</text>
+          <circle cx="810" cy="135" r="14" fill="#ef5a2a"/><text x="810" y="140">4</text>
+          <circle cx="810" cy="65" r="14" fill="#1f2a4d"/><text x="810" y="70">7</text>
+        </g>
+        <!-- una linea rossa che attraversa tutti gli strati -->
+        <path d="M870 450V30" stroke="#ef5a2a" stroke-width="4" stroke-dasharray="2 8" stroke-linecap="round"/>
+      </svg>
+    </figure>
+    <p class="strata-note">I numeri rossi sono le tappe. Quasi ogni luogo compare in più strati: è questo il segreto di Milano.</p>
+  </div>
+</section>
+
+<!-- ===== IL PERCORSO ===== -->
+<section class="route" id="percorso">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">La mappa</span>
+      <h2>Il percorso, <em>passo dopo passo</em></h2>
+      <p>Dal Castello al Duomo: toccate un numero per rivedere la tappa.</p>
+    </div>
+    <div class="route-fig reveal">
+        <rect width="900" height="420" rx="14" fill="#f8f1e6"/>
+        <!-- Parco Sempione e cerchia -->
+        <ellipse cx="130" cy="100" rx="110" ry="70" fill="#cfe3d7" opacity=".7"/>
+        <text x="130" y="104" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" fill="#2f6b4f">Parco Sempione</text>
+        <ellipse cx="620" cy="260" rx="300" ry="150" fill="none" stroke="#c9973f" stroke-width="2" stroke-dasharray="6 6" opacity=".7"/>
+        <text x="860" y="250" text-anchor="end" font-family="DM Sans,sans-serif" font-size="11" fill="#9a7a35">cerchia dei Navigli</text>
+        <!-- percorso -->
+        <path d="M170 150L250 220L340 250L420 290L520 320L610 330L700 300" fill="none" stroke="#ef5a2a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 12"/>
+        <path d="M170 150L250 220L340 250L420 290L520 320L610 330L700 300" fill="none" stroke="#ef5a2a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/>
+        <!-- tappe -->
+        <g font-family="Fraunces,Georgia,serif" font-weight="800" font-size="17" text-anchor="middle" fill="#fff">
+          <a href="castello.html" class="stop" aria-label="Tappa 1: Castello Sforzesco"><circle class="dot" cx="170" cy="150" r="20" fill="#ef5a2a"/><text x="170" y="156">1</text></a>
+          <a href="via-gorani.html" class="stop" aria-label="Tappa 2: Via Gorani"><circle class="dot" cx="250" cy="220" r="20" fill="#ef5a2a"/><text x="250" y="226">2</text></a>
+          <a href="madonna-del-grembiule.html" class="stop" aria-label="Tappa 3: Madonna del Grembiule"><circle class="dot" cx="340" cy="250" r="20" fill="#ef5a2a"/><text x="340" y="256">3</text></a>
+          <a href="piazza-affari.html" class="stop" aria-label="Tappa 4: Piazza Affari"><circle class="dot" cx="420" cy="290" r="20" fill="#ef5a2a"/><text x="420" y="296">4</text></a>
+          <a href="piazza-san-sepolcro.html" class="stop" aria-label="Tappa 5: Piazza San Sepolcro"><circle class="dot" cx="520" cy="320" r="20" fill="#ef5a2a"/><text x="520" y="326">5</text></a>
+          <a href="san-satiro.html" class="stop" aria-label="Tappa 6: San Satiro"><circle class="dot" cx="610" cy="330" r="20" fill="#ef5a2a"/><text x="610" y="336">6</text></a>
+          <circle cx="700" cy="300" r="26" fill="#1f2a4d"/><text x="700" y="307">7</text>
+        </g>
+        <g font-family="DM Sans,sans-serif" font-size="13" font-weight="700" fill="#2a1f2d">
+          <text x="170" y="122" text-anchor="middle">Castello</text>
+          <text x="250" y="190" text-anchor="middle">Via Gorani</text>
+          <text x="340" y="222" text-anchor="middle">Madonna del Grembiule</text>
+          <text x="420" y="334" text-anchor="middle">Piazza Affari</text>
+          <text x="520" y="362" text-anchor="middle">San Sepolcro</text>
+          <text x="610" y="374" text-anchor="middle">San Satiro</text>
+          <text x="700" y="262" text-anchor="middle" fill="#1f2a4d" font-size="15">Duomo</text>
+        </g>
+      </svg>
+    </div>
+    <p class="route-note">Mappa schematica, non in scala: serve a ricordare l'ordine delle tappe, non le distanze.</p>
+  </div>
+</section>
+
+<!-- ===== RECAP ===== -->
+<section class="recap" id="recap">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">La storia</span>
-      <h2>Sei secoli <em>di cantiere</em></h2>
-      <p>Dalle basiliche paleocristiane alla piazza di oggi. I numeri variano tra le fonti, quindi sono indicativi.</p>
+      <span class="eyebrow">Il recap</span>
+      <h2>Sei tappe, <em>sei lezioni</em></h2>
+      <p>Ogni luogo ci ha detto la stessa cosa con parole diverse. Ripassiamole.</p>
+    </div>
+    <div class="recap-grid">
+      <article class="stop-card reveal"><span class="stop-n">1</span><span class="tag">Castello Sforzesco</span><h3>Fortezza, reggia, museo</h3><p>I Visconti lo costruiscono, i milanesi lo abbattono, gli Sforza lo rifanno, gli spagnoli lo fortificano, Beltrami lo restaura.</p><p class="lesson">Ogni crollo è un nuovo inizio.</p><a class="more" href="castello.html">Rivedi la tappa →</a></article>
+      <article class="stop-card reveal"><span class="stop-n">2</span><span class="tag">Via Gorani</span><h3>Quattro Milano nello stesso metro</h3><p>Il palazzo di un imperatore, una torre medievale, un palazzo barocco, le bombe e una piazza nuova.</p><p class="lesson">Anche una capitale può diventare cortile.</p><a class="more" href="via-gorani.html">Rivedi la tappa →</a></article>
+      <article class="stop-card reveal"><span class="stop-n">3</span><span class="tag">Madonna del Grembiule</span><h3>La chiesa senza tetto</h3><p>Un affresco ritrovato da un operaio, una cappella distrutta nel 1943 e mai ricostruita: oggi è un luogo di silenzio.</p><p class="lesson">Le ferite non si nascondono: diventano memoria.</p><a class="more" href="madonna-del-grembiule.html">Rivedi la tappa →</a></article>
+      <article class="stop-card reveal"><span class="stop-n">4</span><span class="tag">Piazza Affari</span><h3>Gli affari, e l'ironia</h3><p>Sotto la Borsa un teatro romano; davanti, un dito di marmo di Cattelan che sfida il palazzo del potere.</p><p class="lesson">Milano fa affari da duemila anni, e sa riderne.</p><a class="more" href="piazza-affari.html">Rivedi la tappa →</a></article>
+      <article class="stop-card reveal"><span class="stop-n">5</span><span class="tag">Piazza San Sepolcro</span><h3>Il centro che cambia pelle</h3><p>Il foro romano, la chiesa dei crociati, la biblioteca di Federico Borromeo e, nel 1919, una pagina oscura del Novecento.</p><p class="lesson">Si guarda tutto, anche ciò che pesa.</p><a class="more" href="piazza-san-sepolcro.html">Rivedi la tappa →</a></article>
+      <article class="stop-card reveal"><span class="stop-n">6</span><span class="tag">San Satiro</span><h3>Il trucco di Bramante</h3><p>Dietro l'altare passa una strada. Bramante non ha spazio per un'abside e ne dipinge una: meno di un metro che sembra profondo come una chiesa.</p><p class="lesson">Il limite è l'inizio dell'invenzione.</p><a class="more" href="san-satiro.html">Rivedi la tappa →</a></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUATTRO GESTI ===== -->
+<section class="gestures" id="gesti">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" style="color:#ffb089">Che cos'è Milano</span>
+      <h2>Quattro gesti, <em>sempre gli stessi</em></h2>
+      <p>Se guardiamo bene, in ogni tappa Milano ha fatto una di queste quattro cose. Sono il suo carattere.</p>
+    </div>
+    <div class="g4">
+      <div class="gest reveal">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="44" width="48" height="10" rx="2" fill="#a9765f"/><rect x="14" y="30" width="36" height="14" rx="2" fill="#d9a76f"/><rect x="20" y="16" width="24" height="14" rx="2" fill="#f3d7b8"/><path d="M32 6V14M28 10l4-4 4 4" stroke="#ffb089" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Costruire sopra</h3>
+        <p>Non si cancella: si aggiunge uno strato. Il nuovo poggia sul vecchio e lo tiene in vita.</p>
+        <span class="where">Castello · Via Gorani · San Sepolcro</span>
+      </div>
+      <div class="gest reveal">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 54V30a24 24 0 0 1 48 0V54" fill="none" stroke="#f8f1e6" stroke-width="4" stroke-linecap="round"/><path d="M8 54h48" stroke="#f8f1e6" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="22" r="6" fill="#ffd27a"/></svg>
+        <h3>Curare le ferite</h3>
+        <p>Una bomba, un crollo, una storia scomoda: Milano li lascia visibili e ne fa un luogo di memoria.</p>
+        <span class="where">Madonna del Grembiule · Via Gorani · San Sepolcro</span>
+      </div>
+      <div class="gest reveal">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 52V20L32 8L56 20V52Z" fill="none" stroke="#f8f1e6" stroke-width="3" stroke-linejoin="round" stroke-dasharray="3 5"/><path d="M20 52V32a12 12 0 0 1 24 0V52Z" fill="#ffd27a"/><path d="M26 52V36a6 6 0 0 1 12 0V52Z" fill="#1f2a4d"/></svg>
+        <h3>Inventare dove manca</h3>
+        <p>Niente spazio? Si dipinge. Niente tempo? Si rifà. L'ingegno nasce dal limite.</p>
+        <span class="where">San Satiro · Castello (Beltrami)</span>
+      </div>
+      <div class="gest reveal">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22" fill="#ffd27a"/><circle cx="24" cy="26" r="3" fill="#2a1f2d"/><circle cx="40" cy="26" r="3" fill="#2a1f2d"/><path d="M20 38Q32 52 44 38" fill="none" stroke="#2a1f2d" stroke-width="3" stroke-linecap="round"/></svg>
+        <h3>Ridere di sé</h3>
+        <p>Chi fa affari da secoli sa prendersi in giro. Un dito di marmo davanti alla Borsa è un'opera d'arte e uno sberleffo.</p>
+        <span class="where">Piazza Affari · il gioco di oggi</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== IL DUOMO ===== -->
+<section class="duomo" id="duomo">
+  <div class="wrap">
+    <div class="duomo-grid">
+      <div class="reveal">
+        <span class="eyebrow">Settima tappa · Il Duomo</span>
+        <h2>Il simbolo di Milano è <em>un cantiere</em>.</h2>
+        <p>Il Duomo è la sintesi di tutto: è nato nel 1386 e non è mai stato davvero finito. Ha attraversato i Visconti, gli Sforza, gli spagnoli, Napoleone, due secoli di restauri; anche oggi gli scalpellini lavorano sulle guglie, e i milanesi dicono «lungo come la Fabbrica del Duomo» per ogni cosa che non finisce mai.</p>
+        <p>E sotto la piazza, ancora una volta, gli strati: i resti di un battistero paleocristiano, dove secondo la tradizione Ambrogio battezzò Agostino, nella stessa Mediolanum che abbiamo incontrato in via Gorani e a San Sepolcro.</p>
+      </div>
+      <figure class="figure reveal">
+        <svg viewBox="0 0 400 320" role="img" aria-label="Illustrazione della facciata del Duomo con le sue guglie e la Madonnina">
+          <defs>
+            <linearGradient id="dm" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f0dccf"/><stop offset=".5" stop-color="#fbf0e7"/><stop offset="1" stop-color="#ebd3c4"/></linearGradient>
+            <g id="s2" stroke="#b08e79" stroke-width=".9" stroke-linejoin="round"><path d="M-4 0V-8H4V0Z" fill="#ead3c4"/><path d="M-3.4 -8L-2 -34L0 -62L2 -34L3.4 -8Z" fill="#f9ede3"/></g>
+          </defs>
+          <rect width="400" height="320" rx="14" fill="#f8d9bc"/>
+          <circle cx="330" cy="70" r="26" fill="#fff3c9"/>
+          <path d="M60 270V170L150 136L200 90L250 136L340 170V270Z" fill="url(#dm)" stroke="#b08e79" stroke-width="1.6" stroke-linejoin="round"/>
+          <g stroke="#d9bcaa" stroke-width="1"><path d="M110 270V150M150 270V136M250 270V136M290 270V150"/></g>
+          <path d="M175 270V210a25 25 0 0 1 50 0V270Z" fill="#6b4f5a"/>
+          <g fill="#7f96ad" stroke="#b08e79" stroke-width=".9"><rect x="80" y="190" width="18" height="60" rx="9"/><rect x="122" y="184" width="18" height="66" rx="9"/><rect x="260" y="184" width="18" height="66" rx="9"/><rect x="302" y="190" width="18" height="60" rx="9"/></g>
+          <use href="#s2" x="70" y="172"/><use href="#s2" x="110" y="154"/><use href="#s2" x="150" y="138"/><use href="#s2" x="250" y="138"/><use href="#s2" x="290" y="154"/><use href="#s2" x="330" y="172"/>
+          <use href="#s2" x="130" y="150" transform="scale(.7) translate(56 64)"/>
+          <path d="M192 90L196 56L200 10L204 56L208 90Z" fill="#fbefe5" stroke="#b08e79" stroke-width=".9" stroke-linejoin="round"/>
+          <circle cx="200" cy="8" r="3" fill="#d9a63f"/>
+          <path d="M197 14l3-8 3 8" stroke="#d9a63f" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+          <rect x="40" y="270" width="320" height="10" fill="#d9c3b3"/>
+          <g fill="#2a1f2d"><circle cx="90" cy="298" r="5"/><rect x="85" y="303" width="10" height="12" rx="4"/><circle cx="116" cy="300" r="5"/><rect x="111" y="305" width="10" height="10" rx="4"/><circle cx="290" cy="298" r="5"/><rect x="285" y="303" width="10" height="12" rx="4"/></g>
+        </svg>
+        <figcaption>La Madonnina, in cima, guarda tutta la città dall'alto.</figcaption>
+      </figure>
     </div>
 
-    <!-- MODIFICA: controlla date, numeri e testi prima di pubblicare (altezza della Madonnina, numero di statue e guglie, capienza) -->
+    <div class="facts">
+      <div class="fact reveal"><strong>1386</strong><span>inizia il cantiere</span></div>
+      <div class="fact reveal"><strong>135</strong><span>guglie</span></div>
+      <div class="fact reveal"><strong>3.400+</strong><span>statue</span></div>
+      <div class="fact reveal"><strong>1965</strong><span>l'ultima porta di bronzo</span></div>
+    </div>
+
     <div class="timeline">
-      <article class="t-item reveal"><div class="t-card">
-        <span class="t-year">IV secolo · Sotto i vostri piedi</span>
-        <h3>Mediolanum, Ambrogio e il battistero</h3>
-        <p>Siamo nel cuore della Milano romana e tardoantica. Qui sorgevano due basiliche paleocristiane, Santa Tecla e Santa Maria Maggiore (o «Iemale»), demolite dalla fine del Trecento per far posto alla nuova cattedrale.</p>
-        <p>Nell'area archeologica sotto la piazza e il Duomo si vedono i resti del battistero di San Giovanni alle Fonti, una struttura ottagonale del IV secolo con la vasca battesimale. L'ottagono richiama nel simbolismo cristiano l'«ottavo giorno», la resurrezione. Secondo la tradizione, nella notte di Pasqua del 387 il vescovo Ambrogio battezzò qui Agostino d'Ippona.</p>
-        <p>La città capitale dell'Impero (via Gorani), il foro (San Sepolcro) e il vescovo Ambrogio sono parte dello stesso racconto. L'accesso all'area archeologica è possibile solo con biglietto.</p>
-      </div></article>
-
-      <article class="t-item reveal"><div class="t-card">
-        <span class="t-year">1386 · Il cantiere gotico</span>
-        <h3>Una cattedrale per una città e per un duca</h3>
-        <p>Nel 1386 l'arcivescovo Antonio da Saluzzo e il signore di Milano, Gian Galeazzo Visconti, avviano la costruzione di una nuova cattedrale: la città era cresciuta e le vecchie basiliche erano inadeguate. Per i Visconti costruire la cattedrale più grande era anche un modo per affermare il proprio potere. Il Duomo è dedicato a Santa Maria Nascente.</p>
-        <p>La costruzione fu finanziata da una popolazione intera, con donazioni grandi e piccole. Nasce la Veneranda Fabbrica del Duomo, che ancora oggi gestisce la manutenzione continua della cattedrale.</p>
-        <p>Lo stile è «fuori posto»: gotico, cioè nordeuropeo, mentre in Italia si affermava già il Rinascimento. Furono chiamati maestri francesi e tedeschi (tra i nomi legati al cantiere, Nicolas de Bonaventure e Heinrich Parler da Gmünd). Milano voleva una cattedrale che potesse competere con quelle di Francia e Germania. Nel tardo Quattrocento, per il tiburio, furono consultati diversi ingegneri e architetti, tra cui Leonardo da Vinci.</p>
-      </div></article>
-
-      <article class="t-item reveal"><div class="t-card">
-        <span class="t-year">1387 · Il marmo</span>
-        <h3>Candoglia e la via d'acqua</h3>
-        <p>Il materiale simbolo è un marmo bianco con sfumature rosate, estratto a Candoglia, in Val d'Ossola. Gian Galeazzo donò la cava alla Fabbrica, e ancora oggi è riservata al Duomo.</p>
-        <p>I blocchi arrivavano per via d'acqua: lungo il Lago Maggiore, il Ticino e poi il Naviglio Grande fino a Milano, nella Darsena e nei canali interni. Sui blocchi si scriveva AUF, <em style="color:inherit">ad usum fabricae</em> («per l'uso della Fabbrica»), per esentarli dai dazi. Milano era una città d'acqua: il Duomo è stato costruito grazie ai canali, e molti oggi sono coperti.</p>
-        <p>Il colore del marmo cambia con la luce: più caldo al tramonto, più freddo con il cielo grigio. Il restauro è continuo: scultori, scalpellini e restauratori sostituiscono le parti deteriorate, e le statue originali più rovinate sono conservate nel Museo del Duomo.</p>
-      </div></article>
-
-      <article class="t-item reveal"><div class="t-card">
-        <span class="t-year">1774 · La Madonnina</span>
-        <h3>La piccola signora d'oro</h3>
-        <p>La statua dorata in rame, alta circa 4 metri, fu posta sulla guglia maggiore nel 1774 (opera di Giuseppe Perego, su disegno di Giuseppe Bini). La guglia è a circa 108 metri da terra.</p>
-        <p>Per molto tempo nessun edificio in città doveva superare l'altezza della Madonnina. Quando nel 1960 fu costruito il Grattacielo Pirelli, più alto, sulla sua cima fu posta una copia della statua, per rispetto della tradizione. Oggi la regola è superata: i grattacieli più alti sono nell'area di Porta Nuova e CityLife. Ma la Madonnina resta l'emblema dei milanesi, e una celebre canzone dialettale è dedicata a lei. La statua originale è stata sostituita nel corso dei restauri ed è oggi al Museo del Duomo.</p>
-      </div></article>
-
-      <article class="t-item reveal"><div class="t-card">
-        <span class="t-year">1805 · La facciata e Napoleone</span>
-        <h3>Una facciata tardiva</h3>
-        <p>La facciata è molto più tarda del resto e per secoli rimase incompiuta. Alla fine del Cinquecento furono realizzati alcuni elementi in stile classico e solo nell'Ottocento la parte superiore fu portata a termine in stile neogotico.</p>
-        <p>Napoleone ebbe un ruolo decisivo: nel 1805 si fece incoronare Re d'Italia proprio qui, con la Corona Ferrea (oggi conservata a Monza), e ordinò di accelerare il completamento della facciata.</p>
-        <p>La porta centrale in bronzo è di Ludovico Pogliaghi (inizio Novecento); l'ultima porta fu completata nel 1965, data che molte guide considerano la fine simbolica dei lavori. Circa (le fonti variano): oltre 3.000 statue, più di un centinaio di guglie e decine di doccioni che fanno scorrere l'acqua piovana. Una vera «foresta di marmo».</p>
-      </div></article>
-
-      <article class="t-item reveal"><div class="t-card">
-        <span class="t-year">L'interno · Spazio, luce e storie</span>
-        <h3>Una foresta di pietra</h3>
-        <p>Cinque navate e una sessantina di colonne-pilastri; può contenere decine di migliaia di persone (circa 40.000, dato indicativo). Le vetrate, antiche e moderne, raccontano storie bibliche e di santi, un «fumetto» per chi non sapeva leggere.</p>
-        <p>Da non perdere: il San Bartolomeo scorticato (1562, Marco d'Agrate), con la propria pelle sulle spalle; la meridiana, una linea di ottone con i segni dello zodiaco inserita nel 1786 dagli astronomi di Brera; il Santo Chiodo, secondo la tradizione uno dei chiodi della Croce, mostrato ogni settembre per l'Esaltazione della Croce, quando l'arcivescovo viene sollevato con un apparato detto «nivola»; e la cripta di San Carlo Borromeo, riformatore e simbolo della Controriforma.</p>
-        <p>Per entrare servono un abbigliamento adeguato (spalle e ginocchia coperte), i controlli di sicurezza e un biglietto.</p>
-      </div></article>
-
-      <article class="t-item reveal"><div class="t-card">
-        <span class="t-year">Le terrazze</span>
-        <h3>Camminare sul tetto di marmo</h3>
-        <p>Si può salire sulle terrazze, a piedi o in ascensore. Da lì si vedono da vicino guglie, statue e doccioni e, nelle giornate limpide, le Alpi. È uno dei pochi luoghi d'Europa in cui si può passeggiare tra i dettagli di una cattedrale gotica.</p>
-      </div></article>
-
-      <article class="t-item reveal"><div class="t-card">
-        <span class="t-year">Ottocento–Novecento · La piazza</span>
-        <h3>Da piazzetta medievale a salotto della nazione</h3>
-        <p>La piazza che vedete non è medievale. Fino all'Ottocento il Duomo era circondato da edifici addossati, vicoli e botteghe, come il Coperto dei Figini. La piazza attuale nasce dopo l'Unità d'Italia, con la demolizione di un'intera area urbana.</p>
-        <p>La Galleria Vittorio Emanuele II (1865–1877), di Giuseppe Mengoni, è un passaggio coperto in ferro e vetro, tra i primi grandi esempi di galleria commerciale in Europa, chiamato «il salotto di Milano». Mengoni morì nel 1877 cadendo da un'impalcatura, poco prima dell'inaugurazione. Il monumento equestre a Vittorio Emanuele II è del 1896.</p>
-        <p>Palazzo Reale fu per secoli sede del potere civile, dai Visconti agli Asburgo e ai Savoia; nel 1953 vi fu esposta Guernica di Picasso. L'Arengario, degli anni Trenta, è parte del Museo del Novecento. Qui si incrociano due linee della metropolitana, M1 e M3.</p>
-        <p><strong>Quante epoche riuscite a vedere da qui?</strong> Romana sotto i piedi, gotica nel Duomo, ottocentesca nella Galleria, razionalista nell'Arengario, contemporanea nei grattacieli all'orizzonte.</p>
-      </div></article>
-    </div>
-
-    <div class="glossary reveal">
-      <h3>Parole chiave · Key words</h3>
-      <ul>
-        <li><strong>Duomo</strong> = cathedral (not «dome»)</li>
-        <li><strong>guglia</strong> = spire</li>
-        <li><strong>doccione</strong> = gargoyle</li>
-        <li><strong>navata</strong> = nave</li>
-        <li><strong>Veneranda Fabbrica</strong> = the cathedral's works administration</li>
-        <li><strong>tiburio</strong> = crossing tower</li>
-      </ul>
+      <article class="t-item reveal"><div class="t-card"><span class="t-year">1386 · Gian Galeazzo Visconti</span><h3>Si comincia</h3><p>Nasce il cantiere della nuova cattedrale, sul luogo di due chiese più antiche. Il marmo rosa arriva dalle cave di Candoglia, via acqua, lungo i Navigli.</p></div></article>
+      <article class="t-item reveal"><div class="t-card"><span class="t-year">1577 · San Carlo Borromeo</span><h3>La consacrazione</h3><p>Il Duomo viene consacrato, ma è tutt'altro che finito: la facciata resta incompleta per più di due secoli.</p></div></article>
+      <article class="t-item reveal"><div class="t-card"><span class="t-year">1774 · La Madonnina</span><h3>Una statua dorata sul punto più alto</h3><p>Sulla guglia maggiore sale la statua di rame dorato, che diventa il simbolo della città.</p></div></article>
+      <article class="t-item reveal"><div class="t-card"><span class="t-year">1805–1813 · Napoleone</span><h3>La facciata</h3><p>Napoleone vuole la facciata finita per farsi incoronare re d'Italia: gli stessi anni che abbiamo incontrato al Castello e alla Borsa.</p></div></article>
+      <article class="t-item reveal"><div class="t-card"><span class="t-year">Oggi · La Veneranda Fabbrica</span><h3>Un cantiere che non si ferma</h3><p>Scalpellini, restauratori e architetti continuano a sostituire il marmo e a riparare le guglie. Il Duomo è, in pratica, sempre in costruzione.</p></div></article>
     </div>
   </div>
 </section>
 
-<!-- ===== GIOCO: CHI VUOI RISENTIRE ===== -->
-<section class="game-sec" id="gioco">
+<!-- ===== GIOCO FINALE ===== -->
+<section class="game-sec" id="parola">
   <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Il gioco · Chi vuoi risentire</span>
-      <h2>Chi vuoi <em>risentire</em>?</h2>
-      <p>Trasformiamo la giornata in contatti reali. Cinque minuti, poi aperitivo.</p>
+    <div class="sec-head center reveal">
+      <span class="eyebrow">L'ultimo gioco · Una parola per Milano</span>
+      <h2>Aggiungete <em>il vostro strato</em></h2>
+      <p>Milano si costruisce sopra ciò che c'era. Anche questo pomeriggio è diventato uno strato. Una parola a testa: se doveste descrivere Milano dopo questa camminata, quale scegliereste?</p>
     </div>
 
-    <div class="how reveal">
-      <div><h4>1. Scegli</h4><p>Dalla lista, fino a 3 persone che vorresti rivedere.</p></div>
-      <div><h4>2. Nessuno vede</h4><p>La tua scelta arriva solo all'organizzatore. Nessun altro partecipante vede cosa hai scelto.</p></div>
-      <div><h4>3. Se è reciproca</h4><p>Entro 48 ore ricevi il contatto, ma solo di chi ha scelto te a sua volta. Altrimenti non succede nulla e nessuno sa nulla.</p></div>
-      <div><h4>4. Poi si cancella</h4><p>Dopo l'invio tutti i dati di scelta e di contatto vengono cancellati, e ti avvisiamo.</p></div>
+    <div class="word-start" id="wordStart">
+      <button class="btn btn-primary" id="wordGo" type="button">Chi comincia?</button>
+      <p class="pairs-note" id="wordMsg" style="margin-top:1rem;font-size:.92rem;color:var(--ink-soft)">Premete il tasto: ognuno dice la sua parola, poi si passa al prossimo.</p>
     </div>
 
-    <!-- Modulo -->
-    <div class="form-card reveal" id="pickForm">
-      <h3>La tua scelta</h3>
-      <p class="sub">Chi non vuole partecipare può saltare: nessuno lo saprà.</p>
-
-      <div class="field">
-        <label for="meSelect">Chi sei?</label>
-        <select id="meSelect"><option value="">Scegli il tuo nome…</option></select>
+    <div class="word-panel" id="wordPanel" hidden>
+      <h3>Una parola per Milano</h3>
+      <p>Non c'è una risposta giusta. Una parola sola, senza spiegazioni (le spiegazioni, all'aperitivo).</p>
+      <p class="word-turn" id="wordTurn"></p>
+      <p class="word-name" id="wordName" aria-live="polite"></p>
+      <div class="word-actions">
+        <button class="btn btn-primary" id="wordNext" type="button">Prossima persona →</button>
       </div>
-
-      <div class="field" id="picksField" hidden>
-        <fieldset>
-          <legend>Chi vorresti rivedere? (massimo 3)</legend>
-          <div class="picks" id="picks"></div>
-          <p class="picks-hint" id="picksHint">Scelte: 0 di 3</p>
-        </fieldset>
-      </div>
-
-      <label class="consent"><input type="checkbox" id="consent"><span>Ho capito come funziona: la mia scelta arriva solo all'organizzatore, viene usata solo per gli abbinamenti e cancellata dopo l'invio. Dopo la conferma non posso cambiarla.</span></label>
-
-      <div class="actions">
-        <button class="btn btn-primary" id="sendBtn" type="button">Conferma e blocca le scelte</button>
-        <button class="btn btn-lightline" id="skipBtn" type="button">Preferisco saltare</button>
-      </div>
-      <p class="err" id="err" role="alert" hidden></p>
-      <noscript><p class="err">Il modulo richiede JavaScript.</p></noscript>
-    </div>
-
-    <!-- Stato dopo la conferma (identico per chi sceglie e per chi salta) -->
-    <div class="locked" id="locked" hidden>
-      <h3>Fatto.</h3>
-      <p>Le scelte sono bloccate e nessuno può vederle. Se la scelta è reciproca, entro 48 ore riceverai il contatto; altrimenti non succede nulla.</p>
-      <p style="margin-top:.8rem">Ora foto di gruppo e aperitivo!</p>
-    </div>
-
-    <div class="after">
-      <div class="reveal"><h4>Foto di gruppo</h4><p>Si chiude con la foto di gruppo.</p></div>
-      <div class="reveal"><h4>Aperitivo</h4><p>E si va diretti all'aperitivo: è il momento in cui le persone si parlano.</p></div>
-      <div class="reveal"><h4>Un messaggio, e un sondaggio</h4><p>Ti scriveremo per ringraziarti e per chiederti tre cose: cosa è piaciuto, cosa no, dove tornare.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ===== FINALE ===== -->
-<section class="finale" id="finale">
+<!-- ===== MANIFESTO ===== -->
+<section class="manifesto" id="fine">
   <div class="wrap reveal">
-    <span class="eyebrow">Fine del giro</span>
-    <blockquote>Il Duomo non è solo un monumento: è un cantiere che continua da sei secoli. Milano lo ha costruito insieme, con l'acqua, con il marmo e con la pazienza, e continua a prendersene cura.</blockquote>
-    <p>Dal battistero di Ambrogio al cantiere gotico, da Napoleone alla Madonnina, fino alla piazza e alla Galleria. Se vi è rimasta voglia di Milano:</p>
-    <ul class="next-list">
-      <li>Galleria Vittorio Emanuele II</li>
-      <li>Salita alle terrazze</li>
-      <li>Museo del Duomo</li>
-      <li>La Scala</li>
-      <li>Pinacoteca Ambrosiana</li>
-      <li>Quadrilatero della Moda</li>
-    </ul>
-    <div class="cta-btns">
-      <a class="btn btn-primary" href="index.html#partecipanti">Torna al tour</a>
-      <a class="btn btn-ghost" href="san-satiro.html">← Sesta tappa</a>
-      <a class="btn btn-ghost" href="castello.html">Rivedi dalla prima tappa</a>
+    <span class="eyebrow">Fine del tour</span>
+    <h2>Grazie per essere stato con noi a scoprire un po' di più <em>Milano</em>.</h2>
+    <p class="mani-end">Il Duomo non è mai finito. Milano nemmeno. E ogni persona che ci cammina dentro, oggi, aggiunge un pezzetto.</p>
+    <div class="mani-btns">
+      <a class="btn btn-primary" href="index.html#top">Torna all'inizio</a>
+      <a class="btn btn-light" href="san-satiro.html">← Sesta tappa</a>
     </div>
   </div>
 </section>
@@ -434,13 +553,8 @@ footer a:hover{color:#fff}
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="wrap foot">
-    <div><strong class="madonnina">✦</strong> Milano a Passo Lento · Social walking tour<br><span style="opacity:.7">Fatto a mano, a piedi, a Milano.</span></div>
-    <div>
-      <!-- MODIFICA: inserisci i tuoi contatti reali -->
-      <a href="mailto:ciao@tuodominio.it">ciao@tuodominio.it</a> ·
-      <a href="https://instagram.com/" rel="noopener">Instagram</a>
-    </div>
-    <div style="opacity:.7">© <span id="year">2026</span> · Tutti i diritti riservati</div>
+    <div><strong class="madonnina">✦</strong> Ciao bella Milano · Social walking tour<br><span style="opacity:.7">Fatto a mano, a piedi, da chi ama Milano per chi ama Milano.</span></div>
+    <div style="opacity:.7"><span id="year">2026</span> · Diritti riservati</div>
   </div>
 </footer>
 
@@ -461,104 +575,65 @@ footer a:hover{color:#fff}
     els.forEach(function(el,i){el.style.transitionDelay=(i%3)*90+'ms';io.observe(el)});
   }else{els.forEach(function(el){el.classList.add('in')})}
 
-  /* ===== Gioco: chi vuoi risentire =====
-     - ognuno sceglie fino a 3 persone; la scelta viene INVIATA all'organizzatore
-       (SCELTE_ENDPOINT in partecipanti.js) e NON resta sul telefono: sul telefono si
-       salva solo che le scelte sono bloccate;
-     - chi salta non invia nulla, ma vede la stessa schermata finale di chi sceglie;
-     - gli abbinamenti reciproci li calcola l'organizzatore (organizzatore.html). */
-  var LIST=(window.PARTECIPANTI||[]).filter(function(p){return p&&p.nome}).map(function(p){return p.nome})
-            .sort(function(a,b){return a.localeCompare(b,'it')}),
-      EP=window.SCELTE_ENDPOINT||'',
-      KEY='mpt_scelte_tappa7',MAX=3,
-      form=document.getElementById('pickForm'),
-      locked=document.getElementById('locked'),
-      sel=document.getElementById('meSelect'),
-      field=document.getElementById('picksField'),
-      picks=document.getElementById('picks'),
-      hint=document.getElementById('picksHint'),
-      consent=document.getElementById('consent'),
-      sendBtn=document.getElementById('sendBtn'),
-      skipBtn=document.getElementById('skipBtn'),
-      err=document.getElementById('err'),
-      me='';
-  if(!form)return;
+  /* ===== Gioco finale: una parola per Milano =====
+     L'ordine è "casuale" ma calcolato dal codice del giro e dall'elenco in
+     partecipanti.js: è lo stesso su tutti i telefoni. */
+  var LIST=(window.PARTECIPANTI||[]).filter(function(p){return p&&p.nome}).map(function(p){return p.nome}),
+      go=document.getElementById('wordGo');
+  if(!go)return;
+  var start=document.getElementById('wordStart'),
+      msg=document.getElementById('wordMsg'),
+      panel=document.getElementById('wordPanel'),
+      turn=document.getElementById('wordTurn'),
+      nameEl=document.getElementById('wordName'),
+      next=document.getElementById('wordNext'),
+      reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches,
+      i=0,order=[];
 
   function pad(n){return(n<10?'0':'')+n}
   var d=new Date(),
       code=(window.URLSearchParams&&new URLSearchParams(location.search).get('giro'))||window.GIRO||(d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate()));
-
-  function showErr(t){err.textContent=t;err.hidden=false}
-  function clearErr(){err.hidden=true}
-  function showLocked(){form.hidden=true;locked.hidden=false}
-  function lock(){
-    try{localStorage.setItem(KEY,JSON.stringify({giro:code}))}catch(e){}
-    showLocked();
+  function hash(s){
+    var h=1779033703^s.length;
+    for(var k=0;k<s.length;k++){h=Math.imul(h^s.charCodeAt(k),3432918353);h=h<<13|h>>>19}
+    h=Math.imul(h^h>>>16,2246822507);h=Math.imul(h^h>>>13,3266489909);
+    return(h^h>>>16)>>>0;
+  }
+  function mulberry32(a){
+    return function(){
+      a|=0;a=a+0x6D2B79F5|0;
+      var t=Math.imul(a^a>>>15,1|a);
+      t=t+Math.imul(t^t>>>7,61|t)^t;
+      return((t^t>>>14)>>>0)/4294967296;
+    };
+  }
+  function shuffle(arr,rng){
+    var a=arr.slice();
+    for(var k=a.length-1;k>0;k--){var j=Math.floor(rng()*(k+1));var t=a[k];a[k]=a[j];a[j]=t}
+    return a;
   }
 
-  try{
-    var st=JSON.parse(localStorage.getItem(KEY)||'null');
-    if(st&&st.giro===code)showLocked();
-  }catch(e){}
+  function show(){
+    nameEl.classList.remove('pop');void nameEl.offsetWidth;
+    if(i<order.length){
+      turn.textContent='Tocca a · '+(i+1)+' di '+order.length;
+      nameEl.textContent=order[i];
+      nameEl.classList.add('pop');
+      next.textContent=(i===order.length-1)?'Fine del giro ✦':'Prossima persona →';
+    }else{
+      turn.textContent='Il giro è completo';
+      nameEl.textContent='Milano, in '+order.length+' parole.';
+      next.hidden=true;
+      document.getElementById('fine').scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+    }
+  }
 
-  LIST.forEach(function(n){
-    var o=document.createElement('option');o.value=n;o.textContent=n;sel.appendChild(o);
+  go.addEventListener('click',function(){
+    if(!LIST.length){msg.textContent='Nessun partecipante: controlla il file partecipanti.js.';return}
+    order=shuffle(LIST,mulberry32(hash(code+'|t7|'+LIST.join(','))));
+    i=0;start.hidden=true;panel.hidden=false;show();
   });
-  try{
-    var saved=localStorage.getItem('mpt_io');   /* il nome scelto alle tappe 2 e 6 */
-    if(saved&&LIST.indexOf(saved)>-1){sel.value=saved;me=saved;renderPicks()}
-  }catch(e){}
-
-  function chosen(){
-    return [].slice.call(picks.querySelectorAll('input:checked')).map(function(i){return i.value});
-  }
-  function updateCount(){
-    var c=chosen().length;
-    hint.textContent='Scelte: '+c+' di '+MAX;
-    [].slice.call(picks.querySelectorAll('input')).forEach(function(i){
-      i.disabled=!i.checked&&c>=MAX;
-    });
-  }
-  function renderPicks(){
-    picks.textContent='';
-    field.hidden=!me;
-    if(!me)return;
-    LIST.filter(function(n){return n!==me}).forEach(function(n){
-      var l=document.createElement('label');l.className='pick';
-      var i=document.createElement('input');i.type='checkbox';i.value=n;
-      i.addEventListener('change',updateCount);
-      var s=document.createElement('span');s.textContent=n;
-      l.appendChild(i);l.appendChild(s);picks.appendChild(l);
-    });
-    updateCount();
-  }
-  sel.addEventListener('change',function(){
-    me=sel.value;clearErr();renderPicks();
-    try{if(me)localStorage.setItem('mpt_io',me)}catch(e){}
-  });
-
-  skipBtn.addEventListener('click',function(){lock()});
-
-  sendBtn.addEventListener('click',function(){
-    clearErr();
-    var p=chosen();
-    if(!me)return showErr('Scegli prima il tuo nome, oppure salta.');
-    if(!p.length)return showErr('Scegli almeno una persona, oppure premi «Preferisco saltare».');
-    if(!consent.checked)return showErr('Spunta la casella per confermare di aver capito come funziona.');
-    if(!EP)return showErr("L'invio non è ancora configurato: avvisa l'organizzatore. Le tue scelte NON sono state inviate.");
-    sendBtn.disabled=true;skipBtn.disabled=true;
-    fetch(EP,{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({giro:code,chi:me,scelte:p.join(', '),riga:me+': '+p.join(', ')})
-    }).then(function(r){
-      if(!r.ok)throw new Error('http');
-      lock();
-    }).catch(function(){
-      sendBtn.disabled=false;skipBtn.disabled=false;
-      showErr("Non sono riuscito a inviare le scelte. Controlla la connessione e riprova: non sono state bloccate.");
-    });
-  });
+  next.addEventListener('click',function(){i++;show()});
 })();
 </script>
 </body>
